@@ -3,6 +3,15 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.controls {
+  padding: 12px;
+  background: #f4f4f4;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 #map {
-  height: 100vh;
+  height: calc(100vh - 56px);
 }

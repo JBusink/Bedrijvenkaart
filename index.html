@@ -2,20 +2,41 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bedrijvenkaart</title>
 
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- Leaflet -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
 </head>
-
 <body>
+  <div class="controls">
+    <label for="typeFilter">Type organisatie:</label>
+    <select id="typeFilter">
+      <option value="alles">Alles</option>
+      <option value="bedrijf">Bedrijf</option>
+      <option value="onderzoek">Onderzoek</option>
+    </select>
 
-<div id="map"></div>
+    <label for="onderwerpFilter">Onderwerp:</label>
+    <select id="onderwerpFilter">
+      <option value="alles">Alles</option>
+      <option value="high-tech systemen">High-tech systemen</option>
+      <option value="mechatronica">Mechatronica</option>
+      <option value="optica/fotonica">Optica/fotonica</option>
+      <option value="materialen">Materialen</option>
+      <option value="energie">Energie</option>
+      <option value="medische technologie">Medische technologie</option>
+      <option value="data/modelleren">Data/modelleren</option>
+      <option value="metingen & sensoren">Metingen & sensoren</option>
+    </select>
+  </div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="js/main.js"></script>
+  <div id="map"></div>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -5,25 +5,68 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap'
 }).addTo(map);
 
-fetch('data/bedrijven.json')
-  .then(res => res.json())
-  .then(bedrijven => {
-    const markers = [];
+const typeFilter = document.getElementById('typeFilter');
+const onderwerpFilter = document.getElementById('onderwerpFilter');
 
-    bedrijven.forEach(bedrijf => {
-      const marker = L.marker([bedrijf.lat, bedrijf.lng])
-        .addTo(map)
-        .bindPopup(`
-          <b>${bedrijf.naam}</b><br>
-          ${bedrijf.plaats}<br>
-          ${bedrijf.beschrijving}
-        `);
+let alleBedrijven = [];
+let markerLayer = L.layerGroup().addTo(map);
 
-      markers.push(marker);
-    });
+function voldoetAanFilter(bedrijf) {
+  const gekozenType = typeFilter.value;
+  const gekozenOnderwerp = onderwerpFilter.value;
 
-    if (markers.length > 0) {
-      const groep = L.featureGroup(markers);
-      map.fitBounds(groep.getBounds().pad(0.2));
-    }
+  const typeOk = gekozenType === 'alles' || bedrijf.type === gekozenType;
+  const onderwerpOk =
+    gekozenOnderwerp === 'alles' || bedrijf.onderwerp === gekozenOnderwerp;
+
+  return typeOk && onderwerpOk;
+}
+
+function tekenMarkers(bedrijven) {
+  markerLayer.clearLayers();
+
+  const markers = [];
+
+  bedrijven.forEach((bedrijf) => {
+    const marker = L.marker([bedrijf.lat, bedrijf.lng]).bindPopup(`
+      <b>${bedrijf.naam}</b><br>
+      ${bedrijf.plaats}<br>
+      <b>Type:</b> ${bedrijf.type}<br>
+      <b>Onderwerp:</b> ${bedrijf.onderwerp}<br>
+      ${bedrijf.beschrijving}
+    `);
+
+    marker.addTo(markerLayer);
+    markers.push(marker);
   });
+
+  if (markers.length > 0) {
+    const groep = L.featureGroup(markers);
+    map.fitBounds(groep.getBounds().pad(0.2));
+  } else {
+    map.setView([52.2, 5.3], 7);
+  }
+}
+
+function updateKaart() {
+  const gefilterd = alleBedrijven.filter(voldoetAanFilter);
+  tekenMarkers(gefilterd);
+}
+
+fetch('data/bedrijven.json')
+  .then((res) => {
+    if (!res.ok) {
+      throw new Error(`Kon bedrijven.json niet laden: ${res.status}`);
+    }
+    return res.json();
+  })
+  .then((bedrijven) => {
+    alleBedrijven = bedrijven;
+    updateKaart();
+  })
+  .catch((err) => {
+    console.error('Fout bij laden van bedrijven:', err);
+  });
+
+typeFilter.addEventListener('change', updateKaart);
+onderwerpFilter.addEventListener('change', updateKaart);
