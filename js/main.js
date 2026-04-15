@@ -276,3 +276,33 @@ if (showMapBtn) {
 if (showInfoBtn) {
   showInfoBtn.addEventListener('click', toonInfoView);
 }
+
+const darkToggle = document.getElementById('darkToggle');
+
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark-mode');
+  document.body.classList.remove('light-mode');
+  if (darkToggle) darkToggle.textContent = '☀️';
+} else if (localStorage.getItem('theme') === 'light') {
+  document.body.classList.add('light-mode');
+  document.body.classList.remove('dark-mode');
+  if (darkToggle) darkToggle.textContent = '🌙';
+}
+
+if (darkToggle) {
+  darkToggle.addEventListener('click', () => {
+    const isDark = document.body.classList.contains('dark-mode');
+
+    if (isDark) {
+      document.body.classList.remove('dark-mode');
+      document.body.classList.add('light-mode');
+      localStorage.setItem('theme', 'light');
+      darkToggle.textContent = '🌙';
+    } else {
+      document.body.classList.remove('light-mode');
+      document.body.classList.add('dark-mode');
+      localStorage.setItem('theme', 'dark');
+      darkToggle.textContent = '☀️';
+    }
+  });
+}
