@@ -7,6 +7,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 const typeFilter = document.getElementById('typeFilter');
 const onderwerpFilter = document.getElementById('onderwerpFilter');
+const resetButton = document.getElementById('resetFilters');
 
 let alleBedrijven = [];
 let markerLayer = L.layerGroup().addTo(map);
@@ -22,19 +23,38 @@ function voldoetAanFilter(bedrijf) {
   return typeOk && onderwerpOk;
 }
 
+function maakPopupHtml(bedrijf) {
+  const emailHtml = bedrijf.email
+    ? `<a href="mailto:${bedrijf.email}">E-mail contact</a>`
+    : '';
+
+  const websiteHtml = bedrijf.website
+    ? `<a href="${bedrijf.website}" target="_blank" rel="noopener noreferrer">Website</a>`
+    : '';
+
+  return `
+    <div class="popup-content">
+      <h3>${bedrijf.naam}</h3>
+      <div class="popup-meta"><strong>Plaats:</strong> ${bedrijf.plaats}</div>
+      <div class="popup-meta"><strong>Type:</strong> ${bedrijf.type}</div>
+      <div class="popup-meta"><strong>Onderwerp:</strong> ${bedrijf.onderwerp}</div>
+      <div class="popup-meta">${bedrijf.beschrijving}</div>
+      <div class="popup-links">
+        ${emailHtml}
+        ${websiteHtml}
+      </div>
+    </div>
+  `;
+}
+
 function tekenMarkers(bedrijven) {
   markerLayer.clearLayers();
 
   const markers = [];
 
   bedrijven.forEach((bedrijf) => {
-    const marker = L.marker([bedrijf.lat, bedrijf.lng]).bindPopup(`
-      <b>${bedrijf.naam}</b><br>
-      ${bedrijf.plaats}<br>
-      <b>Type:</b> ${bedrijf.type}<br>
-      <b>Onderwerp:</b> ${bedrijf.onderwerp}<br>
-      ${bedrijf.beschrijving}
-    `);
+    const marker = L.marker([bedrijf.lat, bedrijf.lng])
+      .bindPopup(maakPopupHtml(bedrijf));
 
     marker.addTo(markerLayer);
     markers.push(marker);
@@ -70,3 +90,9 @@ fetch('data/bedrijven.json')
 
 typeFilter.addEventListener('change', updateKaart);
 onderwerpFilter.addEventListener('change', updateKaart);
+
+resetButton.addEventListener('click', () => {
+  typeFilter.value = 'alles';
+  onderwerpFilter.value = 'alles';
+  updateKaart();
+});

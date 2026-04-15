@@ -12,27 +12,42 @@
   />
 </head>
 <body>
-  <div class="controls">
-    <label for="typeFilter">Type organisatie:</label>
-    <select id="typeFilter">
-      <option value="alles">Alles</option>
-      <option value="bedrijf">Bedrijf</option>
-      <option value="onderzoek">Onderzoek</option>
-    </select>
+  <header class="topbar">
+    <div>
+      <h1>Bedrijvenkaart Technische Natuurkunde</h1>
+      <p>Zoek bedrijven en onderzoeksinstituten op type en onderwerp.</p>
+    </div>
+  </header>
 
-    <label for="onderwerpFilter">Onderwerp:</label>
-    <select id="onderwerpFilter">
-      <option value="alles">Alles</option>
-      <option value="high-tech systemen">High-tech systemen</option>
-      <option value="mechatronica">Mechatronica</option>
-      <option value="optica/fotonica">Optica/fotonica</option>
-      <option value="materialen">Materialen</option>
-      <option value="energie">Energie</option>
-      <option value="medische technologie">Medische technologie</option>
-      <option value="data/modelleren">Data/modelleren</option>
-      <option value="metingen & sensoren">Metingen & sensoren</option>
-    </select>
-  </div>
+  <section class="filter-panel">
+    <div class="filter-group">
+      <label for="typeFilter">Type organisatie</label>
+      <select id="typeFilter">
+        <option value="alles">Alles</option>
+        <option value="bedrijf">Bedrijf</option>
+        <option value="onderzoek">Onderzoek</option>
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="onderwerpFilter">Onderwerp</label>
+      <select id="onderwerpFilter">
+        <option value="alles">Alles</option>
+        <option value="high-tech systemen">High-tech systemen</option>
+        <option value="mechatronica">Mechatronica</option>
+        <option value="optica/fotonica">Optica/fotonica</option>
+        <option value="materialen">Materialen</option>
+        <option value="energie">Energie</option>
+        <option value="medische technologie">Medische technologie</option>
+        <option value="data/modelleren">Data/modelleren</option>
+        <option value="metingen en sensoren">Metingen en sensoren</option>
+      </select>
+    </div>
+
+    <div class="filter-actions">
+      <button id="resetFilters" type="button">Reset filters</button>
+    </div>
+  </section>
 
   <div id="map"></div>
 

@@ -26,15 +26,16 @@
     "onderwerp": "data/modelleren",
     "beschrijving": "Toegepast onderzoek en innovatie."
   },
-
   {
-    "naam": "AMOLF",
-    "plaats": "Amsterdam",
-    "lat": 52.356,
-    "lng": 4.953,
-    "type": "onderzoek",
-    "onderwerp": "optica/fotonica",
-    "beschrijving": "Fundamenteel onderzoek in fotonica, nanofysica en soft matter."
+  "naam": "AMOLF",
+  "plaats": "Amsterdam",
+  "lat": 52.356,
+  "lng": 4.953,
+  "type": "onderzoek",
+  "onderwerp": "optica/fotonica",
+  "beschrijving": "Fundamenteel onderzoek in fotonica, nanofysica en soft matter.",
+  "email": "info@amolf.nl",
+  "website": "https://amolf.nl"
   },
   {
     "naam": "ARCNL",
