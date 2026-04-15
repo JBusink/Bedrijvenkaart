@@ -10,7 +10,6 @@
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
-
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
@@ -58,7 +57,18 @@
     </div>
   </section>
 
-  <div id="map"></div>
+  <main class="content-layout">
+    <div class="map-wrapper">
+      <div id="map"></div>
+    </div>
+
+    <aside class="sidepanel" id="sidepanel">
+      <div class="sidepanel-placeholder">
+        <h2>Bedrijfsinformatie</h2>
+        <p>Klik op een marker om uitgebreide informatie te bekijken.</p>
+      </div>
+    </aside>
+  </main>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>

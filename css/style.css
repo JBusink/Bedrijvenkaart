@@ -63,11 +63,6 @@ body {
   box-shadow: 0 0 0 3px rgba(31, 93, 153, 0.12);
 }
 
-.filter-actions {
-  display: flex;
-  align-items: end;
-}
-
 .filter-actions button {
   padding: 10px 14px;
   border: none;
@@ -82,45 +77,110 @@ body {
   background: #174a7a;
 }
 
+.content-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  height: calc(100vh - 154px);
+}
+
+.map-wrapper {
+  min-width: 0;
+}
+
 #map {
-  height: calc(100vh - 170px);
   width: 100%;
+  height: 100%;
 }
 
-.popup-content {
-  line-height: 1.5;
-  min-width: 220px;
+.sidepanel {
+  background: white;
+  border-left: 1px solid #dbe2ea;
+  padding: 24px;
+  overflow-y: auto;
 }
 
-.popup-content h3 {
+.sidepanel-placeholder h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.sidepanel-placeholder p {
+  color: #475569;
+  line-height: 1.6;
+}
+
+.company-header {
+  margin-bottom: 20px;
+}
+
+.company-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.4rem;
+}
+
+.company-subtitle {
+  color: #475569;
+  font-size: 0.98rem;
+}
+
+.company-section {
+  margin-bottom: 18px;
+}
+
+.company-section h3 {
   margin: 0 0 8px 0;
   font-size: 1rem;
+  color: #123b66;
 }
 
-.popup-meta {
-  margin: 4px 0;
-  font-size: 0.92rem;
+.company-meta {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 20px;
 }
 
-.popup-links {
-  margin-top: 12px;
+.company-meta-item {
+  padding: 10px 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+.company-links {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
-.popup-links a {
+.company-links a {
   display: inline-block;
-  padding: 8px 10px;
-  border-radius: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
   background: #e8f0fa;
   color: #1f5d99;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.96rem;
   font-weight: 600;
-  transition: 0.2s;
 }
 
-.popup-links a:hover {
+.company-links a:hover {
   background: #d6e4f5;
+}
+
+@media (max-width: 1000px) {
+  .content-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 55vh auto;
+    height: auto;
+  }
+
+  #map {
+    height: 55vh;
+  }
+
+  .sidepanel {
+    border-left: none;
+    border-top: 1px solid #dbe2ea;
+  }
 }

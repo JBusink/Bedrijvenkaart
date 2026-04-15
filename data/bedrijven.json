@@ -59,14 +59,16 @@
     "beschrijving": "Productie en onderzoek naar staal en materiaaltechnologie.",
     "website": "https://www.tatasteeljobs.nl/option/vakgebieden/studenten-starters"
   },
-  {
-    "naam": "PhotonFirst",
-    "plaats": "Alkmaar",
-    "lat": 52.632,
-    "lng": 4.753,
-    "type": "bedrijf",
-    "onderwerp": "optica/fotonica",
-    "beschrijving": "Fotonische sensortechnologie voor high-tech toepassingen.",
-    "website":"https://www.photonfirst.com/careers"
-  }
+{
+  "naam": "PhotonFirst",
+  "plaats": "Alkmaar",
+  "lat": 52.632,
+  "lng": 4.753,
+  "type": "bedrijf",
+  "onderwerp": "optica/fotonica",
+  "beschrijving": "Fotonische sensortechnologie voor high-tech toepassingen.",
+  "extraInfo": "PhotonFirst ontwikkelt geïntegreerde fotonische sensoren en meetsystemen voor toepassingen in de high-tech industrie, aerospace en monitoring. Dit is interessant voor TN-studenten met interesse in optica, sensoren en systeemintegratie.",
+  "email": "info@photonfirst.com",
+  "website": "https://www.photonfirst.com"
+}
 ]
