@@ -127,22 +127,22 @@ body {
 .filter-group label {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #334155;
+  color: var(--text-soft);
 }
 
 .filter-group select {
   padding: 10px 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  background: white;
-  font-size: 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg-panel);
   color: var(--text-main);
+  font-size: 0.95rem;
 }
 
 .filter-group select:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(31, 93, 153, 0.12);
+  box-shadow: 0 0 0 3px rgba(31, 93, 153, 0.15);
 }
 
 .filter-actions button {
@@ -150,7 +150,7 @@ body {
   border: none;
   border-radius: 8px;
   background: var(--accent);
-  color: white;
+  color:var(--text-soft);
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
@@ -397,5 +397,20 @@ body {
   .tab-button.active {
     background: white;
     color: #1f5d99;
+  }
+
+  .filter-group select {
+    background: var(--bg-panel);
+    color: var(--text-main);
+    border-color: var(--border);
+  }
+
+  .filter-group label {
+    color: var(--text-soft);
+  }
+
+  .filter-panel {
+    background: var(--bg-panel);
+    border-bottom: 1px solid var(--border);
   }
 }
