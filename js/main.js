@@ -3,9 +3,27 @@ const showInfoBtn = document.getElementById('showInfoBtn');
 const kaartView = document.getElementById('kaartView');
 const infoView = document.getElementById('infoView');
 
+const typeFilter = document.getElementById('typeFilter');
+const onderwerpFilter = document.getElementById('onderwerpFilter');
+const resetButton = document.getElementById('resetFilters');
+const sidepanel = document.getElementById('sidepanel');
+
 const map = L.map('map').setView([52.2, 5.3], 7);
 
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; OpenStreetMap'
+}).addTo(map);
+
+let alleBedrijven = [];
+const markerCluster = L.markerClusterGroup();
+map.addLayer(markerCluster);
+
 function toonKaartView() {
+  if (!kaartView || !infoView || !showMapBtn || !showInfoBtn) {
+    return;
+  }
+
   kaartView.classList.remove('hidden-view');
   infoView.classList.add('hidden-view');
 
@@ -18,6 +36,10 @@ function toonKaartView() {
 }
 
 function toonInfoView() {
+  if (!kaartView || !infoView || !showMapBtn || !showInfoBtn) {
+    return;
+  }
+
   kaartView.classList.add('hidden-view');
   infoView.classList.remove('hidden-view');
 
@@ -25,24 +47,35 @@ function toonInfoView() {
   showInfoBtn.classList.add('active');
 }
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; OpenStreetMap'
-}).addTo(map);
+function toonStandaardPanel() {
+  if (!sidepanel) {
+    return;
+  }
 
-const typeFilter = document.getElementById('typeFilter');
-const onderwerpFilter = document.getElementById('onderwerpFilter');
-const resetButton = document.getElementById('resetFilters');
-const sidepanel = document.getElementById('sidepanel');
+  sidepanel.innerHTML = `
+    <div class="sidepanel-placeholder">
+      <h2>Bedrijfsinformatie</h2>
+      <p>Klik op een marker om uitgebreide informatie te bekijken.</p>
+    </div>
+  `;
+}
 
-let alleBedrijven = [];
-let markerCluster = L.markerClusterGroup();
+function toonGeenResultatenPanel() {
+  if (!sidepanel) {
+    return;
+  }
 
-map.addLayer(markerCluster);
+  sidepanel.innerHTML = `
+    <div class="sidepanel-placeholder">
+      <h2>Geen resultaten</h2>
+      <p>Er zijn geen bedrijven die voldoen aan de gekozen filters.</p>
+    </div>
+  `;
+}
 
 function voldoetAanFilter(bedrijf) {
-  const gekozenType = typeFilter.value;
-  const gekozenOnderwerp = onderwerpFilter.value;
+  const gekozenType = typeFilter ? typeFilter.value : 'alles';
+  const gekozenOnderwerp = onderwerpFilter ? onderwerpFilter.value : 'alles';
 
   const typeOk = gekozenType === 'alles' || bedrijf.type === gekozenType;
   const onderwerpOk =
@@ -87,15 +120,29 @@ function iconVoorOnderwerp(onderwerp) {
 }
 
 function maakPopupHtml(bedrijf) {
+  const naam = bedrijf.naam || 'Onbekend bedrijf';
+  const plaats = bedrijf.plaats || 'Onbekende locatie';
+
   return `
     <div>
-      <strong>${bedrijf.naam}</strong><br>
-      ${bedrijf.plaats}
+      <strong>${naam}</strong><br>
+      ${plaats}
     </div>
   `;
 }
 
 function toonBedrijfInPanel(bedrijf) {
+  if (!sidepanel) {
+    return;
+  }
+
+  const naam = bedrijf.naam || 'Onbekend bedrijf';
+  const plaats = bedrijf.plaats || 'Onbekende locatie';
+  const type = bedrijf.type || 'Onbekend';
+  const onderwerp = bedrijf.onderwerp || 'Onbekend';
+  const beschrijving = bedrijf.beschrijving || 'Geen beschrijving beschikbaar.';
+  const extraInfo = bedrijf.extraInfo || '';
+
   const emailHtml = bedrijf.email
     ? `<a href="mailto:${bedrijf.email}">📧 E-mail</a>`
     : '';
@@ -104,29 +151,29 @@ function toonBedrijfInPanel(bedrijf) {
     ? `<a href="${bedrijf.website}" target="_blank" rel="noopener noreferrer">🌐 Website</a>`
     : '';
 
-  const extraInfoHtml = bedrijf.extraInfo
+  const extraInfoHtml = extraInfo
     ? `
       <div class="company-section">
         <h3>Extra informatie</h3>
-        <p>${bedrijf.extraInfo}</p>
+        <p>${extraInfo}</p>
       </div>
     `
     : '';
 
   sidepanel.innerHTML = `
     <div class="company-header">
-      <h2>${bedrijf.naam}</h2>
-      <div class="company-subtitle">${bedrijf.plaats}</div>
+      <h2>${naam}</h2>
+      <div class="company-subtitle">${plaats}</div>
     </div>
 
     <div class="company-meta">
-      <div class="company-meta-item"><strong>Type:</strong> ${bedrijf.type}</div>
-      <div class="company-meta-item"><strong>Onderwerp:</strong> ${bedrijf.onderwerp}</div>
+      <div class="company-meta-item"><strong>Type:</strong> ${type}</div>
+      <div class="company-meta-item"><strong>Onderwerp:</strong> ${onderwerp}</div>
     </div>
 
     <div class="company-section">
       <h3>Beschrijving</h3>
-      <p>${bedrijf.beschrijving || 'Geen beschrijving beschikbaar.'}</p>
+      <p>${beschrijving}</p>
     </div>
 
     ${extraInfoHtml}
@@ -147,6 +194,13 @@ function tekenMarkers(bedrijven) {
   const markers = [];
 
   bedrijven.forEach((bedrijf) => {
+    if (
+      typeof bedrijf.lat !== 'number' ||
+      typeof bedrijf.lng !== 'number'
+    ) {
+      return;
+    }
+
     const marker = L.marker(
       [bedrijf.lat, bedrijf.lng],
       { icon: iconVoorOnderwerp(bedrijf.onderwerp) }
@@ -165,12 +219,6 @@ function tekenMarkers(bedrijven) {
     map.fitBounds(groep.getBounds().pad(0.2));
   } else {
     map.setView([52.2, 5.3], 7);
-    sidepanel.innerHTML = `
-      <div class="sidepanel-placeholder">
-        <h2>Geen resultaten</h2>
-        <p>Er zijn geen bedrijven die voldoen aan de gekozen filters.</p>
-      </div>
-    `;
   }
 }
 
@@ -179,12 +227,9 @@ function updateKaart() {
   tekenMarkers(gefilterd);
 
   if (gefilterd.length > 0) {
-    sidepanel.innerHTML = `
-      <div class="sidepanel-placeholder">
-        <h2>Bedrijfsinformatie</h2>
-        <p>Klik op een marker om uitgebreide informatie te bekijken.</p>
-      </div>
-    `;
+    toonStandaardPanel();
+  } else {
+    toonGeenResultatenPanel();
   }
 }
 
@@ -201,16 +246,33 @@ fetch('data/bedrijven.json')
   })
   .catch((err) => {
     console.error('Fout bij laden van bedrijven:', err);
+    toonGeenResultatenPanel();
   });
 
-typeFilter.addEventListener('change', updateKaart);
-onderwerpFilter.addEventListener('change', updateKaart);
+if (typeFilter) {
+  typeFilter.addEventListener('change', updateKaart);
+}
 
-resetButton.addEventListener('click', () => {
-  typeFilter.value = 'alles';
-  onderwerpFilter.value = 'alles';
-  updateKaart();
-});
+if (onderwerpFilter) {
+  onderwerpFilter.addEventListener('change', updateKaart);
+}
 
-showMapBtn.addEventListener('click', toonKaartView);
-showInfoBtn.addEventListener('click', toonInfoView);
+if (resetButton) {
+  resetButton.addEventListener('click', () => {
+    if (typeFilter) {
+      typeFilter.value = 'alles';
+    }
+    if (onderwerpFilter) {
+      onderwerpFilter.value = 'alles';
+    }
+    updateKaart();
+  });
+}
+
+if (showMapBtn) {
+  showMapBtn.addEventListener('click', toonKaartView);
+}
+
+if (showInfoBtn) {
+  showInfoBtn.addEventListener('click', toonInfoView);
+}

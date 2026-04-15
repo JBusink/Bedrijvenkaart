@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bedrijvenkaart</title>
+  <title>Bedrijvenkaart Technische Natuurkunde</title>
 
+  <!-- Eigen CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Leaflet -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
+
+  <!-- MarkerCluster -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
@@ -19,92 +24,149 @@
     href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
   />
 </head>
+
 <body>
+
+  <!-- HEADER -->
   <header class="topbar">
     <div>
       <h1>Bedrijvenkaart Technische Natuurkunde</h1>
-      <p>Zoek bedrijven en onderzoeksinstituten op type en onderwerp.</p>
+      <p>Zoek stagebedrijven en onderzoeksinstituten</p>
     </div>
   </header>
 
-  <section class="filter-panel">
-    <div class="filter-group">
-      <label for="typeFilter">Type organisatie</label>
-      <select id="typeFilter">
-        <option value="alles">Alles</option>
-        <option value="bedrijf">Bedrijf</option>
-        <option value="onderzoek">Onderzoek</option>
-      </select>
-    </div>
+  <!-- NAV TABS -->
+  <nav class="page-tabs">
+    <button id="showMapBtn" class="tab-button active" type="button">
+      🗺️ Kaart
+    </button>
+    <button id="showInfoBtn" class="tab-button" type="button">
+      ℹ️ Stage-informatie
+    </button>
+  </nav>
 
-    <div class="filter-group">
-      <label for="onderwerpFilter">Onderwerp</label>
-      <select id="onderwerpFilter">
-        <option value="alles">Alles</option>
-        <option value="high-tech systemen">High-tech systemen</option>
-        <option value="mechatronica">Mechatronica</option>
-        <option value="optica/fotonica">Optica/fotonica</option>
-        <option value="materialen">Materialen</option>
-        <option value="energie">Energie</option>
-        <option value="medische technologie">Medische technologie</option>
-        <option value="data/modelleren">Data/modelleren</option>
-        <option value="metingen en sensoren">Metingen en sensoren</option>
-      </select>
-    </div>
+  <!-- ========================= -->
+  <!-- KAART VIEW -->
+  <!-- ========================= -->
 
-    <div class="filter-actions">
-      <button id="resetFilters" type="button">Reset filters</button>
-    </div>
-  </section>
+  <div id="kaartView">
 
-  <main class="content-layout">
-    <div class="map-wrapper">
-      <div id="map"></div>
-    </div>
+    <!-- FILTERS -->
+    <section class="filter-panel">
 
-    <aside class="sidepanel" id="sidepanel">
-      <div class="sidepanel-placeholder">
-        <h2>Bedrijfsinformatie</h2>
-        <p>Klik op een marker om uitgebreide informatie te bekijken.</p>
+      <div class="filter-group">
+        <label for="typeFilter">Type organisatie</label>
+        <select id="typeFilter">
+          <option value="alles">Alles</option>
+          <option value="bedrijf">Bedrijf</option>
+          <option value="onderzoek">Onderzoek</option>
+        </select>
       </div>
-    </aside>
-  </main>
+
+      <div class="filter-group">
+        <label for="onderwerpFilter">Onderwerp</label>
+        <select id="onderwerpFilter">
+          <option value="alles">Alles</option>
+          <option value="high-tech systemen">High-tech systemen</option>
+          <option value="mechatronica">Mechatronica</option>
+          <option value="optica/fotonica">Optica/fotonica</option>
+          <option value="materialen">Materialen</option>
+          <option value="energie">Energie</option>
+          <option value="medische technologie">Medische technologie</option>
+          <option value="data/modelleren">Data/modelleren</option>
+          <option value="metingen en sensoren">Metingen en sensoren</option>
+        </select>
+      </div>
+
+      <div class="filter-actions">
+        <button id="resetFilters" type="button">
+          Reset filters
+        </button>
+      </div>
+
+    </section>
+
+    <!-- KAART + SIDEPANEL -->
+    <main class="content-layout">
+
+      <div class="map-wrapper">
+        <div id="map"></div>
+      </div>
+
+      <aside class="sidepanel" id="sidepanel">
+        <div class="sidepanel-placeholder">
+          <h2>Bedrijfsinformatie</h2>
+          <p>Klik op een marker om uitgebreide informatie te bekijken.</p>
+        </div>
+      </aside>
+
+    </main>
+
+  </div>
+
+  <!-- ========================= -->
+  <!-- INFO VIEW -->
+  <!-- ========================= -->
 
   <div id="infoView" class="hidden-view">
-  <section class="info-page">
-    <div class="info-card">
-      <h2>Informatie over stagelopen</h2>
-      <p>
-        Op deze pagina kun je algemene informatie zetten over stages binnen
-        Technische Natuurkunde.
-      </p>
-    </div>
 
-    <div class="info-card">
-      <h3>Wat kun je hier opnemen?</h3>
-      <ul>
-        <li>Wat voor soort stageplekken passend zijn</li>
-        <li>Verwachte duur en studiebelasting</li>
-        <li>Wanneer studenten moeten beginnen met zoeken</li>
-        <li>Wat je verwacht van een stagebedrijf</li>
-        <li>Hoe studenten contact opnemen</li>
-      </ul>
-    </div>
+    <section class="info-page">
 
-    <div class="info-card">
-      <h3>Voorbeeldtekst</h3>
-      <p>
-        Een technische stage binnen Technische Natuurkunde richt zich doorgaans
-        op onderzoek, ontwikkeling, metingen, modellering of systeemintegratie.
-        Studenten zoeken een plek waar zij inhoudelijke en professionele
-        ervaring opdoen binnen een realistische R&amp;D-context.
-      </p>
-    </div>
-  </section>
-</div>
+      <div class="info-card">
+        <h2>Stage-informatie</h2>
+        <p>
+          Op deze pagina vind je algemene informatie over het zoeken en uitvoeren
+          van een stage binnen Technische Natuurkunde.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>Wat is een technische stage?</h3>
+        <p>
+          Een technische stage richt zich op onderzoek, ontwikkeling, metingen,
+          modellering of systeemintegratie binnen een professionele omgeving.
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>Waar moet een stageplek aan voldoen?</h3>
+        <ul>
+          <li>Technische inhoud (R&amp;D, metingen, modellering)</li>
+          <li>Begeleiding vanuit het bedrijf</li>
+          <li>Relevantie voor Technische Natuurkunde</li>
+          <li>Mogelijkheid tot leren en experimenteren</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>Hoe vind je een stage?</h3>
+        <ul>
+          <li>Gebruik deze kaart als startpunt</li>
+          <li>Bekijk bedrijven en onderzoeksinstituten</li>
+          <li>Neem contact op via e-mail of website</li>
+          <li>Bespreek ideeën met je docent</li>
+        </ul>
+      </div>
+
+      <div class="info-card">
+        <h3>Tips</h3>
+        <ul>
+          <li>Begin op tijd (minimaal 2–3 maanden vooraf)</li>
+          <li>Wees proactief in contact opnemen</li>
+          <li>Denk na over je interesses (optica, data, materialen, etc.)</li>
+          <li>Gebruik je netwerk (docenten, medestudenten)</li>
+        </ul>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- SCRIPTS -->
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
   <script src="js/main.js"></script>
+
 </body>
 </html>
