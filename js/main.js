@@ -10,7 +10,9 @@ const onderwerpFilter = document.getElementById('onderwerpFilter');
 const resetButton = document.getElementById('resetFilters');
 
 let alleBedrijven = [];
-let markerLayer = L.layerGroup().addTo(map);
+let markerCluster = L.markerClusterGroup();
+
+map.addLayer(markerCluster);
 
 function voldoetAanFilter(bedrijf) {
   const gekozenType = typeFilter.value;
@@ -23,13 +25,28 @@ function voldoetAanFilter(bedrijf) {
   return typeOk && onderwerpOk;
 }
 
+function kleurVoorOnderwerp(onderwerp) {
+  const kleuren = {
+    'high-tech systemen': '#1d4ed8',
+    'mechatronica': '#7c3aed',
+    'optica/fotonica': '#0f766e',
+    'materialen': '#b45309',
+    'energie': '#16a34a',
+    'medische technologie': '#dc2626',
+    'data/modelleren': '#0891b2',
+    'metingen en sensoren': '#ea580c'
+  };
+
+  return kleuren[onderwerp] || '#475569';
+}
+
 function maakPopupHtml(bedrijf) {
   const emailHtml = bedrijf.email
-    ? `<a href="mailto:${bedrijf.email}">📧 E-mail</a>`
+    ? `<a href="mailto:${bedrijf.email}">E-mail</a>`
     : '';
 
   const websiteHtml = bedrijf.website
-    ? `<a href="${bedrijf.website}" target="_blank">🌐 Website</a>`
+    ? `<a href="${bedrijf.website}" target="_blank" rel="noopener noreferrer">Website</a>`
     : '';
 
   return `
@@ -48,16 +65,24 @@ function maakPopupHtml(bedrijf) {
 }
 
 function tekenMarkers(bedrijven) {
-  markerLayer.clearLayers();
+  markerCluster.clearLayers();
 
   const markers = [];
 
   bedrijven.forEach((bedrijf) => {
-    const marker = L.marker([bedrijf.lat, bedrijf.lng])
-      .bindPopup(maakPopupHtml(bedrijf));
+    const kleur = kleurVoorOnderwerp(bedrijf.onderwerp);
 
-    marker.addTo(markerLayer);
+    const marker = L.circleMarker([bedrijf.lat, bedrijf.lng], {
+      radius: 8,
+      fillColor: kleur,
+      color: '#ffffff',
+      weight: 2,
+      opacity: 1,
+      fillOpacity: 0.9
+    }).bindPopup(maakPopupHtml(bedrijf));
+
     markers.push(marker);
+    markerCluster.addLayer(marker);
   });
 
   if (markers.length > 0) {
