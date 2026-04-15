@@ -103,18 +103,24 @@ body {
 }
 
 .popup-links {
-  margin-top: 10px;
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .popup-links a {
+  display: inline-block;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #e8f0fa;
   color: #1f5d99;
   text-decoration: none;
+  font-size: 0.9rem;
   font-weight: 600;
+  transition: 0.2s;
 }
 
 .popup-links a:hover {
-  text-decoration: underline;
+  background: #d6e4f5;
 }

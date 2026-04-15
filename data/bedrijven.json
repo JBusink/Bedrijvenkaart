@@ -32,8 +32,8 @@
   {
   "naam": "AMOLF",
   "plaats": "Amsterdam",
-  "lat": 52.356,
-  "lng": 4.953,
+  "lat": 52.35649267541846,
+  "lng": 4.9486217438576,
   "type": "onderzoek",
   "onderwerp": "optica/fotonica",
   "beschrijving": "Fundamenteel onderzoek in fotonica, nanofysica en soft matter.",
@@ -42,8 +42,8 @@
   {
     "naam": "ARCNL",
     "plaats": "Amsterdam",
-    "lat": 52.356,
-    "lng": 4.953,
+    "lat": 52.357003980049015,
+    "lng": 4.947747343718745,
     "type": "onderzoek",
     "onderwerp": "high-tech systemen",
     "beschrijving": "Onderzoek naar lithografie en nanofabricage in samenwerking met ASML.",

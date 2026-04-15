@@ -25,11 +25,11 @@ function voldoetAanFilter(bedrijf) {
 
 function maakPopupHtml(bedrijf) {
   const emailHtml = bedrijf.email
-    ? `<a href="mailto:${bedrijf.email}">E-mail contact</a>`
+    ? `<a href="mailto:${bedrijf.email}">📧 E-mail</a>`
     : '';
 
   const websiteHtml = bedrijf.website
-    ? `<a href="${bedrijf.website}" target="_blank" rel="noopener noreferrer">Website</a>`
+    ? `<a href="${bedrijf.website}" target="_blank">🌐 Website</a>`
     : '';
 
   return `
