@@ -1,4 +1,3 @@
-// Kaart initialiseren
 const map = L.map('map').setView([52.2, 5.3], 7);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -6,7 +5,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap'
 }).addTo(map);
 
-// Data inladen
 fetch('data/bedrijven.json')
   .then(res => res.json())
   .then(bedrijven => {
