@@ -6,7 +6,8 @@
     "lng": 5.406,
     "type": "bedrijf",
     "onderwerp": "high-tech systemen",
-    "beschrijving": "High-tech bedrijf in halfgeleiderapparatuur."
+    "beschrijving": "High-tech bedrijf in halfgeleiderapparatuur.",
+    "website": "https://www.asml.com/en/careers/students-new-graduates/netherlands/internships"
   },
   {
     "naam": "Nikhef",
@@ -15,7 +16,8 @@
     "lng": 4.95,
     "type": "onderzoek",
     "onderwerp": "metingen & sensoren",
-    "beschrijving": "Onderzoek aan detectoren en subatomaire fysica."
+    "beschrijving": "Onderzoek aan detectoren en subatomaire fysica.",
+    "website": "https://www.nikhef.nl/stages-en-afstuderen/"
   },
   {
     "naam": "TNO",
@@ -24,7 +26,8 @@
     "lng": 4.37,
     "type": "onderzoek",
     "onderwerp": "data/modelleren",
-    "beschrijving": "Toegepast onderzoek en innovatie."
+    "beschrijving": "Toegepast onderzoek en innovatie.",
+    "website": "https://www.tno.nl/en/careers/graduates/"
   },
   {
   "naam": "AMOLF",
@@ -34,8 +37,7 @@
   "type": "onderzoek",
   "onderwerp": "optica/fotonica",
   "beschrijving": "Fundamenteel onderzoek in fotonica, nanofysica en soft matter.",
-  "email": "info@amolf.nl",
-  "website": "https://amolf.nl"
+  "website": "https://amolf.nl/jobs-amolfl-scientific-internship"
   },
   {
     "naam": "ARCNL",
@@ -44,7 +46,8 @@
     "lng": 4.953,
     "type": "onderzoek",
     "onderwerp": "high-tech systemen",
-    "beschrijving": "Onderzoek naar lithografie en nanofabricage in samenwerking met ASML."
+    "beschrijving": "Onderzoek naar lithografie en nanofabricage in samenwerking met ASML.",
+    "website": "https://arcnl.nl/jobs-arcnl-scientific-internship"
   },
   {
     "naam": "Tata Steel",
@@ -53,7 +56,8 @@
     "lng": 4.601,
     "type": "bedrijf",
     "onderwerp": "materialen",
-    "beschrijving": "Productie en onderzoek naar staal en materiaaltechnologie."
+    "beschrijving": "Productie en onderzoek naar staal en materiaaltechnologie.",
+    "website": "https://www.tatasteeljobs.nl/option/vakgebieden/studenten-starters"
   },
   {
     "naam": "PhotonFirst",
@@ -62,6 +66,7 @@
     "lng": 4.753,
     "type": "bedrijf",
     "onderwerp": "optica/fotonica",
-    "beschrijving": "Fotonische sensortechnologie voor high-tech toepassingen."
+    "beschrijving": "Fotonische sensortechnologie voor high-tech toepassingen.",
+    "website":"https://www.photonfirst.com/careers"
   }
 ]
