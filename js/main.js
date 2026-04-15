@@ -7,17 +7,44 @@ const typeFilter = document.getElementById('typeFilter');
 const onderwerpFilter = document.getElementById('onderwerpFilter');
 const resetButton = document.getElementById('resetFilters');
 const sidepanel = document.getElementById('sidepanel');
+const darkToggle = document.getElementById('darkToggle');
 
 const map = L.map('map').setView([52.2, 5.3], 7);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; OpenStreetMap'
-}).addTo(map);
+/* =========================
+   KAARTLAGEN LIGHT / DARK
+   ========================= */
+
+const lightTiles = L.tileLayer(
+  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap'
+  }
+);
+
+const darkTiles = L.tileLayer(
+  'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+  {
+    maxZoom: 19,
+    subdomains: 'abcd',
+    attribution: '&copy; OpenStreetMap &copy; CARTO'
+  }
+);
+
+lightTiles.addTo(map);
+
+/* =========================
+   DATA / MARKERS
+   ========================= */
 
 let alleBedrijven = [];
 const markerCluster = L.markerClusterGroup();
 map.addLayer(markerCluster);
+
+/* =========================
+   VIEW LOGICA
+   ========================= */
 
 function toonKaartView() {
   if (!kaartView || !infoView || !showMapBtn || !showInfoBtn) {
@@ -47,6 +74,10 @@ function toonInfoView() {
   showInfoBtn.classList.add('active');
 }
 
+/* =========================
+   SIDEPANEL
+   ========================= */
+
 function toonStandaardPanel() {
   if (!sidepanel) {
     return;
@@ -69,64 +100,6 @@ function toonGeenResultatenPanel() {
     <div class="sidepanel-placeholder">
       <h2>Geen resultaten</h2>
       <p>Er zijn geen bedrijven die voldoen aan de gekozen filters.</p>
-    </div>
-  `;
-}
-
-function voldoetAanFilter(bedrijf) {
-  const gekozenType = typeFilter ? typeFilter.value : 'alles';
-  const gekozenOnderwerp = onderwerpFilter ? onderwerpFilter.value : 'alles';
-
-  const typeOk = gekozenType === 'alles' || bedrijf.type === gekozenType;
-  const onderwerpOk =
-    gekozenOnderwerp === 'alles' || bedrijf.onderwerp === gekozenOnderwerp;
-
-  return typeOk && onderwerpOk;
-}
-
-function kleurVoorOnderwerp(onderwerp) {
-  const kleuren = {
-    'high-tech systemen': '#1d4ed8',
-    'mechatronica': '#7c3aed',
-    'optica/fotonica': '#0f766e',
-    'materialen': '#b45309',
-    'energie': '#16a34a',
-    'medische technologie': '#dc2626',
-    'data/modelleren': '#0891b2',
-    'metingen en sensoren': '#ea580c'
-  };
-
-  return kleuren[onderwerp] || '#475569';
-}
-
-function iconVoorOnderwerp(onderwerp) {
-  const kleur = kleurVoorOnderwerp(onderwerp);
-
-  return L.divIcon({
-    className: '',
-    html: `
-      <div style="
-        width: 22px;
-        height: 22px;
-        border-radius: 50%;
-        background: ${kleur};
-        border: 3px solid white;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.28);
-      "></div>
-    `,
-    iconSize: [22, 22],
-    iconAnchor: [11, 11]
-  });
-}
-
-function maakPopupHtml(bedrijf) {
-  const naam = bedrijf.naam || 'Onbekend bedrijf';
-  const plaats = bedrijf.plaats || 'Onbekende locatie';
-
-  return `
-    <div>
-      <strong>${naam}</strong><br>
-      ${plaats}
     </div>
   `;
 }
@@ -188,16 +161,84 @@ function toonBedrijfInPanel(bedrijf) {
   `;
 }
 
+/* =========================
+   FILTERS / CATEGORIEËN
+   ========================= */
+
+function voldoetAanFilter(bedrijf) {
+  const gekozenType = typeFilter ? typeFilter.value : 'alles';
+  const gekozenOnderwerp = onderwerpFilter ? onderwerpFilter.value : 'alles';
+
+  const typeOk = gekozenType === 'alles' || bedrijf.type === gekozenType;
+  const onderwerpOk =
+    gekozenOnderwerp === 'alles' || bedrijf.onderwerp === gekozenOnderwerp;
+
+  return typeOk && onderwerpOk;
+}
+
+function kleurVoorOnderwerp(onderwerp) {
+  const kleuren = {
+    'high-tech systemen': '#1d4ed8',
+    'mechatronica': '#7c3aed',
+    'optica/fotonica': '#0f766e',
+    'materialen': '#b45309',
+    'energie': '#16a34a',
+    'medische technologie': '#dc2626',
+    'data/modelleren': '#0891b2',
+    'metingen en sensoren': '#ea580c'
+  };
+
+  return kleuren[onderwerp] || '#475569';
+}
+
+function borderVoorMarker() {
+  return document.body.classList.contains('dark-mode') ? '#0f172a' : '#ffffff';
+}
+
+function iconVoorOnderwerp(onderwerp) {
+  const kleur = kleurVoorOnderwerp(onderwerp);
+  const borderKleur = borderVoorMarker();
+
+  return L.divIcon({
+    className: '',
+    html: `
+      <div style="
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: ${kleur};
+        border: 3px solid ${borderKleur};
+        box-shadow: 0 2px 8px rgba(0,0,0,0.28);
+      "></div>
+    `,
+    iconSize: [22, 22],
+    iconAnchor: [11, 11]
+  });
+}
+
+/* =========================
+   POPUP / MARKERS
+   ========================= */
+
+function maakPopupHtml(bedrijf) {
+  const naam = bedrijf.naam || 'Onbekend bedrijf';
+  const plaats = bedrijf.plaats || 'Onbekende locatie';
+
+  return `
+    <div>
+      <strong>${naam}</strong><br>
+      ${plaats}
+    </div>
+  `;
+}
+
 function tekenMarkers(bedrijven) {
   markerCluster.clearLayers();
 
   const markers = [];
 
   bedrijven.forEach((bedrijf) => {
-    if (
-      typeof bedrijf.lat !== 'number' ||
-      typeof bedrijf.lng !== 'number'
-    ) {
+    if (typeof bedrijf.lat !== 'number' || typeof bedrijf.lng !== 'number') {
       return;
     }
 
@@ -233,6 +274,40 @@ function updateKaart() {
   }
 }
 
+/* =========================
+   DARK MODE MAP THEME
+   ========================= */
+
+function updateMapTheme() {
+  const isDark = document.body.classList.contains('dark-mode');
+
+  if (isDark) {
+    if (map.hasLayer(lightTiles)) {
+      map.removeLayer(lightTiles);
+    }
+    if (!map.hasLayer(darkTiles)) {
+      darkTiles.addTo(map);
+    }
+  } else {
+    if (map.hasLayer(darkTiles)) {
+      map.removeLayer(darkTiles);
+    }
+    if (!map.hasLayer(lightTiles)) {
+      lightTiles.addTo(map);
+    }
+  }
+
+  // markers opnieuw tekenen zodat de randkleur ook meewisselt
+  if (alleBedrijven.length > 0) {
+    const gefilterd = alleBedrijven.filter(voldoetAanFilter);
+    tekenMarkers(gefilterd);
+  }
+}
+
+/* =========================
+   DATA LADEN
+   ========================= */
+
 fetch('data/bedrijven.json')
   .then((res) => {
     if (!res.ok) {
@@ -243,11 +318,16 @@ fetch('data/bedrijven.json')
   .then((bedrijven) => {
     alleBedrijven = bedrijven;
     updateKaart();
+    updateMapTheme();
   })
   .catch((err) => {
     console.error('Fout bij laden van bedrijven:', err);
     toonGeenResultatenPanel();
   });
+
+/* =========================
+   EVENT LISTENERS FILTERS
+   ========================= */
 
 if (typeFilter) {
   typeFilter.addEventListener('change', updateKaart);
@@ -269,6 +349,10 @@ if (resetButton) {
   });
 }
 
+/* =========================
+   EVENT LISTENERS VIEW
+   ========================= */
+
 if (showMapBtn) {
   showMapBtn.addEventListener('click', toonKaartView);
 }
@@ -277,17 +361,25 @@ if (showInfoBtn) {
   showInfoBtn.addEventListener('click', toonInfoView);
 }
 
-const darkToggle = document.getElementById('darkToggle');
+/* =========================
+   DARK MODE TOGGLE
+   ========================= */
 
 if (localStorage.getItem('theme') === 'dark') {
   document.body.classList.add('dark-mode');
   document.body.classList.remove('light-mode');
-  if (darkToggle) darkToggle.textContent = '☀️';
+  if (darkToggle) {
+    darkToggle.textContent = '☀️';
+  }
 } else if (localStorage.getItem('theme') === 'light') {
   document.body.classList.add('light-mode');
   document.body.classList.remove('dark-mode');
-  if (darkToggle) darkToggle.textContent = '🌙';
+  if (darkToggle) {
+    darkToggle.textContent = '🌙';
+  }
 }
+
+updateMapTheme();
 
 if (darkToggle) {
   darkToggle.addEventListener('click', () => {
@@ -304,5 +396,7 @@ if (darkToggle) {
       localStorage.setItem('theme', 'dark');
       darkToggle.textContent = '☀️';
     }
+
+    updateMapTheme();
   });
 }
