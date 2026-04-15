@@ -24,6 +24,43 @@
     "lng": 4.37,
     "type": "onderzoek",
     "onderwerp": "data/modelleren",
-    "beschrijving": "Onderzoek en toegepaste innovatie."
+    "beschrijving": "Toegepast onderzoek en innovatie."
+  },
+
+  {
+    "naam": "AMOLF",
+    "plaats": "Amsterdam",
+    "lat": 52.356,
+    "lng": 4.953,
+    "type": "onderzoek",
+    "onderwerp": "optica/fotonica",
+    "beschrijving": "Fundamenteel onderzoek in fotonica, nanofysica en soft matter."
+  },
+  {
+    "naam": "ARCNL",
+    "plaats": "Amsterdam",
+    "lat": 52.356,
+    "lng": 4.953,
+    "type": "onderzoek",
+    "onderwerp": "high-tech systemen",
+    "beschrijving": "Onderzoek naar lithografie en nanofabricage in samenwerking met ASML."
+  },
+  {
+    "naam": "Tata Steel",
+    "plaats": "IJmuiden",
+    "lat": 52.463,
+    "lng": 4.601,
+    "type": "bedrijf",
+    "onderwerp": "materialen",
+    "beschrijving": "Productie en onderzoek naar staal en materiaaltechnologie."
+  },
+  {
+    "naam": "PhotonFirst",
+    "plaats": "Alkmaar",
+    "lat": 52.632,
+    "lng": 4.753,
+    "type": "bedrijf",
+    "onderwerp": "optica/fotonica",
+    "beschrijving": "Fotonische sensortechnologie voor high-tech toepassingen."
   }
 ]
