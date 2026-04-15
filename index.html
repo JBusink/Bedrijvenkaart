@@ -5,16 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bedrijvenkaart Technische Natuurkunde</title>
 
-  <!-- Eigen CSS -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Leaflet -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
   />
 
-  <!-- MarkerCluster -->
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
@@ -24,41 +21,24 @@
     href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
   />
 </head>
-
 <body>
 
-  <!-- HEADER -->
   <header class="topbar">
-    <div>
-      <h1>Bedrijvenkaart Technische Natuurkunde</h1>
-      <p>Zoek stagebedrijven en onderzoeksinstituten</p>
+    <div class="topbar-inner">
+      <div class="topbar-text">
+        <h1>Bedrijvenkaart Technische Natuurkunde</h1>
+        <p>Zoek stagebedrijven en onderzoeksinstituten</p>
+      </div>
+
+      <nav class="page-tabs">
+        <a href="index.html" class="tab-button active">🗺️ Kaart</a>
+        <a href="stage.html" class="tab-button">ℹ️ Stage-informatie</a>
+      </nav>
     </div>
   </header>
 
-  <nav class="page-tabs">
-  <a href="index.html" class="tab-button active">🗺️ Kaart</a>
-  <a href="stage.html" class="tab-button">ℹ️ Stage-informatie</a>
-</nav>
-
-  <!-- NAV TABS -->
-  <!-- <nav class="page-tabs">
-    <button id="showMapBtn" class="tab-button active" type="button">
-      🗺️ Kaart
-    </button>
-    <button id="showInfoBtn" class="tab-button" type="button">
-      ℹ️ Stage-informatie
-    </button>
-  </nav> -->
-
-  <!-- ========================= -->
-  <!-- KAART VIEW -->
-  <!-- ========================= -->
-
   <div id="kaartView">
-
-    <!-- FILTERS -->
     <section class="filter-panel">
-
       <div class="filter-group">
         <label for="typeFilter">Type organisatie</label>
         <select id="typeFilter">
@@ -84,16 +64,11 @@
       </div>
 
       <div class="filter-actions">
-        <button id="resetFilters" type="button">
-          Reset filters
-        </button>
+        <button id="resetFilters" type="button">Reset filters</button>
       </div>
-
     </section>
 
-    <!-- KAART + SIDEPANEL -->
     <main class="content-layout">
-
       <div class="map-wrapper">
         <div id="map"></div>
       </div>
@@ -104,18 +79,8 @@
           <p>Klik op een marker om uitgebreide informatie te bekijken.</p>
         </div>
       </aside>
-
     </main>
-
   </div>
-
-  <!-- ========================= -->
-  <!-- INFO VIEW -->
-  <!-- ========================= -->
-
-  
-
-  <!-- SCRIPTS -->
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>

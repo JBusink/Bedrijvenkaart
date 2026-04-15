@@ -3,67 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bedrijvenkaart Technische Natuurkunde</title>
-
-  <!-- Eigen CSS -->
+  <title>Stage-informatie Technische Natuurkunde</title>
   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+  <header class="topbar">
+    <div>
+      <h1>Stage-informatie Technische Natuurkunde</h1>
+      <p>Algemene informatie over het zoeken en uitvoeren van een stage</p>
+    </div>
+  </header>
 
-<nav class="page-tabs">
-  <a href="index.html" class="tab-button">🗺️ Kaart</a>
-  <a href="stage.html" class="tab-button active">ℹ️ Stage-informatie</a>
-</nav>
+  <nav class="page-tabs">
+    <a href="index.html" class="tab-button">🗺️ Kaart</a>
+    <a href="stage.html" class="tab-button active">ℹ️ Stage-informatie</a>
+  </nav>
 
-<div id="infoView" class="hidden-view">
+  <main class="info-page">
 
-    <section class="info-page">
+    <section class="info-card">
+      <h2>Stage-informatie</h2>
+      <p>
+        Op deze pagina vind je algemene informatie over het zoeken en uitvoeren
+        van een stage binnen Technische Natuurkunde.
+      </p>
+    </section>
 
-      <div class="info-card">
-        <h2>Stage-informatie</h2>
-        <p>
-          Op deze pagina vind je algemene informatie over het zoeken en uitvoeren
-          van een stage binnen Technische Natuurkunde.
-        </p>
-      </div>
+    <section class="accordion">
 
-      <div class="info-card">
-        <h3>Wat is een technische stage?</h3>
-        <p>
-          Een technische stage richt zich op onderzoek, ontwikkeling, metingen,
-          modellering of systeemintegratie binnen een professionele omgeving.
-        </p>
-      </div>
+      <details class="accordion-item" open>
+        <summary>Wat is een technische stage?</summary>
+        <div class="accordion-content">
+          <p>
+            Een technische stage richt zich op onderzoek, ontwikkeling, metingen,
+            modellering of systeemintegratie binnen een professionele omgeving.
+          </p>
+        </div>
+      </details>
 
-      <div class="info-card">
-        <h3>Waar moet een stageplek aan voldoen?</h3>
-        <ul>
-          <li>Technische inhoud (R&amp;D, metingen, modellering)</li>
-          <li>Begeleiding vanuit het bedrijf</li>
-          <li>Relevantie voor Technische Natuurkunde</li>
-          <li>Mogelijkheid tot leren en experimenteren</li>
-        </ul>
-      </div>
+      <details class="accordion-item">
+        <summary>Waar moet een stageplek aan voldoen?</summary>
+        <div class="accordion-content">
+          <ul>
+            <li>Technische inhoud zoals R&amp;D, metingen of modellering</li>
+            <li>Begeleiding vanuit het bedrijf of instituut</li>
+            <li>Relevantie voor Technische Natuurkunde</li>
+            <li>Mogelijkheid om inhoudelijk en professioneel te groeien</li>
+          </ul>
+        </div>
+      </details>
 
-      <div class="info-card">
-        <h3>Hoe vind je een stage?</h3>
-        <ul>
-          <li>Gebruik deze kaart als startpunt</li>
-          <li>Bekijk bedrijven en onderzoeksinstituten</li>
-          <li>Neem contact op via e-mail of website</li>
-          <li>Bespreek ideeën met je docent</li>
-        </ul>
-      </div>
+      <details class="accordion-item">
+        <summary>Hoe vind je een stage?</summary>
+        <div class="accordion-content">
+          <ul>
+            <li>Gebruik deze kaart als startpunt</li>
+            <li>Bekijk bedrijven en onderzoeksinstituten</li>
+            <li>Neem contact op via e-mail of website</li>
+            <li>Bespreek ideeën met je docent of stagecoördinator</li>
+          </ul>
+        </div>
+      </details>
 
-      <div class="info-card">
-        <h3>Tips</h3>
-        <ul>
-          <li>Begin op tijd (minimaal 2–3 maanden vooraf)</li>
-          <li>Wees proactief in contact opnemen</li>
-          <li>Denk na over je interesses (optica, data, materialen, etc.)</li>
-          <li>Gebruik je netwerk (docenten, medestudenten)</li>
-        </ul>
-      </div>
+      <details class="accordion-item">
+        <summary>Tips</summary>
+        <div class="accordion-content">
+          <ul>
+            <li>Begin op tijd, bij voorkeur minimaal 2–3 maanden vooraf</li>
+            <li>Wees proactief in contact opnemen</li>
+            <li>Denk na over je interesses, zoals optica, data of materialen</li>
+            <li>Gebruik je netwerk van docenten, medestudenten en eerdere stageplekken</li>
+          </ul>
+        </div>
+      </details>
 
     </section>
 
-  </div>
+  </main>
+
+</body>
+</html>
