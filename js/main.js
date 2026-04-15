@@ -8,6 +8,48 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const typeFilter = document.getElementById('typeFilter');
 const onderwerpFilter = document.getElementById('onderwerpFilter');
 const resetButton = document.getElementById('resetFilters');
+const marker = L.circleMarker([bedrijf.lat, bedrijf.lng], {
+  radius: 9,
+  fillColor: kleur,
+  color: '#ffffff',
+  weight: 2,
+  opacity: 1,
+  fillOpacity: 0.85
+})
+.on('mouseover', function () {
+  this.setStyle({
+    radius: 12,
+    fillOpacity: 1
+  });
+})
+.on('mouseout', function () {
+  this.setStyle({
+    radius: 9,
+    fillOpacity: 0.85
+  });
+})
+.bindPopup(maakPopupHtml(bedrijf));
+
+const marker = L.circleMarker([bedrijf.lat, bedrijf.lng], {
+  radius: 9,
+  fillColor: kleur,
+  color: kleur,
+  weight: 1,
+  opacity: 0.8,
+  fillOpacity: 0.9
+})
+.bindPopup(maakPopupHtml(bedrijf));
+
+// glow layer
+const glow = L.circleMarker([bedrijf.lat, bedrijf.lng], {
+  radius: 14,
+  color: kleur,
+  weight: 0,
+  fillOpacity: 0.2
+});
+
+markerCluster.addLayer(glow);
+markerCluster.addLayer(marker);
 
 let alleBedrijven = [];
 let markerCluster = L.markerClusterGroup();
