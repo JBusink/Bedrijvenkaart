@@ -40,10 +40,8 @@ body {
 
 .topbar-inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 12px;
 }
 .topbar-text h1 {
   margin: 0 0 4px;
@@ -74,11 +72,9 @@ body {
 /* Tabs */
 
 .page-tabs {
+  margin-left: auto;
   display: flex;
   gap: 10px;
-  padding: 0;
-  background: transparent;
-  border-bottom: none;
 }
 
 .tab-button {
@@ -148,17 +144,21 @@ body {
 .filter-actions button {
   padding: 10px 14px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   background: var(--accent);
-  color:var(--text-soft);
+  color: white;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, transform 0.05s ease;
 }
 
 .filter-actions button:hover {
   background: var(--accent-dark);
+}
+
+.filter-actions button:active {
+  transform: scale(0.97);
 }
 
 /* Main layout */
@@ -357,6 +357,10 @@ body {
 .accordion-content ul {
   margin: 0;
   padding-left: 20px;
+}
+
+.dark-toggle {
+  margin-right: 4px;
 }
 
 .dark-toggle {
