@@ -358,3 +358,44 @@ body {
   margin: 0;
   padding-left: 20px;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-page: #0f172a;
+    --bg-panel: #1e293b;
+    --bg-soft: #334155;
+    --bg-link: #1e3a5f;
+    --bg-link-hover: #27496d;
+
+    --text-main: #e2e8f0;
+    --text-soft: #94a3b8;
+    --text-heading: #e2e8f0;
+
+    --border: #334155;
+    --border-soft: #475569;
+
+    --accent: #3b82f6;
+    --accent-dark: #2563eb;
+
+    --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.4);
+  }
+
+  body {
+    background: var(--bg-page);
+    color: var(--text-main);
+  }
+
+  .topbar {
+    background: linear-gradient(135deg, #1e3a5f, #1e40af);
+  }
+
+  .tab-button {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .tab-button.active {
+    background: white;
+    color: #1f5d99;
+  }
+}
