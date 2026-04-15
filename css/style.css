@@ -184,3 +184,64 @@ body {
     border-top: 1px solid #dbe2ea;
   }
 }
+
+.page-tabs {
+  display: flex;
+  gap: 12px;
+  padding: 12px 24px;
+  background: white;
+  border-bottom: 1px solid #dbe2ea;
+}
+
+.tab-button {
+  padding: 10px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #1f2937;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tab-button:hover {
+  background: #e8f0fa;
+}
+
+.tab-button.active {
+  background: #1f5d99;
+  color: white;
+  border-color: #1f5d99;
+}
+
+.hidden-view {
+  display: none;
+}
+
+.info-page {
+  padding: 24px;
+  background: #f4f7fb;
+  min-height: calc(100vh - 140px);
+  display: grid;
+  gap: 20px;
+}
+
+.info-card {
+  background: white;
+  border: 1px solid #dbe2ea;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.info-card h2,
+.info-card h3 {
+  margin-top: 0;
+  color: #123b66;
+}
+
+.info-card p,
+.info-card li {
+  line-height: 1.6;
+  color: #334155;
+}

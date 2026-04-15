@@ -1,4 +1,29 @@
+const showMapBtn = document.getElementById('showMapBtn');
+const showInfoBtn = document.getElementById('showInfoBtn');
+const kaartView = document.getElementById('kaartView');
+const infoView = document.getElementById('infoView');
+
 const map = L.map('map').setView([52.2, 5.3], 7);
+
+function toonKaartView() {
+  kaartView.classList.remove('hidden-view');
+  infoView.classList.add('hidden-view');
+
+  showMapBtn.classList.add('active');
+  showInfoBtn.classList.remove('active');
+
+  setTimeout(() => {
+    map.invalidateSize();
+  }, 100);
+}
+
+function toonInfoView() {
+  kaartView.classList.add('hidden-view');
+  infoView.classList.remove('hidden-view');
+
+  showMapBtn.classList.remove('active');
+  showInfoBtn.classList.add('active');
+}
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
@@ -186,3 +211,6 @@ resetButton.addEventListener('click', () => {
   onderwerpFilter.value = 'alles';
   updateKaart();
 });
+
+showMapBtn.addEventListener('click', toonKaartView);
+showInfoBtn.addEventListener('click', toonInfoView);
