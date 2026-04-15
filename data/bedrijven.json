@@ -1,0 +1,18 @@
+[
+  {
+    "naam": "ASML",
+    "plaats": "Veldhoven",
+    "lat": 51.418,
+    "lng": 5.406,
+    "type": "fotonica",
+    "beschrijving": "High-tech bedrijf in halfgeleiderapparatuur."
+  },
+  {
+    "naam": "Nikhef",
+    "plaats": "Amsterdam",
+    "lat": 52.356,
+    "lng": 4.950,
+    "type": "onderzoek",
+    "beschrijving": "Nationaal instituut voor subatomaire fysica."
+  }
+]
