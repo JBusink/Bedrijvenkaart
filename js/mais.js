@@ -1,3 +1,5 @@
+console.log("main.js geladen");
+
 const map = L.map('map').setView([52.2, 5.3], 7);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -7,12 +9,14 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 fetch('data/bedrijven.json')
   .then(res => {
+    console.log("fetch response:", res.status, res.url);
     if (!res.ok) {
-      throw new Error('JSON niet gevonden');
+      throw new Error(`Kon bedrijven.json niet laden: ${res.status}`);
     }
     return res.json();
   })
   .then(bedrijven => {
+    console.log("bedrijven geladen:", bedrijven);
 
     const markers = [];
 
@@ -31,8 +35,10 @@ fetch('data/bedrijven.json')
     if (markers.length > 0) {
       const groep = L.featureGroup(markers);
       map.fitBounds(groep.getBounds().pad(0.2));
+    } else {
+      console.warn("Geen markers gevonden in bedrijven.json");
     }
   })
   .catch(err => {
-    console.error('Fout:', err);
+    console.error("Fout in main.js:", err);
   });
