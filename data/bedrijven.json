@@ -57,6 +57,7 @@
     "type": "bedrijf",
     "onderwerp": "materialen",
     "beschrijving": "Productie en onderzoek naar staal en materiaaltechnologie.",
+    // "email": 
     "website": "https://www.tatasteeljobs.nl/option/vakgebieden/studenten-starters"
   },
 {
@@ -68,7 +69,249 @@
   "onderwerp": "optica/fotonica",
   "beschrijving": "Fotonische sensortechnologie voor high-tech toepassingen.",
   "extraInfo": "PhotonFirst ontwikkelt geïntegreerde fotonische sensoren en meetsystemen voor toepassingen in de high-tech industrie, aerospace en monitoring. Dit is interessant voor TN-studenten met interesse in optica, sensoren en systeemintegratie.",
-  "email": "info@photonfirst.com",
+  // "email": "info@photonfirst.com",
   "website": "https://www.photonfirst.com"
-}
+},
+  {
+    "naam": "AMS Institute",
+    "plaats": "Amsterdam",
+    "lat": 52.3676,
+    "lng": 4.9041,
+    "type": "onderzoek",
+    "onderwerp": "stedelijke technologie",
+    "beschrijving": "Onderzoeksinstituut voor stedelijke uitdagingen en technologie.",
+    "extraInfo": "AMS Institute richt zich op data, energie, mobiliteit en circulaire stadssystemen. Interessant voor TN-studenten met interesse in applied physics in urban context.",
+    "website": "https://www.ams-institute.org"
+  },
+  {
+    "naam": "Sonion Nederland B.V.",
+    "plaats": "Hoofddorp",
+    "lat": 52.3000,
+    "lng": 4.6900,
+    "type": "bedrijf",
+    "onderwerp": "micro-elektronica / sensoren",
+    "beschrijving": "Ontwikkeling van micro-elektronische componenten en sensoren.",
+    "extraInfo": "Sonion ontwikkelt precisiecomponenten voor o.a. medische toepassingen. Relevant voor TN met interesse in MEMS en akoestiek.",
+    "website": "https://www.sonion.com"
+  },
+  {
+    "naam": "Eddytec B.V.",
+    "plaats": "Utrecht",
+    "lat": 52.0907,
+    "lng": 5.1214,
+    "type": "bedrijf",
+    "onderwerp": "meet- en regeltechniek",
+    "beschrijving": "Ontwikkeling van industriële meet- en regelsystemen.",
+    "extraInfo": "Eddytec richt zich op sensortechnologie en automatisering in industriële processen.",
+    "website": ""
+  },
+  {
+    "naam": "Hobré Instruments B.V.",
+    "plaats": "Purmerend",
+    "lat": 52.5050,
+    "lng": 4.9597,
+    "type": "bedrijf",
+    "onderwerp": "gasanalyse",
+    "beschrijving": "Meetapparatuur voor gasanalyse in industrie.",
+    "extraInfo": "Hobré ontwikkelt optische meetsystemen voor procesindustrie. Interessant voor optica en spectroscopie.",
+    "website": "https://www.hobre.com"
+  },
+  {
+    "naam": "Koninklijke NLR",
+    "plaats": "Marknesse",
+    "lat": 52.7025,
+    "lng": 5.8764,
+    "type": "onderzoek",
+    "onderwerp": "lucht- en ruimtevaart",
+    "beschrijving": "Nationaal lucht- en ruimtevaartlaboratorium.",
+    "extraInfo": "NLR doet onderzoek naar aerodynamica, materialen en ruimtevaarttechnologie.",
+    "website": "https://www.nlr.org"
+  },
+  {
+    "naam": "Nebest Laboratorium",
+    "plaats": "Vianen",
+    "lat": 51.9925,
+    "lng": 5.1000,
+    "type": "bedrijf",
+    "onderwerp": "materiaalonderzoek",
+    "beschrijving": "Laboratorium voor bouw- en materiaalonderzoek.",
+    "extraInfo": "Nebest voert destructief en niet-destructief onderzoek uit op materialen.",
+    "website": "https://www.nebest.nl"
+  },
+  {
+    "naam": "Innoseis",
+    "plaats": "Amsterdam",
+    "lat": 52.3702,
+    "lng": 4.8952,
+    "type": "bedrijf",
+    "onderwerp": "geofysica",
+    "beschrijving": "Seismische technologie voor olie en gas.",
+    "extraInfo": "Innoseis ontwikkelt innovatieve seismische bronnen voor geofysisch onderzoek.",
+    "website": "https://www.innoseis.com"
+  },
+  {
+    "naam": "VSL",
+    "plaats": "Delft",
+    "lat": 52.0116,
+    "lng": 4.3571,
+    "type": "onderzoek",
+    "onderwerp": "metrologie",
+    "beschrijving": "Nationaal meetinstituut van Nederland.",
+    "extraInfo": "VSL werkt aan standaarden en nauwkeurige metingen. Zeer relevant voor precisiefysica.",
+    "website": "https://www.vsl.nl"
+  },
+  {
+    "naam": "VUmc",
+    "plaats": "Amsterdam",
+    "lat": 52.3344,
+    "lng": 4.8660,
+    "type": "medisch",
+    "onderwerp": "medische fysica",
+    "beschrijving": "Academisch ziekenhuis.",
+    "extraInfo": "Toepassingen van fysica in imaging, radiotherapie en medische technologie.",
+    "website": "https://www.vumc.nl"
+  },
+  {
+    "naam": "Universiteit van Amsterdam",
+    "plaats": "Amsterdam",
+    "lat": 52.3550,
+    "lng": 4.9550,
+    "type": "onderzoek",
+    "onderwerp": "fysica",
+    "beschrijving": "Universiteit met sterke natuurkunde-afdeling.",
+    "extraInfo": "Onderzoek in o.a. quantum, deeltjesfysica en fotonica.",
+    "website": "https://www.uva.nl"
+  },
+  {
+    "naam": "Futura Composites",
+    "plaats": "Drachten",
+    "lat": 53.1125,
+    "lng": 6.0989,
+    "type": "bedrijf",
+    "onderwerp": "composieten",
+    "beschrijving": "Ontwikkeling van composietmaterialen.",
+    "extraInfo": "Focus op lichtgewicht structuren voor industrie.",
+    "website": "https://www.futura-composites.com"
+  },
+  {
+    "naam": "TNO",
+    "plaats": "Den Haag",
+    "lat": 52.0705,
+    "lng": 4.3007,
+    "type": "onderzoek",
+    "onderwerp": "toegepaste fysica",
+    "beschrijving": "Toegepast onderzoeksinstituut.",
+    "extraInfo": "Breed spectrum: defensie, energie, materialen en sensoren.",
+    "website": "https://www.tno.nl"
+  },
+  {
+    "naam": "JRC Petten",
+    "plaats": "Petten",
+    "lat": 52.7667,
+    "lng": 4.6667,
+    "type": "onderzoek",
+    "onderwerp": "nucleair",
+    "beschrijving": "Europees onderzoekscentrum.",
+    "extraInfo": "Focus op nucleaire technologie en materialenonderzoek.",
+    "website": "https://joint-research-centre.ec.europa.eu"
+  },
+  {
+    "naam": "Thales Nederland",
+    "plaats": "Hengelo",
+    "lat": 52.2650,
+    "lng": 6.7931,
+    "type": "bedrijf",
+    "onderwerp": "defensie / radar",
+    "beschrijving": "High-tech defensiesystemen.",
+    "extraInfo": "Sterk in radar, signaalverwerking en embedded systems.",
+    "website": "https://www.thalesgroup.com"
+  },
+  {
+    "naam": "UMC Utrecht",
+    "plaats": "Utrecht",
+    "lat": 52.0889,
+    "lng": 5.1778,
+    "type": "medisch",
+    "onderwerp": "medische fysica",
+    "beschrijving": "Academisch ziekenhuis.",
+    "extraInfo": "Onderzoek naar imaging, radiotherapie en biomaterialen.",
+    "website": "https://www.umcutrecht.nl"
+  },
+  {
+    "naam": "JansZon",
+    "plaats": "Arnhem",
+    "lat": 51.9851,
+    "lng": 5.8987,
+    "type": "bedrijf",
+    "onderwerp": "zonne-energie",
+    "beschrijving": "Zonne-energie oplossingen.",
+    "extraInfo": "Installatie en ontwikkeling van PV-systemen.",
+    "website": ""
+  },
+  {
+    "naam": "KoDi Energie Besparende Technieken",
+    "plaats": "Nederland",
+    "lat": 52.1326,
+    "lng": 5.2913,
+    "type": "bedrijf",
+    "onderwerp": "energie",
+    "beschrijving": "Energiebesparende systemen.",
+    "extraInfo": "Focus op efficiëntie en duurzame installaties.",
+    "website": ""
+  },
+  {
+    "naam": "SODAQ",
+    "plaats": "Eindhoven",
+    "lat": 51.4416,
+    "lng": 5.4697,
+    "type": "bedrijf",
+    "onderwerp": "IoT / sensoren",
+    "beschrijving": "IoT hardware en sensoren.",
+    "extraInfo": "Ontwikkelt low-power sensornetwerken.",
+    "website": "https://www.sodaq.com"
+  },
+  {
+    "naam": "Thorlabs",
+    "plaats": "Newton (VS)",
+    "lat": 42.3370,
+    "lng": -71.2092,
+    "type": "bedrijf",
+    "onderwerp": "optica",
+    "beschrijving": "Optische componenten en systemen.",
+    "extraInfo": "Veel gebruikt in labs voor optica en fotonica.",
+    "website": "https://www.thorlabs.com"
+  },
+  {
+    "naam": "TRL Space Systems GmbH",
+    "plaats": "München",
+    "lat": 48.1351,
+    "lng": 11.5820,
+    "type": "bedrijf",
+    "onderwerp": "ruimtevaart",
+    "beschrijving": "Ruimtevaarttechnologie.",
+    "extraInfo": "Ontwikkelt systemen voor satellieten en ruimtevaart.",
+    "website": ""
+  },
+  {
+    "naam": "ETH Zürich",
+    "plaats": "Zürich",
+    "lat": 47.3769,
+    "lng": 8.5417,
+    "type": "onderzoek",
+    "onderwerp": "fysica",
+    "beschrijving": "Technische universiteit.",
+    "extraInfo": "Topinstituut voor natuurkunde en engineering.",
+    "website": "https://ethz.ch"
+  },
+  {
+    "naam": "Peutz B.V.",
+    "plaats": "Mook",
+    "lat": 51.7520,
+    "lng": 5.8790,
+    "type": "bedrijf",
+    "onderwerp": "akoestiek",
+    "beschrijving": "Adviesbureau voor akoestiek en bouwfysica.",
+    "extraInfo": "Sterk in geluidsmetingen en simulaties.",
+    "website": "https://www.peutz.nl"
+  }
 ]
