@@ -4,7 +4,7 @@ const kaartView = document.getElementById('kaartView');
 const infoView = document.getElementById('infoView');
 
 const typeFilter = document.getElementById('typeFilter');
-const onderwerpFilter = document.getElementById('onderwerpFilter');
+const tagFilter = document.getElementById('tagFilter');
 const resetButton = document.getElementById('resetFilters');
 const sidepanel = document.getElementById('sidepanel');
 const darkToggle = document.getElementById('darkToggle');
@@ -41,6 +41,29 @@ lightTiles.addTo(map);
 let alleBedrijven = [];
 const markerCluster = L.markerClusterGroup();
 map.addLayer(markerCluster);
+
+/* =========================
+   HELPERS
+   ========================= */
+
+function asArray(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+  if (value === null || value === undefined || value === '') {
+    return [];
+  }
+  return [value];
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
 
 /* =========================
    VIEW LOGICA
@@ -109,19 +132,33 @@ function toonBedrijfInPanel(bedrijf) {
     return;
   }
 
-  const naam = bedrijf.naam || 'Onbekend bedrijf';
-  const plaats = bedrijf.plaats || 'Onbekende locatie';
-  const type = bedrijf.type || 'Onbekend';
-  const onderwerp = bedrijf.onderwerp || 'Onbekend';
-  const beschrijving = bedrijf.beschrijving || 'Geen beschrijving beschikbaar.';
-  const extraInfo = bedrijf.extraInfo || '';
+  const naam = escapeHtml(bedrijf.naam || 'Onbekende organisatie');
+  const plaats = escapeHtml(bedrijf.plaats || 'Onbekende locatie');
+  const types = asArray(bedrijf.type);
+  const tags = asArray(bedrijf.tags);
+
+  const typeTekst = types.length > 0
+    ? types.map(escapeHtml).join(', ')
+    : 'Onbekend';
+
+  const tagsTekst = tags.length > 0
+    ? tags.map(escapeHtml).join(', ')
+    : 'Geen tags';
+
+  const beschrijving = escapeHtml(
+    bedrijf.beschrijving || 'Geen beschrijving beschikbaar.'
+  );
+
+  const extraInfo = bedrijf.extraInfo
+    ? escapeHtml(bedrijf.extraInfo)
+    : '';
 
   const emailHtml = bedrijf.email
-    ? `<a href="mailto:${bedrijf.email}">📧 E-mail</a>`
+    ? `<a href="mailto:${encodeURIComponent(bedrijf.email).replace('%40', '@')}">📧 E-mail</a>`
     : '';
 
   const websiteHtml = bedrijf.website
-    ? `<a href="${bedrijf.website}" target="_blank" rel="noopener noreferrer">🌐 Website</a>`
+    ? `<a href="${escapeHtml(bedrijf.website)}" target="_blank" rel="noopener noreferrer">🌐 Website</a>`
     : '';
 
   const extraInfoHtml = extraInfo
@@ -140,8 +177,8 @@ function toonBedrijfInPanel(bedrijf) {
     </div>
 
     <div class="company-meta">
-      <div class="company-meta-item"><strong>Type:</strong> ${type}</div>
-      <div class="company-meta-item"><strong>Onderwerp:</strong> ${onderwerp}</div>
+      <div class="company-meta-item"><strong>Type:</strong> ${typeTekst}</div>
+      <div class="company-meta-item"><strong>Tags:</strong> ${tagsTekst}</div>
     </div>
 
     <div class="company-section">
@@ -167,36 +204,65 @@ function toonBedrijfInPanel(bedrijf) {
 
 function voldoetAanFilter(bedrijf) {
   const gekozenType = typeFilter ? typeFilter.value : 'alles';
-  const gekozenOnderwerp = onderwerpFilter ? onderwerpFilter.value : 'alles';
+  const gekozenTag = tagFilter ? tagFilter.value : 'alles';
 
-  const typeOk = gekozenType === 'alles' || bedrijf.type === gekozenType;
-  const onderwerpOk =
-    gekozenOnderwerp === 'alles' || bedrijf.onderwerp === gekozenOnderwerp;
+  const types = asArray(bedrijf.type);
+  const tags = asArray(bedrijf.tags);
 
-  return typeOk && onderwerpOk;
+  const typeOk = gekozenType === 'alles' || types.includes(gekozenType);
+  const tagOk = gekozenTag === 'alles' || tags.includes(gekozenTag);
+
+  return typeOk && tagOk;
 }
 
-function kleurVoorOnderwerp(onderwerp) {
+function kleurVoorCategorie(kleurCategorie) {
   const kleuren = {
-    'high-tech systemen': '#1d4ed8',
+    'optica': '#0f766e',
+    'fotonica': '#0f766e',
+    'sensoren': '#ea580c',
+    'metingen': '#ea580c',
+    'metrologie': '#ea580c',
+    'data': '#0891b2',
+    'modelleren': '#0891b2',
+    'high-tech': '#1d4ed8',
     'mechatronica': '#7c3aed',
-    'optica/fotonica': '#0f766e',
     'materialen': '#b45309',
     'energie': '#16a34a',
-    'medische technologie': '#dc2626',
-    'data/modelleren': '#0891b2',
-    'metingen en sensoren': '#ea580c'
+    'medisch': '#dc2626',
+    'medische fysica': '#dc2626',
+    'nucleair': '#a21caf',
+    'deeltjesfysica': '#2563eb',
+    'ruimtevaart': '#334155',
+    'luchtvaart': '#334155',
+    'akoestiek': '#c2410c',
+    'geofysica': '#57534e',
+    'quantum': '#4338ca',
+    'industrie': '#475569'
   };
 
-  return kleuren[onderwerp] || '#475569';
+  return kleuren[kleurCategorie] || '#475569';
 }
 
 function borderVoorMarker() {
   return document.body.classList.contains('dark-mode') ? '#0f172a' : '#ffffff';
 }
 
-function iconVoorOnderwerp(onderwerp) {
-  const kleur = kleurVoorOnderwerp(onderwerp);
+function bepaalKleurCategorie(bedrijf) {
+  if (bedrijf.kleurCategorie && typeof bedrijf.kleurCategorie === 'string') {
+    return bedrijf.kleurCategorie;
+  }
+
+  const tags = asArray(bedrijf.tags);
+  if (tags.length > 0) {
+    return tags[0];
+  }
+
+  return 'overig';
+}
+
+function iconVoorBedrijf(bedrijf) {
+  const categorie = bepaalKleurCategorie(bedrijf);
+  const kleur = kleurVoorCategorie(categorie);
   const borderKleur = borderVoorMarker();
 
   return L.divIcon({
@@ -217,17 +283,82 @@ function iconVoorOnderwerp(onderwerp) {
 }
 
 /* =========================
+   FILTEROPTIES OPBOUWEN
+   ========================= */
+
+function vulTypeFilterOpties(bedrijven) {
+  if (!typeFilter) {
+    return;
+  }
+
+  const huidigeWaarde = typeFilter.value || 'alles';
+
+  const uniekeTypes = [...new Set(
+    bedrijven.flatMap((bedrijf) => asArray(bedrijf.type))
+  )]
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b, 'nl'));
+
+  typeFilter.innerHTML = '<option value="alles">Alle types</option>';
+
+  uniekeTypes.forEach((type) => {
+    const option = document.createElement('option');
+    option.value = type;
+    option.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+    typeFilter.appendChild(option);
+  });
+
+  if ([...typeFilter.options].some((opt) => opt.value === huidigeWaarde)) {
+    typeFilter.value = huidigeWaarde;
+  } else {
+    typeFilter.value = 'alles';
+  }
+}
+
+function vulTagFilterOpties(bedrijven) {
+  if (!tagFilter) {
+    return;
+  }
+
+  const huidigeWaarde = tagFilter.value || 'alles';
+
+  const uniekeTags = [...new Set(
+    bedrijven.flatMap((bedrijf) => asArray(bedrijf.tags))
+  )]
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b, 'nl'));
+
+  tagFilter.innerHTML = '<option value="alles">Alle tags</option>';
+
+  uniekeTags.forEach((tag) => {
+    const option = document.createElement('option');
+    option.value = tag;
+    option.textContent = tag;
+    tagFilter.appendChild(option);
+  });
+
+  if ([...tagFilter.options].some((opt) => opt.value === huidigeWaarde)) {
+    tagFilter.value = huidigeWaarde;
+  } else {
+    tagFilter.value = 'alles';
+  }
+}
+
+/* =========================
    POPUP / MARKERS
    ========================= */
 
 function maakPopupHtml(bedrijf) {
-  const naam = bedrijf.naam || 'Onbekend bedrijf';
-  const plaats = bedrijf.plaats || 'Onbekende locatie';
+  const naam = escapeHtml(bedrijf.naam || 'Onbekende organisatie');
+  const plaats = escapeHtml(bedrijf.plaats || 'Onbekende locatie');
+  const types = asArray(bedrijf.type);
+  const typeTekst = types.length > 0 ? escapeHtml(types.join(', ')) : 'Onbekend';
 
   return `
     <div>
       <strong>${naam}</strong><br>
-      ${plaats}
+      ${plaats}<br>
+      <small>${typeTekst}</small>
     </div>
   `;
 }
@@ -244,7 +375,7 @@ function tekenMarkers(bedrijven) {
 
     const marker = L.marker(
       [bedrijf.lat, bedrijf.lng],
-      { icon: iconVoorOnderwerp(bedrijf.onderwerp) }
+      { icon: iconVoorBedrijf(bedrijf) }
     )
       .bindPopup(maakPopupHtml(bedrijf))
       .on('click', () => {
@@ -297,7 +428,6 @@ function updateMapTheme() {
     }
   }
 
-  // markers opnieuw tekenen zodat de randkleur ook meewisselt
   if (alleBedrijven.length > 0) {
     const gefilterd = alleBedrijven.filter(voldoetAanFilter);
     tekenMarkers(gefilterd);
@@ -317,6 +447,10 @@ fetch('data/bedrijven.json')
   })
   .then((bedrijven) => {
     alleBedrijven = bedrijven;
+
+    vulTypeFilterOpties(alleBedrijven);
+    vulTagFilterOpties(alleBedrijven);
+
     updateKaart();
     updateMapTheme();
   })
@@ -333,8 +467,8 @@ if (typeFilter) {
   typeFilter.addEventListener('change', updateKaart);
 }
 
-if (onderwerpFilter) {
-  onderwerpFilter.addEventListener('change', updateKaart);
+if (tagFilter) {
+  tagFilter.addEventListener('change', updateKaart);
 }
 
 if (resetButton) {
@@ -342,8 +476,8 @@ if (resetButton) {
     if (typeFilter) {
       typeFilter.value = 'alles';
     }
-    if (onderwerpFilter) {
-      onderwerpFilter.value = 'alles';
+    if (tagFilter) {
+      tagFilter.value = 'alles';
     }
     updateKaart();
   });
