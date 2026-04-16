@@ -164,8 +164,10 @@ function toonBedrijfInPanel(bedrijf) {
   const extraInfoHtml = extraInfo
     ? `
       <div class="company-section">
-        <h3>Extra informatie</h3>
-        <p>${extraInfo}</p>
+        <div class="company-section-inner">
+          <h3>Extra informatie</h3>
+          <p>${extraInfo}</p>
+        </div>
       </div>
     `
     : '';
@@ -182,17 +184,21 @@ function toonBedrijfInPanel(bedrijf) {
     </div>
 
     <div class="company-section">
-      <h3>Beschrijving</h3>
-      <p>${beschrijving}</p>
+      <div class="company-section-inner">
+        <h3>Beschrijving</h3>
+        <p>${beschrijving}</p>
+      </div>
     </div>
 
     ${extraInfoHtml}
 
     <div class="company-section">
-      <h3>Links en contact</h3>
-      <div class="company-links">
-        ${emailHtml}
-        ${websiteHtml}
+      <div class="company-section-inner">
+        <h3>Links en contact</h3>
+        <div class="company-links">
+          ${emailHtml}
+          ${websiteHtml}
+        </div>
       </div>
     </div>
   `;
@@ -227,8 +233,8 @@ function borderVoorMarker() { return document.body.classList.contains('dark-mode
 function iconVoorBedrijf(bedrijf) {
   const isDark = document.body.classList.contains('dark-mode');
 
-  const kleur = isDark ? '#e5e7eb' : '#0f172a';   // licht in dark, zwart in light
-  const borderKleur = isDark ? '#020617' : '#ffffff';
+  const kleur = isDark ? '#e3ddf9' : '#0f172a';   // licht in dark, zwart in light
+  const borderKleur = isDark ? '#0f172a' : '#e3ddf9';
 
   return L.divIcon({
     className: '',

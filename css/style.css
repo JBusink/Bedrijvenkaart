@@ -3,7 +3,7 @@
 }
 
 :root {
-  --bg-page: #f4f7fb;
+  --bg-page: #f7f4fb;
   --bg-panel: #ffffff;
   --bg-soft: #f8fafc;
   --bg-link: #e8f0fa;
@@ -16,8 +16,8 @@
   --border: #dbe2ea;
   --border-soft: #e2e8f0;
 
-  --accent: #1f5d99;
-  --accent-dark: #174a7a;
+  --accent: #25167A ;
+  --accent-dark: #000000;
 
   --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.04);
   --radius: 12px;
@@ -35,7 +35,7 @@ body {
 
 .topbar {
   padding: 12px 24px;
-  background: linear-gradient(135deg, #18456f, #1f5d99);
+  background: linear-gradient(135deg, #1a1340, #2e2272);
   color: white;
 }
 
@@ -81,10 +81,10 @@ body {
 .tab-button {
   display: inline-block;
   padding: 8px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.12);
-  color: white;
+  border: 1px solid rgba(255, 251, 251, 0.271);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.086);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   font-size: 0.92rem;
   font-weight: 600;
@@ -97,7 +97,7 @@ body {
 
 .tab-button.active {
   background: white;
-  color: #1f5d99;
+  color: #2a1c68;
   border-color: white;
 }
 
@@ -206,7 +206,6 @@ body {
 .company-header {
   margin-bottom: 18px;
 }
-
 .company-subtitle {
   color: var(--text-soft);
   font-size: 0.95rem;
@@ -227,15 +226,28 @@ body {
 }
 
 .company-section {
-  margin-bottom: 18px;
+  background: var(--bg);
+  padding: 1px;
+  border-radius: 12px;
+  margin-bottom: 16px;
 }
 
-.company-section h3,
+.company-section-inner {
+  background: var(--bg);
+  border-radius: 11px;
+  padding: 4px 6px;
+}
+
+.company-section-inner h3,
 .info-card h2,
 .info-card h3 {
   margin: 0 0 8px;
   font-size: 1rem;
   color: var(--text-heading);
+}
+
+.company-section-inner p {
+  margin: 0;
 }
 
 .company-links {
@@ -249,7 +261,7 @@ body {
   padding: 10px 12px;
   border-radius: 8px;
   background: var(--bg-link);
-  color: var(--accent);
+  color: var(--text-main);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
@@ -493,112 +505,203 @@ body {
 }
 
 /* Automatische dark mode als fallback */
-@media (prefers-color-scheme: dark) {
-  body:not(.light-mode):not(.dark-mode) {
-    --bg-page: #0f172a;
-    --bg-panel: #1e293b;
-    --bg-soft: #334155;
-    --bg-link: #1e3a5f;
-    --bg-link-hover: #27496d;
+/* =========================
+   DARK MODE - HvA palette
+   ========================= */
 
-    --text-main: #e2e8f0;
-    --text-soft: #94a3b8;
-    --text-heading: #e2e8f0;
+body.dark-mode {
+  --bg-page: #0a0623;          /* Marine: achtergrond pagina */
+  --bg-panel: #160e44;         /* HvA-purple: cards/panels */
+  --bg-soft: #1E1649;          /* Deep sea: alleen subtiele donkere vlakken */
+  --bg-link: #25167A;
+  --bg-link-hover: #1E1649;
 
-    --border: #334155;
-    --border-soft: #475569;
+  --text-main: #FFFFFF;        /* White: primaire tekst */
+  --text-soft: rgba(255,255,255,0.78);
+  --text-heading: #FFFFFF;
 
-    --accent: #3b82f6;
-    --accent-dark: #2563eb;
+  --border: rgba(255,255,255,0.14);
+  --border-soft: rgba(255,255,255,0.22);
 
-    --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.4);
-  }
+  --accent: #726868;           /* Black als highlight */
+  --accent-dark: #130b42;      /* HvA-purple als secundaire accentkleur */
 
-  body:not(.light-mode):not(.dark-mode) .topbar {
-    background: linear-gradient(135deg, #1e3a5f, #1e40af);
-  }
-
-  body:not(.light-mode):not(.dark-mode) .tab-button {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-
-  body:not(.light-mode):not(.dark-mode) .tab-button.active {
-    background: white;
-    color: #1f5d99;
-  }
-
-  body:not(.light-mode):not(.dark-mode) .filter-group select {
-    background: var(--bg-panel);
-    color: var(--text-main);
-    border-color: var(--border);
-  }
-
-  body:not(.light-mode):not(.dark-mode) .filter-group label {
-    color: var(--text-soft);
-  }
-
-  body:not(.light-mode):not(.dark-mode) .filter-panel {
-    background: var(--bg-panel);
-    border-bottom: 1px solid var(--border);
-  }
+  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
-/* Handmatige dark mode */
 body.dark-mode {
-  --bg-page: #0f172a;
-  --bg-panel: #1e293b;
-  --bg-soft: #334155;
-  --bg-link: #1e3a5f;
-  --bg-link-hover: #27496d;
-
-  --text-main: #e2e8f0;
-  --text-soft: #94a3b8;
-  --text-heading: #e2e8f0;
-
-  --border: #334155;
-  --border-soft: #475569;
-
-  --accent: #3b82f6;
-  --accent-dark: #2563eb;
-
-  --shadow-soft: 0 2px 10px rgba(0, 0, 0, 0.4);
+  background: var(--bg-page);
+  color: var(--text-main);
 }
 
 body.dark-mode .topbar {
-  background: linear-gradient(135deg, #1e3a5f, #1e40af);
+  background: #0f0933;
 }
 
 body.dark-mode .tab-button {
   background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--text-main);
 }
 
 body.dark-mode .tab-button.active {
-  background: white;
-  color: #1f5d99;
-}
-
-body.dark-mode .filter-group select {
-  background: var(--bg-panel);
-  color: var(--text-main);
-  border-color: var(--border);
-}
-
-body.dark-mode .filter-group label {
-  color: var(--text-soft);
+  background: #381695;
+  color: #FFFFFF;
 }
 
 body.dark-mode .filter-panel {
-  background: var(--bg-panel);
-  border-bottom: 1px solid var(--border);
+  background: #0c072e;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: var(--shadow-soft);
+}
+
+body.dark-mode .filter-group label {
+  color: var(--text-main);
+}
+
+body.dark-mode .filter-group select {
+  background: #160d47;
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,0.18);
+}
+
+body.dark-mode .tag-filter-option {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.16);
+  color: #FFFFFF;
+}
+
+body.dark-mode .tag-filter-option:hover {
+  background: rgba(255,255,255,0.12);
+}
+
+body.dark-mode .tag-filter-option input {
+  accent-color: #39106f;
+}
+
+body.dark-mode .company-card,
+body.dark-mode .info-card,
+body.dark-mode .sidepanel,
+body.dark-mode .company-section,
+body.dark-mode .accordion-item {
+  background: #0e0930;
+  color: #FFFFFF;
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+  padding: 12px 14px;   /* 👈 dit is de fix */
+}
+
+/* header */
+body.dark-mode .accordion-item summary {
+  background: #25167A;                         /* HvA-purple */
+  color: #FFFFFF;
+  padding: 12px 16px;
+}
+
+/* inhoud (tekstvlak) */
+body.dark-mode .accordion-content {
+  background: #0e0930;                         /* 👈 jouw tekstvlak */
+  color: #FFFFFF;
+  padding: 14px 16px;
+}
+
+body.dark-mode .company-links a,
+body.dark-mode a {
+  color: #FFFFFF;
+}
+
+body.dark-mode .company-links a:hover,
+body.dark-mode a:hover {
+  color: rgba(255,255,255,0.82);
 }
 
 body.dark-mode .dark-toggle {
-  border-color: rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.18);
+  color: #FFFFFF;
 }
 
 body.dark-mode .dark-toggle:hover {
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(255,255,255,0.16);
+}
+
+body.dark-mode button,
+body.dark-mode .button,
+body.dark-mode #resetFilters {
+  background: #381695;
+  color: #FFFFFF;
+  border: 1px solid rgba(255,255,255,0.14);
+}
+
+body.dark-mode button:hover,
+body.dark-mode .button:hover,
+body.dark-mode #resetFilters:hover {
+  background: #1E1649;
+}
+
+/* marker-clusters */
+body.dark-mode .marker-cluster-small {
+  background-color: rgba(34, 17, 128, 0.28);
+}
+body.dark-mode .marker-cluster-small div {
+  background-color: #9785fc;
+  color: #FFFFFF;
+}
+
+body.dark-mode .marker-cluster-medium {
+  background-color: rgba(50, 16, 238, 0.318);
+}
+body.dark-mode .marker-cluster-medium div {
+  background-color: #381f91;
+  color: #FFFFFF;
+}
+
+body.dark-mode .marker-cluster-large {
+  background-color: rgba(0, 0, 0, 0.28);
+}
+body.dark-mode .marker-cluster-large div {
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+body.dark-mode .marker-cluster div {
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* kaart iets rustiger houden */
+body.dark-mode #map {
+  filter: brightness(1.08);
+}
+
+body.dark-mode .leaflet-bar a:first-child {
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+}
+
+body.dark-mode .leaflet-bar a:last-child {
+  border-top: none;
+}
+
+body.dark-mode .leaflet-control-zoom a,
+body.dark-mode .leaflet-bar a {
+  background-color: #25167A;
+  color: #FFFFFF;
+  border-color: rgba(255,255,255,0.18);
+}
+
+body.dark-mode .leaflet-control-zoom a:hover,
+body.dark-mode .leaflet-bar a:hover {
+  background-color: #1E1649;
+  color: #FFFFFF;
+}
+
+body.dark-mode .leaflet-bar {
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+}
+
+body.dark-mode .leaflet-control-zoom-in,
+body.dark-mode .leaflet-control-zoom-out {
+  font-weight: 700;
 }
