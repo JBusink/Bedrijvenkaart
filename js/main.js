@@ -218,49 +218,8 @@ function voldoetAanFilter(bedrijf) {
   return typeOk && tagsOk;
 }
 
-function kleurVoorCategorie(kleurCategorie) {
-  const kleuren = {
-    'optica': '#0f766e',
-    'fotonica': '#0f766e',
-    'sensoren': '#ea580c',
-    'metingen': '#ea580c',
-    'metrologie': '#ea580c',
-    'data': '#0891b2',
-    'modelleren': '#0891b2',
-    'high-tech': '#1d4ed8',
-    'mechatronica': '#7c3aed',
-    'materialen': '#b45309',
-    'energie': '#16a34a',
-    'medisch': '#dc2626',
-    'medische fysica': '#dc2626',
-    'nucleair': '#a21caf',
-    'deeltjesfysica': '#2563eb',
-    'ruimtevaart': '#334155',
-    'luchtvaart': '#334155',
-    'akoestiek': '#c2410c',
-    'geofysica': '#57534e',
-    'quantum': '#4338ca',
-    'industrie': '#475569'
-  };
-
-  return kleuren[kleurCategorie] || '#475569';
-}
-
-function borderVoorMarker() {
-  return document.body.classList.contains('dark-mode') ? '#0f172a' : '#ffffff';
-}
-
-function bepaalKleurCategorie(bedrijf) {
-  if (bedrijf.kleurCategorie && typeof bedrijf.kleurCategorie === 'string') {
-    return bedrijf.kleurCategorie;
-  }
-
-  const tags = asArray(bedrijf.tags);
-  if (tags.length > 0) {
-    return tags[0];
-  }
-
-  return 'overig';
+function kleurVoorCategorie() {
+  return '#475569';
 }
 
 function iconVoorBedrijf(bedrijf) {
