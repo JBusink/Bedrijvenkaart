@@ -154,7 +154,7 @@ function toonBedrijfInPanel(bedrijf) {
     : '';
 
   const emailHtml = bedrijf.email
-    ? `<a href="mailto:${encodeURIComponent(bedrijf.email).replace('%40', '@')}">📧 E-mail</a>`
+    ? `<a href="mailto:${bedrijf.email}">📧 E-mail</a>`
     : '';
 
   const websiteHtml = bedrijf.website
@@ -204,15 +204,18 @@ function toonBedrijfInPanel(bedrijf) {
 
 function voldoetAanFilter(bedrijf) {
   const gekozenType = typeFilter ? typeFilter.value : 'alles';
-  const gekozenTag = tagFilter ? tagFilter.value : 'alles';
+  const actieveTags = geselecteerdeTags();
 
   const types = asArray(bedrijf.type);
   const tags = asArray(bedrijf.tags);
 
   const typeOk = gekozenType === 'alles' || types.includes(gekozenType);
-  const tagOk = gekozenTag === 'alles' || tags.includes(gekozenTag);
 
-  return typeOk && tagOk;
+  const tagsOk =
+    actieveTags.length === 0 ||
+    actieveTags.some((tag) => tags.includes(tag));
+
+  return typeOk && tagsOk;
 }
 
 function kleurVoorCategorie(kleurCategorie) {
@@ -320,28 +323,28 @@ function vulTagFilterOpties(bedrijven) {
     return;
   }
 
-  const huidigeWaarde = tagFilter.value || 'alles';
-
   const uniekeTags = [...new Set(
     bedrijven.flatMap((bedrijf) => asArray(bedrijf.tags))
   )]
     .filter(Boolean)
     .sort((a, b) => a.localeCompare(b, 'nl'));
 
-  tagFilter.innerHTML = '<option value="alles">Alle tags</option>';
+  tagFilter.innerHTML = uniekeTags.map((tag, index) => `
+    <label class="tag-filter-option" for="tag-${index}">
+      <input
+        type="checkbox"
+        id="tag-${index}"
+        value="${escapeHtml(tag)}"
+      >
+      <span>${escapeHtml(tag)}</span>
+    </label>
+  `).join('');
 
-  uniekeTags.forEach((tag) => {
-    const option = document.createElement('option');
-    option.value = tag;
-    option.textContent = tag;
-    tagFilter.appendChild(option);
-  });
-
-  if ([...tagFilter.options].some((opt) => opt.value === huidigeWaarde)) {
-    tagFilter.value = huidigeWaarde;
-  } else {
-    tagFilter.value = 'alles';
-  }
+  tagFilter
+    .querySelectorAll('input[type="checkbox"]')
+    .forEach((checkbox) => {
+      checkbox.addEventListener('change', updateKaart);
+    });
 }
 
 /* =========================
@@ -392,6 +395,15 @@ function tekenMarkers(bedrijven) {
   } else {
     map.setView([52.2, 5.3], 7);
   }
+}
+
+function geselecteerdeTags() {
+  if (!tagFilter) {
+    return [];
+  }
+
+  return [...tagFilter.querySelectorAll('input[type="checkbox"]:checked')]
+    .map((checkbox) => checkbox.value);
 }
 
 function updateKaart() {
@@ -476,9 +488,15 @@ if (resetButton) {
     if (typeFilter) {
       typeFilter.value = 'alles';
     }
+
     if (tagFilter) {
-      tagFilter.value = 'alles';
+      tagFilter
+        .querySelectorAll('input[type="checkbox"]')
+        .forEach((checkbox) => {
+          checkbox.checked = false;
+        });
     }
+
     updateKaart();
   });
 }

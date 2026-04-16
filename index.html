@@ -51,26 +51,16 @@
           <option value="onderzoek">Onderzoek</option>
         </select>
       </div>
-
       <div class="filter-group">
-        <label for="onderwerpFilter">Onderwerp</label>
-        <select id="onderwerpFilter">
-          <option value="alles">Alles</option>
-          <option value="high-tech systemen">High-tech systemen</option>
-          <option value="mechatronica">Mechatronica</option>
-          <option value="optica/fotonica">Optica/fotonica</option>
-          <option value="materialen">Materialen</option>
-          <option value="energie">Energie</option>
-          <option value="medische technologie">Medische technologie</option>
-          <option value="data/modelleren">Data/modelleren</option>
-          <option value="metingen en sensoren">Metingen en sensoren</option>
-        </select>
+        <label>Tags</label>
+        <div id="tagFilter" class="tag-filter-list">
+          <!-- Wordt dynamisch gevuld vanuit JS -->
+        </div>
       </div>
 
       <div class="filter-actions">
         <button id="resetFilters" type="button">Reset filters</button>
       </div>
-    </section>
 
     <main class="content-layout">
       <div class="map-wrapper">

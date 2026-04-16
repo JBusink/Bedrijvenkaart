@@ -384,6 +384,27 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
+
+.tag-filter-list {
+  display: grid;
+  gap: 10px;
+  max-height: 220px;
+  overflow-y: auto;
+  padding: 6px 0;
+}
+
+.tag-filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.tag-filter-option input {
+  margin: 0;
+}
+
 /* Automatische dark mode als fallback */
 @media (prefers-color-scheme: dark) {
   body:not(.light-mode):not(.dark-mode) {
