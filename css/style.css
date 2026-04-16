@@ -36,6 +36,41 @@
   color: white;
 }
 
+/* klein cluster */
+.marker-cluster-small {
+  background-color: rgba(124, 58, 237, 0.3);   /* paars licht */
+}
+
+.marker-cluster-small div {
+  background-color: #7c3aed;                  /* paars */
+  color: white;
+}
+
+/* middel cluster */
+.marker-cluster-medium {
+  background-color: rgba(37, 99, 235, 0.3);   /* blauw licht */
+}
+
+.marker-cluster-medium div {
+  background-color: #2563eb;                  /* blauw */
+  color: white;
+}
+
+/* groot cluster */
+.marker-cluster-large {
+  background-color: rgba(30, 58, 138, 0.3);   /* donkerblauw licht */
+}
+
+.marker-cluster-large div {
+  background-color: #1e3a8a;                  /* donkerblauw */
+  color: white;
+}
+
+.marker-cluster div {
+  border-radius: 10px;   /* minder bol, moderner */
+  font-weight: 600;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
