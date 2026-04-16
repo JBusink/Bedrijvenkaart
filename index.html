@@ -41,8 +41,10 @@
   </div>
 </header>
 
-  <div id="kaartView">
-    <section class="filter-panel">
+<div id="kaartView">
+
+  <section class="hero-filters">
+    <div class="hero-filters-inner">
       <div class="filter-group">
         <label for="typeFilter">Type organisatie</label>
         <select id="typeFilter">
@@ -51,7 +53,8 @@
           <option value="onderzoek">Onderzoek</option>
         </select>
       </div>
-      <div class="filter-group">
+
+      <div class="filter-group filter-group-tags">
         <label>Tags</label>
         <div id="tagFilter" class="tag-filter-list">
           <!-- Wordt dynamisch gevuld vanuit JS -->
@@ -61,24 +64,26 @@
       <div class="filter-actions">
         <button id="resetFilters" type="button">Reset filters</button>
       </div>
+    </div>
+  </section>
 
-    <main class="content-layout">
-      <div class="map-wrapper">
-        <div id="map"></div>
+  <main class="content-layout">
+    <div class="map-wrapper">
+      <div id="map"></div>
+    </div>
+
+    <aside class="sidepanel" id="sidepanel">
+      <div class="sidepanel-placeholder">
+        <h2>Bedrijfsinformatie</h2>
+        <p>Klik op een marker om uitgebreide informatie te bekijken.</p>
       </div>
+    </aside>
+  </main>
+</div>
 
-      <aside class="sidepanel" id="sidepanel">
-        <div class="sidepanel-placeholder">
-          <h2>Bedrijfsinformatie</h2>
-          <p>Klik op een marker om uitgebreide informatie te bekijken.</p>
-        </div>
-      </aside>
-    </main>
-  </div>
-
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-  <script src="js/main.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
