@@ -146,7 +146,7 @@
   "lat": 52.3676,
   "lng": 4.9041,
   "type": ["bedrijf"],
-  "tags": ["sensoren", "metingen", "industrie"],
+  "tags": ["sensoren", "industrie"],
   "beschrijving": "Industriële meet- en regelsystemen.",
   "website": ""
 },

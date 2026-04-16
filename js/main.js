@@ -225,9 +225,10 @@ function kleurVoorCategorie() {
 function borderVoorMarker() { return document.body.classList.contains('dark-mode') ? '#0f172a' : '#ffffff'; }
 
 function iconVoorBedrijf(bedrijf) {
-  const categorie = kleurVoorCategorie(bedrijf);
-  const kleur = kleurVoorCategorie(categorie);
-  const borderKleur = borderVoorMarker();
+  const isDark = document.body.classList.contains('dark-mode');
+
+  const kleur = isDark ? '#e5e7eb' : '#0f172a';   // licht in dark, zwart in light
+  const borderKleur = isDark ? '#020617' : '#ffffff';
 
   return L.divIcon({
     className: '',

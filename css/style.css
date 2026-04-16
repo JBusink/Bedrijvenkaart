@@ -23,53 +23,6 @@
   --radius: 12px;
 }
 
-.marker-cluster-small,
-.marker-cluster-medium,
-.marker-cluster-large {
-  background-color: rgba(71, 85, 105, 0.3);  /* grijs-blauw */
-}
-
-.marker-cluster-small div,
-.marker-cluster-medium div,
-.marker-cluster-large div {
-  background-color: #475569;  /* zelfde kleur als jouw markers */
-  color: white;
-}
-
-/* klein cluster */
-.marker-cluster-small {
-  background-color: rgba(124, 58, 237, 0.3);   /* paars licht */
-}
-
-.marker-cluster-small div {
-  background-color: #7c3aed;                  /* paars */
-  color: white;
-}
-
-/* middel cluster */
-.marker-cluster-medium {
-  background-color: rgba(37, 99, 235, 0.3);   /* blauw licht */
-}
-
-.marker-cluster-medium div {
-  background-color: #2563eb;                  /* blauw */
-  color: white;
-}
-
-/* groot cluster */
-.marker-cluster-large {
-  background-color: rgba(30, 58, 138, 0.3);   /* donkerblauw licht */
-}
-
-.marker-cluster-large div {
-  background-color: #1e3a8a;                  /* donkerblauw */
-  color: white;
-}
-
-.marker-cluster div {
-  border-radius: 10px;   /* minder bol, moderner */
-  font-weight: 600;
-}
 
 body {
   margin: 0;
@@ -501,6 +454,42 @@ body {
 
 .tag-filter-option input {
   margin: 0;
+}
+
+/* klein cluster */
+.marker-cluster-small {
+  background-color: rgba(150, 105, 229, 0.264);
+}
+
+.marker-cluster-small div {
+  background-color: #5244a1 ;
+  color: white;
+}
+
+/* middel cluster */
+.marker-cluster-medium {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.marker-cluster-medium div {
+  background-color: #351FB7;
+  color: white;
+}
+
+/* groot cluster */
+.marker-cluster-large {
+  background-color: rgba(255, 254, 254, 0.904);
+}
+
+.marker-cluster-large div {
+  background-color: #1E1649;
+  color: white;
+}
+
+/* styling */
+.marker-cluster div {
+  border-radius: 10px;
+  font-weight: 600;
 }
 
 /* Automatische dark mode als fallback */
