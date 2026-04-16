@@ -405,6 +405,55 @@ body {
   margin: 0;
 }
 
+.hero-filters {
+  padding: 20px 24px 8px;
+}
+
+.hero-filters-inner {
+  display: grid;
+  gap: 18px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.filter-group {
+  display: grid;
+  gap: 8px;
+}
+
+.filter-group-tags {
+  align-items: start;
+}
+
+.filter-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tag-filter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-filter-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.tag-filter-option input {
+  margin: 0;
+}
+
 /* Automatische dark mode als fallback */
 @media (prefers-color-scheme: dark) {
   body:not(.light-mode):not(.dark-mode) {
