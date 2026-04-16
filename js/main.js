@@ -223,7 +223,7 @@ function kleurVoorCategorie() {
 }
 
 function iconVoorBedrijf(bedrijf) {
-  const categorie = bepaalKleurCategorie(bedrijf);
+  const categorie = kleurVoorCategorie(bedrijf);
   const kleur = kleurVoorCategorie(categorie);
   const borderKleur = borderVoorMarker();
 
