@@ -222,6 +222,8 @@ function kleurVoorCategorie() {
   return '#475569';
 }
 
+function borderVoorMarker() { return document.body.classList.contains('dark-mode') ? '#0f172a' : '#ffffff'; }
+
 function iconVoorBedrijf(bedrijf) {
   const categorie = kleurVoorCategorie(bedrijf);
   const kleur = kleurVoorCategorie(categorie);
