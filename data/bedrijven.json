@@ -5,7 +5,7 @@
     "lat": 51.418,
     "lng": 5.406,
     "type": ["bedrijf"],
-    "tags": ["optica", "mechatronica", "high-tech", "fabricage"],
+    "tags": ["optica", "nanotechnologie", "industrie"],
     "beschrijving": "High-tech bedrijf in halfgeleiderapparatuur.",
     "website": "https://www.asml.com/en/careers/students-new-graduates/netherlands/internships"
   },
@@ -15,18 +15,79 @@
     "lat": 52.356,
     "lng": 4.95,
     "type": ["onderzoek"],
-    "tags": ["deeltjesfysica", "detectoren", "data-analyse", "experiment"],
+    "tags": ["deeltjesfysica", "sensoren"],
     "beschrijving": "Onderzoek aan detectoren en subatomaire fysica.",
     "website": "https://www.nikhef.nl/stages-en-afstuderen/"
   },
   {
-    "naam": "TNO",
-    "plaats": "Den Haag",
-    "lat": 52.0705,
-    "lng": 4.3007,
+    "naam": "TNO - Eindhoven - High Tech",
+    "plaats": "Eindhoven",
+    "lat": 51.449,
+    "lng": 5.457,
     "type": ["onderzoek", "bedrijf"],
-    "tags": ["modelleren", "data", "energie", "defensie", "sensoren"],
-    "beschrijving": "Toegepast onderzoek en innovatie.",
+    "tags": ["fotonica", "halfgeleiders", "sensoren"],
+    "beschrijving": "High-tech onderzoek naar fotonica, halfgeleiders en geïntegreerde systemen.",
+    "website": "https://www.tno.nl/en/careers/graduates/"
+  },
+  {
+    "naam": "TNO - Holst Centre - High Tech",
+    "plaats": "Eindhoven",
+    "lat": 51.443,
+    "lng": 5.460,
+    "type": ["onderzoek", "bedrijf"],
+    "tags": ["nanotechnologie", "sensoren", "energie"],
+    "beschrijving": "Flexibele elektronica, wearables en sensortechnologie.",
+    "website": "https://www.tno.nl/en/careers/graduates/"
+  },
+  {
+    "naam": "TNO - Delft - High Tech",
+    "plaats": "Delft",
+    "lat": 52.002,
+    "lng": 4.373,
+    "type": ["onderzoek", "bedrijf"],
+    "tags": ["optica", "metrologie", "microscopie", "quantum"],
+    "beschrijving": "Precisietechnologie, optica en meetsystemen.",
+    "website": "https://www.tno.nl/en/careers/graduates/"
+  },
+  {
+    "naam": "TNO - Petten - High Tech",
+    "plaats": "Petten",
+    "lat": 52.7667,
+    "lng": 4.6667,
+    "type": ["onderzoek", "bedrijf"],
+    "tags": ["energie", "materialen", "thermodynamica"],
+    "beschrijving": "Onderzoek naar energie, materialen en nucleaire toepassingen.",
+    "website": "https://www.tno.nl/en/careers/graduates/"
+  },
+
+  {
+    "naam": "TNO - Ypenburg - DSS",
+    "plaats": "Den Haag",
+    "lat": 52.040,
+    "lng": 4.369,
+    "type": ["onderzoek", "bedrijf"],
+    "tags": ["defensie", "sensoren", "materialen"],
+    "beschrijving": "Defence, Safety & Security: radar, surveillance en sensoren.",
+    "website": "https://www.tno.nl/en/careers/graduates/"
+  },
+  {
+    "naam": "TNO - Waalsdorperweg - DSS",
+    "plaats": "Den Haag",
+    "lat": 52.093,
+    "lng": 4.324,
+    "type": ["onderzoek", "bedrijf"],
+    "tags": ["defensie", "optica", "sensoren"],
+    "beschrijving": "Radar- en optische systemen voor defensietoepassingen.",
+    "website": "https://www.tno.nl/en/careers/graduates/"
+  },
+  {
+    "naam": "TNO - Soesterberg - DSS",
+    "plaats": "Soesterberg",
+    "lat": 52.123,
+    "lng": 5.276,
+    "type": ["onderzoek", "bedrijf"],
+    "tags": ["defensie", "sensoren"],
+    "beschrijving": "Defence, Safety & Security: radar, sensing en militaire technologie, nabij Amersfoort.",
     "website": "https://www.tno.nl/en/careers/graduates/"
   },
   {
@@ -35,7 +96,7 @@
     "lat": 52.3565,
     "lng": 4.9486,
     "type": ["onderzoek"],
-    "tags": ["fotonica", "nanofysica", "soft matter", "experiment"],
+    "tags": ["fotonica", "nanofysica", "microscopie", "optica"],
     "beschrijving": "Fundamenteel onderzoek in fotonica, nanofysica en soft matter.",
     "website": "https://amolf.nl/jobs-amolfl-scientific-internship"
   },
@@ -45,7 +106,7 @@
     "lat": 52.3570,
     "lng": 4.9477,
     "type": ["onderzoek"],
-    "tags": ["lithografie", "optica", "plasma", "nanotechnologie"],
+    "tags": ["fotonica", "optica", "plasmafysica","quantum", "nanotechnologie"],
     "beschrijving": "Onderzoek naar lithografie en nanofabricage.",
     "website": "https://arcnl.nl/jobs-arcnl-scientific-internship"
   },
@@ -55,7 +116,7 @@
     "lat": 52.463,
     "lng": 4.601,
     "type": ["bedrijf"],
-    "tags": ["materialen", "procestechnologie", "industrie"],
+    "tags": ["materialen", "industrie", "thermodynamica"],
     "beschrijving": "Productie en onderzoek naar staal en materiaaltechnologie.",
     "website": "https://www.tatasteeljobs.nl/option/vakgebieden/studenten-starters"
   },
@@ -70,82 +131,70 @@
     "website": "https://www.photonfirst.com"
   },
   {
-    "naam": "AMS Institute",
-    "plaats": "Amsterdam",
-    "lat": 52.3676,
-    "lng": 4.9041,
-    "type": ["onderzoek"],
-    "tags": ["data", "energie", "modelleren", "urban tech"],
-    "beschrijving": "Onderzoeksinstituut voor stedelijke technologie.",
-    "website": "https://www.ams-institute.org"
-  },
-  {
     "naam": "Sonion Nederland",
     "plaats": "Hoofddorp",
     "lat": 52.3000,
     "lng": 4.6900,
     "type": ["bedrijf"],
-    "tags": ["MEMS", "sensoren", "akoestiek"],
+    "tags": ["materialen", "sensoren", "akoestiek"],
     "beschrijving": "Ontwikkeling van micro-elektronische componenten.",
     "website": "https://www.sonion.com"
   },
   {
-    "naam": "Eddytec",
-    "plaats": "Utrecht",
-    "lat": 52.0907,
-    "lng": 5.1214,
-    "type": ["bedrijf"],
-    "tags": ["sensoren", "automatisering", "metingen"],
-    "beschrijving": "Industriële meet- en regelsystemen.",
-    "website": ""
-  },
+  "naam": "Eddytec",
+  "plaats": "Amsterdam",
+  "lat": 52.3676,
+  "lng": 4.9041,
+  "type": ["bedrijf"],
+  "tags": ["sensoren", "metingen", "industrie"],
+  "beschrijving": "Industriële meet- en regelsystemen.",
+  "website": ""
+},
   {
     "naam": "Hobré Instruments",
     "plaats": "Purmerend",
     "lat": 52.5050,
     "lng": 4.9597,
     "type": ["bedrijf"],
-    "tags": ["optica", "spectroscopie", "gasanalyse"],
+    "tags": ["optica", "metrologie"],
     "beschrijving": "Meetapparatuur voor gasanalyse.",
     "website": "https://www.hobre.com"
   },
-  {
+    {
     "naam": "Koninklijke NLR",
     "plaats": "Marknesse",
     "lat": 52.7025,
     "lng": 5.8764,
     "type": ["onderzoek"],
-    "tags": ["luchtvaart", "ruimtevaart", "simulatie"],
+    "tags": ["materialen", "ruimtevaart", "defensie"],
     "beschrijving": "Lucht- en ruimtevaartonderzoek.",
     "website": "https://www.nlr.org"
-  },
-  {
-    "naam": "Nebest",
-    "plaats": "Vianen",
-    "lat": 51.9925,
-    "lng": 5.1000,
-    "type": ["bedrijf"],
-    "tags": ["materiaalonderzoek", "testen", "constructies"],
-    "beschrijving": "Materiaalonderzoek en inspectie.",
-    "website": "https://www.nebest.nl"
-  },
-  {
-    "naam": "Innoseis",
-    "plaats": "Amsterdam",
-    "lat": 52.3702,
-    "lng": 4.8952,
-    "type": ["bedrijf"],
-    "tags": ["geofysica", "golven", "metingen"],
-    "beschrijving": "Seismische technologie.",
-    "website": "https://www.innoseis.com"
-  },
+  },{
+  "naam": "Nebest",
+  "plaats": "Vianen",
+  "lat": 51.9925,
+  "lng": 5.1000,
+  "type": ["bedrijf"],
+  "tags": ["materialen", "metrologie"],
+  "beschrijving": "Materiaalonderzoek en inspectie.",
+  "website": "https://www.nebest.nl"
+},{
+  "naam": "Innoseis",
+  "plaats": "Amsterdam",
+  "lat": 52.3702,
+  "lng": 4.8952,
+  "type": ["bedrijf"],
+  "tags": ["metrologie", "sensoren"],
+  "beschrijving": "Seismische technologie.",
+  "website": "https://www.innoseis.com"
+}
   {
     "naam": "VSL",
     "plaats": "Delft",
     "lat": 52.0116,
     "lng": 4.3571,
     "type": ["onderzoek"],
-    "tags": ["metrologie", "precisie", "metingen"],
+    "tags": ["metrologie", "sensoren"],
     "beschrijving": "Nationaal meetinstituut.",
     "website": "https://www.vsl.nl"
   },
@@ -155,58 +204,375 @@
     "lat": 52.3344,
     "lng": 4.8660,
     "type": ["onderzoek", "medisch"],
-    "tags": ["medische fysica", "imaging", "radiotherapie"],
+    "tags": ["medische fysica", "microscopie", "optica"],
     "beschrijving": "Academisch ziekenhuis.",
     "website": "https://www.vumc.nl"
   },
   {
-    "naam": "Universiteit van Amsterdam",
-    "plaats": "Amsterdam",
-    "lat": 52.3550,
-    "lng": 4.9550,
-    "type": ["onderzoek"],
-    "tags": ["theoretische fysica", "experiment", "quantum"],
-    "beschrijving": "Universiteit met sterke natuurkunde-afdeling.",
-    "website": "https://www.uva.nl"
-  },
-  {
-    "naam": "Futura Composites",
-    "plaats": "Drachten",
-    "lat": 53.1125,
-    "lng": 6.0989,
-    "type": ["bedrijf"],
-    "tags": ["materialen", "composieten", "mechanica"],
-    "beschrijving": "Ontwikkeling van composietmaterialen.",
-    "website": "https://www.futura-composites.com"
-  },
-  {
-    "naam": "JRC Petten",
-    "plaats": "Petten",
-    "lat": 52.7667,
-    "lng": 4.6667,
-    "type": ["onderzoek"],
-    "tags": ["nucleair", "materialen", "energie"],
-    "beschrijving": "Europees onderzoekscentrum.",
-    "website": "https://joint-research-centre.ec.europa.eu"
-  },
+  "naam": "Universiteit van Amsterdam",
+  "plaats": "Amsterdam",
+  "lat": 52.3550,
+  "lng": 4.9550,
+  "type": ["onderzoek"],
+  "tags": ["quantum", "materialen", "fluidica", "thermodynamica", "microscopie"],
+  "beschrijving": "Universiteit met sterke natuurkunde-afdeling.",
+  "websites": [
+    {
+      "naam": "Instituut voor Natuurkunde (IoP)",
+      "url": "https://iop.uva.nl/"
+    },
+    {
+      "naam": "Van der Waals-Zeeman Instituut (WZI)",
+      "url": "https://iop.uva.nl/wzi/wzi.html"
+    }
+  ]
+},{
+  "naam": "Futura Composites",
+  "plaats": "Heerhugowaard",
+  "lat": 52.6714,
+  "lng": 4.8486,
+  "type": ["bedrijf"],
+  "tags": ["materialen", "industrie"],
+  "beschrijving": "Ontwikkeling van composietmaterialen.",
+  "website": "https://www.futura-composites.com"
+},{
+  "naam": "NRG (Nuclear Research and Consultancy Group)",
+  "plaats": "Petten",
+  "lat": 52.7667,
+  "lng": 4.6667,
+  "type": ["onderzoek", "bedrijf"],
+  "tags": ["energie", "materialen"],
+  "beschrijving": "Onderzoek naar nucleaire technologie, reactoren en materialen, inclusief medische isotopenproductie.",
+  "website": "https://www.nrg.eu"
+},
   {
     "naam": "Thales Nederland",
     "plaats": "Hengelo",
     "lat": 52.2650,
     "lng": 6.7931,
     "type": ["bedrijf"],
-    "tags": ["radar", "signaalverwerking", "defensie"],
+    "tags": ["sensor", "industrie", "defensie"],
     "beschrijving": "High-tech defensiesystemen.",
     "website": "https://www.thalesgroup.com"
   },
   {
-    "naam": "UMC Utrecht",
-    "plaats": "Utrecht",
-    "lat": 52.0889,
-    "lng": 5.1778,
-    "type": ["onderzoek", "medisch"],
-    "tags": ["medische fysica", "imaging", "biomaterialen"],
-    "beschrijving": "Academisch ziekenhuis.",
-    "website": "https://www.umcutrecht.nl"
-  }
+  "naam": "UMC Utrecht",
+  "plaats": "Utrecht",
+  "lat": 52.0889,
+  "lng": 5.1778,
+  "type": ["onderzoek", "medisch"],
+  "tags": ["medische fysica", "microscopie"],
+  "beschrijving": "Academisch ziekenhuis met onderzoek in medische fysica, beeldvorming en biomaterialen.",
+  "website": "https://www.umcutrecht.nl"
+},
+{
+  "naam": "Thorlabs - Bergkirchen",
+  "plaats": "Bergkirchen (Duitsland)",
+  "lat": 48.266,
+  "lng": 11.367,
+  "type": ["bedrijf"],
+  "tags": ["optica", "fotonica"],
+  "beschrijving": "Ontwikkeling en productie van optische en fotonische componenten en systemen.",
+  "website": "https://www.thorlabs.com"
+},
+{
+  "naam": "Cryoworld",
+  "plaats": "Wieringerwerf",
+  "lat": 52.8500,
+  "lng": 5.0330,
+  "type": ["bedrijf"],
+  "tags": ["thermodynamica", "industrie"],
+  "beschrijving": "Ontwikkeling en productie van cryogene apparatuur en opslagsystemen voor vloeibare gassen.",
+  "website": "https://www.cryoworld.com"
+},{
+  "naam": "Demaco",
+  "plaats": "Noord-Scharwoude",
+  "lat": 52.7000,
+  "lng": 4.8000,
+  "type": ["bedrijf"],
+  "tags": ["thermodynamica", "industrie"],
+  "beschrijving": "Ontwikkeling van cryogene infrastructuur en leidingsystemen voor vloeibare gassen.",
+  "website": "https://demaco-cryogenics.com"
+},{
+  "naam": "Quest Medical Imaging",
+  "plaats": "Middenmeer",
+  "lat": 52.807,
+  "lng": 5.018,
+  "type": ["bedrijf", "medisch"],
+  "tags": ["medische fysica", "optica"],
+  "beschrijving": "Ontwikkeling van optische beeldvormingstechnologie voor medische toepassingen, zoals fluorescentie-geleide chirurgie.",
+  "website": "https://www.quest-mi.com"
+},{
+  "naam": "Soluxa",
+  "plaats": "Nijmegen",
+  "lat": 51.842,
+  "lng": 5.852,
+  "type": ["bedrijf"],
+  "tags": ["energie", "nanotechnologie"],
+  "beschrijving": "Ontwikkeling van gekleurde zonnepanelen en nanocoatings voor gebouwgeïntegreerde energieopwekking.",
+  "website": "https://www.soluxa.solar"
+},
+{
+  "naam": "SODAQ (QADOS)",
+  "plaats": "Amsterdam",
+  "lat": 52.3676,
+  "lng": 4.9041,
+  "type": ["bedrijf"],
+  "tags": ["sensoren", "energie"],
+  "beschrijving": "Ontwikkeling van low-power IoT sensoren en systemen voor monitoring en tracking toepassingen.",
+  "website": "https://sodaq.com"
+},{
+  "naam": "Black Semiconductor",
+  "plaats": "Aachen (Duitsland)",
+  "lat": 50.7753,
+  "lng": 6.0839,
+  "type": ["bedrijf"],
+  "tags": ["fotonica", "nanotechnologie"],
+  "beschrijving": "Ontwikkeling van grafene-gebaseerde fotonische chips voor ultra-snelle en energie-efficiënte chipcommunicatie.",
+  "website": "https://www.blacksemi.com"
+},
+{
+  "naam": "AVL / NKI (Antoni van Leeuwenhoek)",
+  "plaats": "Amsterdam",
+  "lat": 52.343,
+  "lng": 4.823,
+  "type": ["onderzoek", "medisch"],
+  "tags": ["medische fysica", "optica"],
+  "beschrijving": "Gespecialiseerd kankercentrum met onderzoek en behandeling, sterk in radiotherapie, imaging en klinische fysica.",
+  "website": "https://www.avl.nl"
+},
+{
+  "naam": "Avantes",
+  "plaats": "Apeldoorn",
+  "lat": 52.2112,
+  "lng": 5.9699,
+  "type": ["bedrijf"],
+  "tags": ["optica", "metrologie"],
+  "beschrijving": "Ontwikkeling en productie van optische spectrometers en meetapparatuur voor analyse van materialen en licht.",
+  "website": "https://www.avantes.com"
+},{
+  "naam": "Enmo",
+  "plaats": "Bladel",
+  "lat": 51.368,
+  "lng": 5.220,
+  "type": ["bedrijf"],
+  "tags": ["akoestiek", "metrologie"],
+  "beschrijving": "Onderzoek en metingen aan geluid en trillingen, met toepassingen in industrie en productontwikkeling.",
+  "website": "https://www.enmo.eu"
+},
+{
+  "naam": "High Voltage Engineering Europa (HVEE)",
+  "plaats": "Amersfoort",
+  "lat": 52.1561,
+  "lng": 5.3878,
+  "type": ["bedrijf"],
+  "tags": ["deeltjesfysica", "energie"],
+  "beschrijving": "Ontwikkeling van hoogspanningssystemen en deeltjesversnellers voor onderzoek en industriële toepassingen.",
+  "website": "https://www.highvolteng.com"
+},
+{
+  "naam": "Hortimare",
+  "plaats": "Heerhugowaard",
+  "lat": 52.6714,
+  "lng": 4.8486,
+  "type": ["bedrijf"],
+  "tags": ["biomaterialen", "industrie"],
+  "beschrijving": "Ontwikkeling en teelt van zeewier voor toepassingen in voedsel, materialen en biotechnologie.",
+  "website": "https://www.hortimare.com"
+},
+{
+  "naam": "LiFT-PV",
+  "plaats": "Arnhem",
+  "lat": 51.985,
+  "lng": 5.898,
+  "type": ["bedrijf"],
+  "tags": ["energie", "nanotechnologie"],
+  "beschrijving": "Ontwikkeling van flexibele dunne-film zonnecellen en zonnefolie, voortgekomen uit HyET Solar.",
+  "website": "https://www.lift-pv.com"
+},
+{
+  "naam": "JansZon",
+  "plaats": "Amsterdam",
+  "lat": 52.3676,
+  "lng": 4.9041,
+  "type": ["bedrijf"],
+  "tags": ["energie", "industrie"],
+  "beschrijving": "Ontwerp, realisatie en beheer van duurzame energiesystemen zoals zonnepanelen, batterijen en laadinfrastructuur.",
+  "website": "https://www.janszon.nl"
+},{
+  "naam": "KNMI",
+  "plaats": "De Bilt",
+  "lat": 52.1017,
+  "lng": 5.1781,
+  "type": ["onderzoek"],
+  "tags": ["geofysica", "metrologie"],
+  "beschrijving": "Nationaal instituut voor weer, klimaat en seismologie, met onderzoek naar atmosfeer, klimaatmodellen en meetnetwerken.",
+  "website": "https://www.knmi.nl"
+},{
+  "naam": "Lumicks",
+  "plaats": "Amsterdam",
+  "lat": 52.3676,
+  "lng": 4.9041,
+  "type": ["bedrijf"],
+  "tags": ["optica", "biomaterialen"],
+  "beschrijving": "Ontwikkeling van optische instrumenten voor single-molecule en biophysisch onderzoek.",
+  "website": "https://lumicks.com/"
+},{
+  "naam": "m+p international",
+  "plaats": "Aalsmeer",
+  "lat": 52.259,
+  "lng": 4.750,
+  "type": ["bedrijf"],
+  "tags": ["akoestiek", "metrologie"],
+  "beschrijving": "Meet- en analysesystemen voor geluid en trillingen.",
+  "website": "https://www.mp.nl"
+},{
+  "naam": "MS Vision",
+  "plaats": "Almere",
+  "lat": 52.3508,
+  "lng": 5.2647,
+  "type": ["bedrijf"],
+  "tags": ["metrologie", "nanotechnologie"],
+  "beschrijving": "Service, ontwikkeling en modificatie van massaspectrometers en analysetechnologie.",
+  "website": "https://msvision.com/"
+},{
+  "naam": "Mach Technology - Amsterdam",
+  "plaats": "Amsterdam",
+  "lat": 52.3676,
+  "lng": 4.9041,
+  "type": ["bedrijf"],
+  "tags": ["sensoren", "industrie"],
+  "beschrijving": "Ontwikkeling en productie van embedded elektronica en meetsystemen.",
+  "website": "https://www.machtechnology.nl"
+},{
+  "naam": "NFI (Nederlands Forensisch Instituut)",
+  "plaats": "Den Haag",
+  "lat": 52.0705,
+  "lng": 4.3007,
+  "type": ["onderzoek"],
+  "tags": ["metrologie", "nanotechnologie", "microscopie"],
+  "beschrijving": "Forensisch onderzoek met geavanceerde analysetechnieken voor sporenonderzoek.",
+  "website": "https://www.forensischinstituut.nl"
+},{
+  "naam": "Peutz",
+  "plaats": "Nijmegen",
+  "lat": 51.842,
+  "lng": 5.852,
+  "type": ["bedrijf"],
+  "tags": ["akoestiek", "industrie"],
+  "beschrijving": "Advies en onderzoek in bouwfysica, akoestiek en trillingen.",
+  "website": "https://www.peutz.nl"
+},{
+  "naam": "Photosynthetic",
+  "plaats": "Amsterdam",
+  "lat": 52.3676,
+  "lng": 4.9041,
+  "type": ["bedrijf"],
+  "tags": ["materialen", "industrie"],
+  "beschrijving": "Ontwikkeling van 3D-geprinte structuren en materialen.",
+  "website": "https://www.photosynthetic.nl"
+},{
+  "naam": "Qblox",
+  "plaats": "Delft",
+  "lat": 52.0116,
+  "lng": 4.3571,
+  "type": ["bedrijf"],
+  "tags": ["quantum", "sensoren"],
+  "beschrijving": "Ontwikkeling van control hardware voor quantum computing systemen.",
+  "website": "https://www.qblox.com"
+},{
+  "naam": "Seaborough",
+  "plaats": "Amsterdam",
+  "lat": 52.3676,
+  "lng": 4.9041,
+  "type": ["bedrijf"],
+  "tags": ["optica", "nanotechnologie"],
+  "beschrijving": "Ontwikkeling van optische coatings en fosformaterialen.",
+  "website": "https://www.seaborough.com/"
+},{
+  "naam": "Solarix",
+  "plaats": "Weesp",
+  "lat": 52.3075,
+  "lng": 5.0417,
+  "type": ["bedrijf"],
+  "tags": ["energie", "materialen"],
+  "beschrijving": "Ontwikkeling van esthetische, gekleurde zonnepanelen voor gebouwen.",
+  "website": "https://www.solarix.nl"
+},{
+  "naam": "SolarTechno",
+  "plaats": "Zaandam",
+  "lat": 52.4385,
+  "lng": 4.8260,
+  "type": ["bedrijf"],
+  "tags": ["energie", "industrie"],
+  "beschrijving": "Ontwikkeling en toepassing van batterijsystemen en energieopslag.",
+  "website": ""
+},{
+  "naam": "Thorizon",
+  "plaats": "Haarlem",
+  "lat": 52.3874,
+  "lng": 4.6462,
+  "type": ["bedrijf"],
+  "tags": ["energie", "materialen"],
+  "beschrijving": "Ontwikkeling van modulaire gesmolten-zoutreactoren voor kernenergie.",
+  "website": "https://thorizon.nl"
+},{
+  "naam": "Bambooder",
+  "plaats": "Amsterdam",
+  "lat": 52.3676,
+  "lng": 4.9041,
+  "type": ["bedrijf"],
+  "tags": ["materialen", "industrie"],
+  "beschrijving": "Ontwikkeling en karakterisatie van duurzame composietmaterialen.",
+  "website": "https://www.bambooder.com/"
+},{
+  "naam": "Hogeschool Inholland",
+  "plaats": "Haarlem",
+  "lat": 52.3874,
+  "lng": 4.6462,
+  "type": ["onderzoek"],
+  "tags": ["medische fysica", "optica"],
+  "beschrijving": "Onderwijs en toegepast onderzoek in medische technologie en beeldvorming.",
+  "website": "https://www.inholland.nl/onderzoek/lectoraten/medische-technologie/"
+},{
+  "naam": "UMC Utrecht",
+  "plaats": "Utrecht",
+  "lat": 52.0889,
+  "lng": 5.1778,
+  "type": ["onderzoek", "medisch"],
+  "tags": ["medische fysica", "optica"],
+  "beschrijving": "Academisch ziekenhuis met onderzoek in MRI en medische beeldvorming.",
+  "websites": [
+    {
+      "naam": "Precision Imaging",
+      "url": "https://research.umcutrecht.nl/research-groups/precision-imaging/"
+    },
+    {
+      "naam": "High Field MRI",
+      "url": "https://www.highfieldmri.nl/research/vascular/"
+    }
+  ]
+},{
+  "naam": "LUMC",
+  "plaats": "Leiden",
+  "lat": 52.1666,
+  "lng": 4.4777,
+  "type": ["onderzoek", "medisch"],
+  "tags": ["medische fysica", "optica"],
+  "beschrijving": "Academisch ziekenhuis met onderzoek in radiotherapie en medische beeldvorming.",
+  "websites": [
+    {
+      "naam": "Radiotherapie",
+      "url": "https://www.lumc.nl/org/radiotherapie/"
+    },
+    {
+      "naam": "Biomedical Imaging",
+      "url": "https://www.lumc.nl/org/radiologie/research/"
+    },
+    {
+      "naam": "LUMC Onderzoek",
+      "url": "https://www.lumc.nl/research/"
+    }
+  ]
+}
 ]

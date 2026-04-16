@@ -1,0 +1,11 @@
+
+  {
+    "naam": "AMS Institute",
+    "plaats": "Amsterdam",
+    "lat": 52.3676,
+    "lng": 4.9041,
+    "type": ["onderzoek"],
+    "tags": ["data", "energie", "modelleren", "urban tech"],
+    "beschrijving": "Onderzoeksinstituut voor stedelijke technologie.",
+    "website": "https://www.ams-institute.org"
+  },
