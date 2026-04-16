@@ -203,7 +203,7 @@
     "plaats": "Amsterdam",
     "lat": 52.3344,
     "lng": 4.8660,
-    "type": ["onderzoek", "medisch"],
+    "type": ["onderzoek"],
     "tags": ["medische fysica", "microscopie", "optica"],
     "beschrijving": "Academisch ziekenhuis.",
     "website": "https://www.vumc.nl"
@@ -260,7 +260,7 @@
   "plaats": "Utrecht",
   "lat": 52.0889,
   "lng": 5.1778,
-  "type": ["onderzoek", "medisch"],
+  "type": ["onderzoek"],
   "tags": ["medische fysica", "microscopie"],
   "beschrijving": "Academisch ziekenhuis met onderzoek in medische fysica, beeldvorming en biomaterialen.",
   "website": "https://www.umcutrecht.nl"
@@ -298,7 +298,7 @@
   "plaats": "Middenmeer",
   "lat": 52.807,
   "lng": 5.018,
-  "type": ["bedrijf", "medisch"],
+  "type": ["bedrijf"],
   "tags": ["medische fysica", "optica"],
   "beschrijving": "Ontwikkeling van optische beeldvormingstechnologie voor medische toepassingen, zoals fluorescentie-geleide chirurgie.",
   "website": "https://www.quest-mi.com"
@@ -336,7 +336,7 @@
   "plaats": "Amsterdam",
   "lat": 52.343,
   "lng": 4.823,
-  "type": ["onderzoek", "medisch"],
+  "type": ["onderzoek"],
   "tags": ["medische fysica", "optica"],
   "beschrijving": "Gespecialiseerd kankercentrum met onderzoek en behandeling, sterk in radiotherapie, imaging en klinische fysica.",
   "website": "https://www.avl.nl"
@@ -539,7 +539,7 @@
   "plaats": "Utrecht",
   "lat": 52.0889,
   "lng": 5.1778,
-  "type": ["onderzoek", "medisch"],
+  "type": ["onderzoek"],
   "tags": ["medische fysica", "optica"],
   "beschrijving": "Academisch ziekenhuis met onderzoek in MRI en medische beeldvorming.",
   "websites": [
@@ -557,7 +557,7 @@
   "plaats": "Leiden",
   "lat": 52.1666,
   "lng": 4.4777,
-  "type": ["onderzoek", "medisch"],
+  "type": ["onderzoek"],
   "tags": ["medische fysica", "optica"],
   "beschrijving": "Academisch ziekenhuis met onderzoek in radiotherapie en medische beeldvorming.",
   "websites": [
