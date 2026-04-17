@@ -157,10 +157,22 @@ function toonBedrijfInPanel(bedrijf) {
     ? `<a href="mailto:${bedrijf.email}">📧 E-mail</a>`
     : '';
 
-  const websiteHtml = bedrijf.website
-    ? `<a href="${escapeHtml(bedrijf.website)}" target="_blank" rel="noopener noreferrer">🌐 Website</a>`
-    : '';
+  let websiteHtml = '';
 
+  if (Array.isArray(bedrijf.websites) && bedrijf.websites.length > 0) {
+    websiteHtml = bedrijf.websites.map(site => `
+      <a href="${escapeHtml(site.url)}" target="_blank" rel="noopener noreferrer">
+        🌐 ${escapeHtml(site.naam)}
+      </a>
+    `).join('');
+  } else if (bedrijf.website) {
+    // fallback voor oude entries
+    websiteHtml = `
+      <a href="${escapeHtml(bedrijf.website)}" target="_blank" rel="noopener noreferrer">
+        🌐 Website
+      </a>
+    `;
+  }
   const extraInfoHtml = extraInfo
     ? `
       <div class="company-section">
