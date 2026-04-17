@@ -146,7 +146,7 @@
   "lat": 52.3676,
   "lng": 4.9041,
   "type": ["bedrijf"],
-  "tags": ["Aarde, klimaat & Ruimte"],
+  "tags": ["Aarde, klimaat & ruimte"],
   "beschrijving": "Industriële meet- en regelsystemen.",
   "website": ""
 },
@@ -166,7 +166,7 @@
     "lat": 52.7025,
     "lng": 5.8764,
     "type": ["onderzoek"],
-    "tags": ["Aarde, klimaat & Ruimte", "Veiligheid & defensie"],
+    "tags": ["Aarde, klimaat & ruimte", "Veiligheid & defensie"],
     "beschrijving": "Lucht- en ruimtevaartonderzoek.",
     "website": "https://www.nlr.org"
   },{
@@ -184,7 +184,7 @@
   "lat": 52.3702,
   "lng": 4.8952,
   "type": ["bedrijf"],
-  "tags": ["Aarde, klimaat & Ruimte"],
+  "tags": ["Aarde, klimaat & ruimte"],
   "beschrijving": "Seismische technologie.",
   "website": "https://www.innoseis.com"
 },
@@ -214,7 +214,7 @@
   "lat": 52.3550,
   "lng": 4.9550,
   "type": ["onderzoek"],
-  "tags": ["High-tech systemen & materialen", "Energie & duurzaamheid","Aarde, klimaat & Ruimte"],
+  "tags": ["High-tech systemen & materialen", "Energie & duurzaamheid","Aarde, klimaat & ruimte"],
   "beschrijving": "Universiteit met sterke natuurkunde-afdeling.",
   "websites": [
     {
@@ -356,7 +356,7 @@
   "lat": 51.368,
   "lng": 5.220,
   "type": ["bedrijf"],
-  "tags": ["High-tech systemen & materialen", "Aarde, klimaat & Ruimte"],
+  "tags": ["High-tech systemen & materialen", "Aarde, klimaat & ruimte"],
   "beschrijving": "Onderzoek en metingen aan geluid en trillingen, met toepassingen in industrie en productontwikkeling.",
   "website": "https://www.enmo.eu"
 },
@@ -405,7 +405,7 @@
   "lat": 52.1017,
   "lng": 5.1781,
   "type": ["onderzoek"],
-  "tags": ["Aarde, klimaat & Ruimte"],
+  "tags": ["Aarde, klimaat & ruimte"],
   "beschrijving": "Nationaal instituut voor weer, klimaat en seismologie, met onderzoek naar atmosfeer, klimaatmodellen en meetnetwerken.",
   "website": "https://www.knmi.nl"
 },{
@@ -423,7 +423,7 @@
   "lat": 52.259,
   "lng": 4.750,
   "type": ["bedrijf"],
-  "tags": ["Aarde, klimaat & Ruimte"],
+  "tags": ["Aarde, klimaat & ruimte"],
   "beschrijving": "Meet- en analysesystemen voor geluid en trillingen.",
   "website": "https://www.mp.nl"
 },{
@@ -581,7 +581,7 @@
   "lat": 52.225,
   "lng": 4.522,
   "type": ["bedrijf"],
-  "tags": ["High-tech systemen & materialen", "Aarde, klimaat & Ruimte"],
+  "tags": ["High-tech systemen & materialen", "Aarde, klimaat & ruimte"],
   "beschrijving": "Ontwikkelt optische meetsystemen en ruimte-instrumentatie voor high-tech en industriële toepassingen.",
   "extraInfo": "cosine ontwikkelt sinds 1998 innovatieve measurement systems voor onder meer space instrumentation, remote sensing en inspectiesystemen. Het bedrijf heeft cleanrooms en testfaciliteiten in Sassenheim en werkt op het snijvlak van fysica, optica, elektronica en software.",
   "website": "https://www.cosine.eu"
@@ -592,7 +592,7 @@
     "lat": 52.1695,
     "lng": 4.4580,
     "type": ["onderzoek"],
-    "tags": ["Aarde, klimaat & Ruimte"],
+    "tags": ["Aarde, klimaat & ruimte"],
     "beschrijving": "Nederlands instituut voor ruimteonderzoek en ruimte-instrumentatie.",
     "website": "https://www.sron.nl"
   },  
@@ -612,7 +612,7 @@
     "lat": 52.1650,
     "lng": 4.4712,
     "type": ["bedrijf"],
-    "tags": ["Aarde, klimaat & Ruimte", "High-tech systemen & materialen"],
+    "tags": ["Aarde, klimaat & ruimte", "High-tech systemen & materialen"],
     "beschrijving": "High-tech ruimtevaartbedrijf met focus op space systems en instrumentatie.",
     "website": "https://www.airbusds.nl"
   },  
@@ -632,7 +632,7 @@
     "lat": 52.1689,
     "lng": 4.4584,
     "type": ["onderzoek"],
-    "tags": ["High-tech systemen & materialen", "Energie & duurzaamheid", "Aarde, klimaat & Ruimte"],
+    "tags": ["High-tech systemen & materialen", "Energie & duurzaamheid", "Aarde, klimaat & ruimte"],
     "beschrijving": "Gebouw en onderzoeksomgeving van natuurkunde aan Universiteit Leiden.",
     "website": "https://www.universiteitleiden.nl/en/locations/huygens"
   },
@@ -642,7 +642,7 @@
     "lat": 52.2390,
     "lng": 4.4330,
     "type": ["onderzoek"],
-    "tags": ["Aarde, klimaat & Ruimte"],
+    "tags": ["Aarde, klimaat & ruimte"],
     "beschrijving": "Europees centrum voor ruimtevaarttechnologie en testen.",
     "extraInfo": "ESTEC is het technologie- en testcentrum van ESA en is zeer relevant voor TN-studenten met interesse in space engineering, testen en instrumentatie.",
     "website": "https://www.esa.int/About_Us/ESTEC"
@@ -663,7 +663,7 @@
     "lat": 52.155,
     "lng": 5.387,
     "type": ["bedrijf"],
-    "tags": ["Aarde, klimaat & Ruimte"],
+    "tags": ["Aarde, klimaat & ruimte"],
     "beschrijving": "Ingenieursbureau voor infrastructuur en technologie.",
     "website": "https://www.royalhaskoningdhv.com"
   },
@@ -673,7 +673,7 @@
     "lat": 52.153,
     "lng": 5.389,
     "type": ["bedrijf"],
-    "tags": ["Aarde, klimaat & Ruimte", "Data & digitalisering"],
+    "tags": ["Aarde, klimaat & ruimte", "Data & digitalisering"],
     "beschrijving": "Internationaal ingenieursbureau.",
     "website": "https://www.arcadis.com"
   },
@@ -713,7 +713,7 @@
     "lat": 52.09,
     "lng": 5.11,
     "type": ["bedrijf"],
-    "tags": ["Aarde, klimaat & Ruimte"],
+    "tags": ["Aarde, klimaat & ruimte"],
     "beschrijving": "Adviesbureau voor milieu en fysische processen.",
     "website": "https://www.tauw.nl"
   },
