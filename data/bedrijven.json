@@ -22,8 +22,8 @@
   {
     "naam": "TNO - Eindhoven - High Tech",
     "plaats": "Eindhoven",
-    "lat": 51.449,
-    "lng": 5.457,
+    "lat": 51.413145018347834,
+    "lng": 5.454007071369618,
     "type": ["onderzoek", "bedrijf"],
     "tags": ["High-tech systemen & materialen"],
     "beschrijving": "High-tech onderzoek naar fotonica, halfgeleiders en geïntegreerde systemen.",
@@ -32,8 +32,8 @@
   {
     "naam": "TNO - Holst Centre - High Tech",
     "plaats": "Eindhoven",
-    "lat": 51.443,
-    "lng": 5.460,
+    "lat": 51.41385475895325,
+    "lng": 5.456837448263083,
     "type": ["onderzoek", "bedrijf"],
     "tags": ["High-tech systemen & materialen"],
     "beschrijving": "Flexibele elektronica, wearables en sensortechnologie.",
@@ -42,8 +42,8 @@
   {
     "naam": "TNO - Delft - High Tech",
     "plaats": "Delft",
-    "lat": 52.002,
-    "lng": 4.373,
+    "lat": 52.001571033929956, 
+    "lng": 4.3787595233497845,
     "type": ["onderzoek", "bedrijf"],
     "tags": ["High-tech systemen & materialen"],
     "beschrijving": "Precisietechnologie, optica en meetsystemen.",
@@ -52,8 +52,8 @@
   {
     "naam": "TNO - Petten - High Tech",
     "plaats": "Petten",
-    "lat": 52.7667,
-    "lng": 4.6667,
+    "lat": 52.78515333317925,
+    "lng": 4.67551664836985,
     "type": ["onderzoek", "bedrijf"],
     "tags": ["Energie & duurzaamheid", "High-tech systemen & materialen"],
     "beschrijving": "Onderzoek naar energie, materialen en nucleaire toepassingen.",
@@ -63,8 +63,8 @@
   {
     "naam": "TNO - Ypenburg - DSS",
     "plaats": "Den Haag",
-    "lat": 52.040,
-    "lng": 4.369,
+    "lat": 52.052441521550435,
+    "lng": 4.379277150662167,
     "type": ["onderzoek", "bedrijf"],
     "tags": ["Veiligheid & defensie"],
     "beschrijving": "Defence, Safety & Security: radar, surveillance en sensoren.",
@@ -73,8 +73,8 @@
   {
     "naam": "TNO - Waalsdorperweg - DSS",
     "plaats": "Den Haag",
-    "lat": 52.093,
-    "lng": 4.324,
+    "lat": 52.10953357693142,
+    "lng": 4.328487525030629,
     "type": ["onderzoek", "bedrijf"],
     "tags": ["Veiligheid & defensie"],
     "beschrijving": "Radar- en optische systemen voor defensietoepassingen.",
@@ -83,8 +83,8 @@
   {
     "naam": "TNO - Soesterberg - DSS",
     "plaats": "Soesterberg",
-    "lat": 52.123,
-    "lng": 5.276,
+    "lat": 52.115030978743725,
+    "lng": 5.290790048811074,
     "type": ["onderzoek", "bedrijf"],
     "tags": ["Veiligheid & defensie"],
     "beschrijving": "Defence, Safety & Security: radar, sensing en militaire technologie, nabij Amersfoort.",
@@ -113,8 +113,8 @@
   {
     "naam": "Tata Steel Nederland",
     "plaats": "IJmuiden",
-    "lat": 52.463,
-    "lng": 4.601,
+    "lat": 52.47766877500795,
+    "lng": 4.63239185273854,
     "type": ["bedrijf"],
     "tags": ["High-tech systemen & materialen"],
     "beschrijving": "Productie en onderzoek naar staal en materiaaltechnologie.",
@@ -123,18 +123,28 @@
   {
     "naam": "PhotonFirst",
     "plaats": "Alkmaar",
-    "lat": 52.632,
-    "lng": 4.753,
+    "lat": 52.59859095055407,
+    "lng": 4.740908741448697,
     "type": ["bedrijf"],
     "tags": ["High-tech systemen & materialen"],
     "beschrijving": "Fotonische sensortechnologie.",
     "website": "https://www.photonfirst.com"
   },
   {
+  "naam": "Technobis",
+  "plaats": "Alkmaar",
+  "lat": 52.59837140013241, 
+  "lng": 4.740185453996898,
+  "type": ["bedrijf"],
+  "tags": ["High-tech systemen & materialen", "Gezondheid & medische technologie"],
+  "beschrijving": "Ontwikkelt en produceert hoogwaardige optische meetinstrumenten en systemen, o.a. voor karakterisatie van materialen en componenten.",
+  "website": "https://www.technobis.com"
+},
+  {
     "naam": "Sonion Nederland",
     "plaats": "Hoofddorp",
-    "lat": 52.3000,
-    "lng": 4.6900,
+    "lat": 52.28881175011686,
+    "lng": 4.7038315543852445,
     "type": ["bedrijf"],
     "tags": ["Gezondheid & medische technologie"],
     "beschrijving": "Ontwikkeling van micro-elektronische componenten.",
@@ -143,8 +153,8 @@
   {
   "naam": "Eddytec",
   "plaats": "Amsterdam",
-  "lat": 52.3676,
-  "lng": 4.9041,
+  "lat": 52.35460397164153,
+  "lng": 4.95963628538009,
   "type": ["bedrijf"],
   "tags": ["Aarde, klimaat & ruimte"],
   "beschrijving": "Industriële meet- en regelsystemen.",
@@ -153,8 +163,8 @@
   {
     "naam": "Hobré Instruments",
     "plaats": "Purmerend",
-    "lat": 52.5050,
-    "lng": 4.9597,
+    "lat": 52.511501973632946,
+    "lng": 5.003599652476195,
     "type": ["bedrijf"],
     "tags": ["High-tech systemen & materialen"],
     "beschrijving": "Meetapparatuur voor gasanalyse.",
@@ -163,8 +173,8 @@
     {
     "naam": "Koninklijke NLR",
     "plaats": "Marknesse",
-    "lat": 52.7025,
-    "lng": 5.8764,
+    "lat": 52.68040766615027,
+    "lng": 5.9289149427717485,
     "type": ["onderzoek"],
     "tags": ["Aarde, klimaat & ruimte", "Veiligheid & defensie"],
     "beschrijving": "Lucht- en ruimtevaartonderzoek.",
@@ -172,8 +182,8 @@
   },{
   "naam": "Nebest",
   "plaats": "Vianen",
-  "lat": 51.9925,
-  "lng": 5.1000,
+  "lat": 51.97651513040847,
+  "lng": 5.0923838408763995,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen"],
   "beschrijving": "Materiaalonderzoek en inspectie.",
@@ -181,8 +191,8 @@
 },{
   "naam": "Innoseis",
   "plaats": "Amsterdam",
-  "lat": 52.3702,
-  "lng": 4.8952,
+  "lat": 52.35602367394954,
+  "lng": 4.95190508124984,
   "type": ["bedrijf"],
   "tags": ["Aarde, klimaat & ruimte"],
   "beschrijving": "Seismische technologie.",
@@ -191,22 +201,12 @@
   {
     "naam": "VSL",
     "plaats": "Delft",
-    "lat": 52.0116,
-    "lng": 4.3571,
+    "lat": 51.985609868915006,
+    "lng": 4.387994994840273,
     "type": ["onderzoek"],
     "tags": ["High-tech systemen & materialen", "Data & digitalisering"],
     "beschrijving": "Nationaal meetinstituut.",
     "website": "https://www.vsl.nl"
-  },
-  {
-    "naam": "VUmc",
-    "plaats": "Amsterdam",
-    "lat": 52.3344,
-    "lng": 4.8660,
-    "type": ["onderzoek"],
-    "tags": ["Gezondheid & medische technologie"],
-    "beschrijving": "Academisch ziekenhuis.",
-    "website": "https://www.vumc.nl"
   },
   {
   "naam": "Universiteit van Amsterdam",
@@ -227,10 +227,28 @@
     }
   ]
 },{
+  "naam": "Vrije Universiteit Amsterdam",
+  "plaats": "Amsterdam",
+  "lat": 52.333792829840796, 
+  "lng": 4.866535288788349,
+  "type": ["onderzoek"],
+  "tags": ["High-tech systemen & materialen", "Energie & duurzaamheid", "Aarde, klimaat & ruimte"],
+  "beschrijving": "Universiteit met sterke onderzoeksgroepen in natuurkunde, o.a. op het gebied van high-energy physics, condensed matter en klimaatwetenschappen.",
+  "websites": [
+    {
+      "naam": "Department of Physics and Astronomy",
+      "url": "https://vu.nl/en/about-vu/faculties/faculty-of-science/departments/physics-and-astronomy"
+    },
+    {
+      "naam": "LaserLaB Amsterdam",
+      "url": "https://vu.nl/en/about-vu/research-institutes/laserlab-amsterdam"
+    }
+  ]
+},{
   "naam": "Futura Composites",
   "plaats": "Heerhugowaard",
-  "lat": 52.6714,
-  "lng": 4.8486,
+  "lat": 52.68535580946888,
+  "lng": 4.835286329281216,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen"],
   "beschrijving": "Ontwikkeling van composietmaterialen.",
@@ -238,8 +256,8 @@
 },{
   "naam": "NRG (Nuclear Research and Consultancy Group)",
   "plaats": "Petten",
-  "lat": 52.7667,
-  "lng": 4.6667,
+  "lat": 52.78811997180781,
+  "lng": 4.680559049072682,
   "type": ["onderzoek", "bedrijf"],
   "tags": ["Energie & duurzaamheid", "High-tech systemen & materialen"],
   "beschrijving": "Onderzoek naar nucleaire technologie, reactoren en materialen, inclusief medische isotopenproductie.",
@@ -248,28 +266,18 @@
   {
     "naam": "Thales Nederland",
     "plaats": "Hengelo",
-    "lat": 52.2650,
-    "lng": 6.7931,
+    "lat": 52.249154667988925,
+    "lng": 6.778819498042152,
     "type": ["bedrijf"],
     "tags": ["Veiligheid & defensie"],
     "beschrijving": "High-tech defensiesystemen.",
     "website": "https://www.thalesgroup.com"
   },
-  {
-  "naam": "UMC Utrecht",
-  "plaats": "Utrecht",
-  "lat": 52.0889,
-  "lng": 5.1778,
-  "type": ["onderzoek"],
-  "tags": ["Gezondheid & medische technologie"],
-  "beschrijving": "Academisch ziekenhuis met onderzoek in medische fysica, beeldvorming en biomaterialen.",
-  "website": "https://www.umcutrecht.nl"
-},
 {
-  "naam": "Thorlabs - Bergkirchen",
-  "plaats": "Bergkirchen (Duitsland)",
-  "lat": 48.266,
-  "lng": 11.367,
+  "naam": "Thorlabs Elliptec GmbH",
+  "plaats": "Dortmunt (Duitsland)",
+  "lat": 51.52046780988933,
+  "lng": 7.528900147964446,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen"],
   "beschrijving": "Ontwikkeling en productie van optische en fotonische componenten en systemen.",
@@ -278,35 +286,35 @@
 {
   "naam": "Cryoworld",
   "plaats": "Wieringerwerf",
-  "lat": 52.8500,
-  "lng": 5.0330,
+  "lat": 52.83975219188784,
+  "lng": 5.019608615846189,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen"],
   "beschrijving": "Ontwikkeling en productie van cryogene apparatuur en opslagsystemen voor vloeibare gassen.",
   "website": "https://www.cryoworld.com"
 },{
-  "naam": "Demaco",
+  "naam": "Demaco Holland B.V.",
   "plaats": "Noord-Scharwoude",
-  "lat": 52.7000,
-  "lng": 4.8000,
+  "lat": 52.70312847754561,
+  "lng": 4.804286100445828,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen"],
   "beschrijving": "Ontwikkeling van cryogene infrastructuur en leidingsystemen voor vloeibare gassen.",
   "website": "https://demaco-cryogenics.com"
 },{
-  "naam": "Quest Medical Imaging",
+  "naam": "Quest Innovations B.V.",
   "plaats": "Middenmeer",
-  "lat": 52.807,
-  "lng": 5.018,
+  "lat": 52.84394668918704,
+  "lng": 5.016118740065686,
   "type": ["bedrijf"],
   "tags": ["Gezondheid & medische technologie"],
   "beschrijving": "Ontwikkeling van optische beeldvormingstechnologie voor medische toepassingen, zoals fluorescentie-geleide chirurgie.",
-  "website": "https://www.quest-mi.com"
+  "website": "https://www.quest-innovations.com/"
 },{
   "naam": "Soluxa",
   "plaats": "Nijmegen",
-  "lat": 51.842,
-  "lng": 5.852,
+  "lat": 51.82364252250181,
+  "lng": 5.869113506467123,
   "type": ["bedrijf"],
   "tags": ["Energie & duurzaamheid"],
   "beschrijving": "Ontwikkeling van gekleurde zonnepanelen en nanocoatings voor gebouwgeïntegreerde energieopwekking.",
@@ -314,9 +322,9 @@
 },
 {
   "naam": "SODAQ (QADOS)",
-  "plaats": "Amsterdam",
-  "lat": 52.3676,
-  "lng": 4.9041,
+  "plaats": "Hilversum",
+  "lat": 52.227076057652056, 
+  "lng": 5.178163058125206,
   "type": ["bedrijf"],
   "tags": ["Energie & duurzaamheid"],
   "beschrijving": "Ontwikkeling van low-power IoT sensoren en systemen voor monitoring en tracking toepassingen.",
@@ -324,28 +332,27 @@
 },{
   "naam": "Black Semiconductor",
   "plaats": "Aachen (Duitsland)",
-  "lat": 50.7753,
-  "lng": 6.0839,
+  "lat": 50.775293216941364,
+  "lng": 6.133534858008317,
+  "type": ["bedrijf"],
+  "tags": ["High-tech systemen & materialen"],
+  "beschrijving": "Ontwikkeling van grafene-gebaseerde fotonische chips voor ultra-snelle en energie-efficiënte chipcommunicatie.",
+  "website": "https://www.blacksemi.com"
+},{
+  "naam": "Black Semiconductor",
+  "plaats": "Zoetermeer",
+  "lat": 52.044691923257766,
+  "lng": 4.5148140961021825,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen"],
   "beschrijving": "Ontwikkeling van grafene-gebaseerde fotonische chips voor ultra-snelle en energie-efficiënte chipcommunicatie.",
   "website": "https://www.blacksemi.com"
 },
 {
-  "naam": "AVL / NKI (Antoni van Leeuwenhoek)",
-  "plaats": "Amsterdam",
-  "lat": 52.343,
-  "lng": 4.823,
-  "type": ["onderzoek"],
-  "tags": ["Gezondheid & medische technologie"],
-  "beschrijving": "Gespecialiseerd kankercentrum met onderzoek en behandeling, sterk in radiotherapie, imaging en klinische fysica.",
-  "website": "https://www.avl.nl"
-},
-{
   "naam": "Avantes",
   "plaats": "Apeldoorn",
-  "lat": 52.2112,
-  "lng": 5.9699,
+  "lat": 52.175282676351195, 
+  "lng": 5.970916879322238,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen"],
   "beschrijving": "Ontwikkeling en productie van optische spectrometers en meetapparatuur voor analyse van materialen en licht.",
@@ -353,8 +360,8 @@
 },{
   "naam": "Enmo",
   "plaats": "Bladel",
-  "lat": 51.368,
-  "lng": 5.220,
+  "lat": 51.371431634819345,
+  "lng": 5.234344454840526,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen", "Aarde, klimaat & ruimte"],
   "beschrijving": "Onderzoek en metingen aan geluid en trillingen, met toepassingen in industrie en productontwikkeling.",
@@ -363,8 +370,8 @@
 {
   "naam": "High Voltage Engineering Europa (HVEE)",
   "plaats": "Amersfoort",
-  "lat": 52.1561,
-  "lng": 5.3878,
+  "lat": 52.165357261519915,
+  "lng": 5.359410467682188,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen"],
   "beschrijving": "Ontwikkeling van hoogspanningssystemen en deeltjesversnellers voor onderzoek en industriële toepassingen.",
@@ -373,28 +380,74 @@
 {
   "naam": "Hortimare",
   "plaats": "Heerhugowaard",
-  "lat": 52.6714,
-  "lng": 4.8486,
+  "lat": 52.698474807850815,
+  "lng": 4.842577654408934,
   "type": ["bedrijf"],
   "tags": ["Energie & duurzaamheid"],
   "beschrijving": "Ontwikkeling en teelt van zeewier voor toepassingen in voedsel, materialen en biotechnologie.",
   "website": "https://www.hortimare.com"
+},{
+  "naam": "Universiteit Leiden",
+  "plaats": "Leiden",
+  "lat": 52.16774043322231,
+  "lng": 4.461797440701351,
+  "type": ["onderzoek"],
+  "tags": ["High-tech systemen & materialen", "Energie & duurzaamheid", "Aarde, klimaat & ruimte"],
+  "beschrijving": "Universiteit met een internationaal toonaangevende natuurkunde-afdeling, actief in o.a. quantumtechnologie, astrofysica en soft matter.",
+  "websites": [
+    {
+      "naam": "Leiden Institute of Physics (LION)",
+      "url": "https://www.physics.leidenuniv.nl/"
+    },
+    {
+      "naam": "Leiden Observatory",
+      "url": "https://www.strw.leidenuniv.nl/"
+    }
+  ]
 },
 {
   "naam": "LiFT-PV",
   "plaats": "Arnhem",
-  "lat": 51.985,
-  "lng": 5.898,
+  "lat": 51.96949047718268,
+  "lng": 5.9469817929846425,
   "type": ["bedrijf"],
   "tags": ["Energie & duurzaamheid"],
   "beschrijving": "Ontwikkeling van flexibele dunne-film zonnecellen en zonnefolie, voortgekomen uit HyET Solar.",
   "website": "https://www.lift-pv.com"
+},{
+  "naam": "Teijin Aramid",
+  "plaats": "Arnhem",
+  "lat": 51.98425917525444,
+  "lng": 5.930497215169776,
+  "type": ["bedrijf"],
+  "tags": ["High-tech systemen & materialen", "Energie & duurzaamheid"],
+  "beschrijving": "Ontwikkelt en produceert high-performance aramidevezels met toepassingen in o.a. composieten, energie en veiligheid. Sterke focus op materiaalonderzoek en R&D.",
+  "website": "https://www.teijinaramid.com"
+},
+{
+  "naam": "Hykor De Koningh",
+  "plaats": "Arnhem",
+  "lat": 51.97159565300841,
+  "lng": 5.943976188259612,
+  "type": ["bedrijf"],
+  "tags": ["High-tech systemen & materialen"],
+  "beschrijving": "Ontwikkelt en bouwt fijnmechanische en high-tech systemen voor o.a. semiconductor- en medische toepassingen, inclusief prototyping en testopstellingen.",
+  "website": "https://www.hykor.nl"
+},{
+  "naam": "KEMA Laboratories",
+  "plaats": "Arnhem",
+  "lat": 51.97987342149217,
+  "lng": 5.868994150657999,
+  "type": ["bedrijf"],
+  "tags": ["Energie & duurzaamheid", "High-tech systemen & materialen"],
+  "beschrijving": "Internationaal test- en certificeringslaboratorium voor energie-infrastructuur, gespecialiseerd in hoogspanningssystemen en elektrische netwerken.",
+  "website": "https://www.dnv.com/kema"
 },
 {
   "naam": "JansZon",
   "plaats": "Amsterdam",
-  "lat": 52.3676,
-  "lng": 4.9041,
+  "lat": 52.36612554923192,
+  "lng": 4.943747831625297,
   "type": ["bedrijf"],
   "tags": ["Energie & duurzaamheid"],
   "beschrijving": "Ontwerp, realisatie en beheer van duurzame energiesystemen zoals zonnepanelen, batterijen en laadinfrastructuur.",
@@ -402,8 +455,8 @@
 },{
   "naam": "KNMI",
   "plaats": "De Bilt",
-  "lat": 52.1017,
-  "lng": 5.1781,
+  "lat": 52.10168246881883,
+  "lng": 5.1783854353194805,
   "type": ["onderzoek"],
   "tags": ["Aarde, klimaat & ruimte"],
   "beschrijving": "Nationaal instituut voor weer, klimaat en seismologie, met onderzoek naar atmosfeer, klimaatmodellen en meetnetwerken.",
@@ -411,17 +464,26 @@
 },{
   "naam": "Lumicks",
   "plaats": "Amsterdam",
-  "lat": 52.3676,
-  "lng": 4.9041,
+  "lat": 52.299870470028836,
+  "lng": 4.955694910203927,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen"],
   "beschrijving": "Ontwikkeling van optische instrumenten voor single-molecule en biophysisch onderzoek.",
   "website": "https://lumicks.com/"
 },{
-  "naam": "m+p international",
+  "naam": "M+P international",
   "plaats": "Aalsmeer",
-  "lat": 52.259,
-  "lng": 4.750,
+  "lat": 52.266690933564796,
+  "lng": 4.798714858235917,
+  "type": ["bedrijf"],
+  "tags": ["Aarde, klimaat & ruimte"],
+  "beschrijving": "Meet- en analysesystemen voor geluid en trillingen.",
+  "website": "https://www.mp.nl"
+},{
+  "naam": "M+P international",
+  "plaats": "Vught",
+  "lat": 51.70619217440775,
+  "lng": 5.489024481311731,
   "type": ["bedrijf"],
   "tags": ["Aarde, klimaat & ruimte"],
   "beschrijving": "Meet- en analysesystemen voor geluid en trillingen.",
@@ -429,8 +491,8 @@
 },{
   "naam": "MS Vision",
   "plaats": "Almere",
-  "lat": 52.3508,
-  "lng": 5.2647,
+  "lat": 52.35134820718819,
+  "lng": 5.184294833356545,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen"],
   "beschrijving": "Service, ontwikkeling en modificatie van massaspectrometers en analysetechnologie.",
@@ -438,8 +500,8 @@
 },{
   "naam": "Mach Technology - Amsterdam",
   "plaats": "Amsterdam",
-  "lat": 52.3676,
-  "lng": 4.9041,
+  "lat": 52.39084770255327,
+  "lng": 4.787167015773315,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen"],
   "beschrijving": "Ontwikkeling en productie van embedded elektronica en meetsystemen.",
@@ -447,17 +509,17 @@
 },{
   "naam": "NFI (Nederlands Forensisch Instituut)",
   "plaats": "Den Haag",
-  "lat": 52.0705,
-  "lng": 4.3007,
+  "lat": 52.04495296986283,
+  "lng": 4.3593973462161255,
   "type": ["onderzoek"],
   "tags": ["Veiligheid & defensie", "Gezondheid & medische technologie"],
   "beschrijving": "Forensisch onderzoek met geavanceerde analysetechnieken voor sporenonderzoek.",
   "website": "https://www.forensischinstituut.nl"
 },{
   "naam": "Peutz",
-  "plaats": "Nijmegen",
-  "lat": 51.842,
-  "lng": 5.852,
+  "plaats": "Mook",
+  "lat": 51.764497219938235,
+  "lng": 5.886179780217461,
   "type": ["bedrijf"],
   "tags": ["Energie & duurzaamheid"],
   "beschrijving": "Advies en onderzoek in bouwfysica, akoestiek en trillingen.",
@@ -465,26 +527,35 @@
 },{
   "naam": "Photosynthetic",
   "plaats": "Amsterdam",
-  "lat": 52.3676,
-  "lng": 4.9041,
+  "lat": 52.35622710422847,
+  "lng": 4.952501635334178,
   "type": ["bedrijf"],
   "tags": ["Energie & duurzaamheid"],
   "beschrijving": "Ontwikkeling van 3D-geprinte structuren en materialen.",
   "website": "https://www.photosynthetic.nl"
 },{
-  "naam": "Qblox",
+  "naam": "Qblox Quantum",
   "plaats": "Delft",
-  "lat": 52.0116,
-  "lng": 4.3571,
+  "lat": 51.99688089815196,
+  "lng": 4.384388981105231,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen"],
   "beschrijving": "Ontwikkeling van control hardware voor quantum computing systemen.",
   "website": "https://www.qblox.com"
 },{
+  "naam": "Keysight Technologies Netherlands Riscure B.V.",
+  "plaats": "Delft",
+  "lat": 51.99801047419118,
+  "lng": 4.386695680824288,
+  "type": ["bedrijf"],
+  "tags": ["High-tech systemen & materialen", "Data & digitalisering"],
+  "beschrijving": "R&D en testlaboratorium gespecialiseerd in hardware- en embedded security, waaronder side-channel analyse en fault injection voor chips en embedded systemen.",
+  "website": "https://www.riscure.com"
+}, {
   "naam": "Seaborough",
   "plaats": "Amsterdam",
-  "lat": 52.3676,
-  "lng": 4.9041,
+  "lat": 52.35717711715541,
+  "lng": 4.948580083225549,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen"],
   "beschrijving": "Ontwikkeling van optische coatings en fosformaterialen.",
@@ -492,8 +563,8 @@
 },{
   "naam": "Solarix",
   "plaats": "Weesp",
-  "lat": 52.3075,
-  "lng": 5.0417,
+  "lat": 52.315342422365994,
+  "lng": 5.021637906495358,
   "type": ["bedrijf"],
   "tags": ["Energie & duurzaamheid"],
   "beschrijving": "Ontwikkeling van esthetische, gekleurde zonnepanelen voor gebouwen.",
@@ -501,26 +572,26 @@
 },{
   "naam": "SolarTechno",
   "plaats": "Zaandam",
-  "lat": 52.4385,
-  "lng": 4.8260,
+  "lat": 52.41891583554849,
+  "lng": 4.847657321339047,
   "type": ["bedrijf"],
   "tags": ["Energie & duurzaamheid"],
   "beschrijving": "Ontwikkeling en toepassing van batterijsystemen en energieopslag.",
   "website": ""
 },{
   "naam": "Thorizon",
-  "plaats": "Haarlem",
-  "lat": 52.3874,
-  "lng": 4.6462,
+  "plaats": "Amsterdam",
+  "lat": 52.39498517387742,
+  "lng": 4.91829025819374,
   "type": ["bedrijf"],
   "tags": ["Energie & duurzaamheid", "High-tech systemen & materialen"],
   "beschrijving": "Ontwikkeling van modulaire gesmolten-zoutreactoren voor kernenergie.",
   "website": "https://thorizon.nl"
 },{
-  "naam": "Bambooder",
+  "naam": "Bambooder Biobased Fibers B.V.",
   "plaats": "Amsterdam",
-  "lat": 52.3676,
-  "lng": 4.9041,
+  "lat": 52.417038879808665,
+  "lng": 4.835737610110836,
   "type": ["bedrijf"],
   "tags": ["Energie & duurzaamheid"],
   "beschrijving": "Ontwikkeling en karakterisatie van duurzame composietmaterialen.",
@@ -528,8 +599,8 @@
 },{
   "naam": "Hogeschool Inholland",
   "plaats": "Haarlem",
-  "lat": 52.3874,
-  "lng": 4.6462,
+  "lat": 52.38921863162883,
+  "lng": 4.611929246972162,
   "type": ["onderzoek"],
   "tags": ["Gezondheid & medische technologie"],
   "beschrijving": "Onderwijs en toegepast onderzoek in medische technologie en beeldvorming.",
@@ -576,10 +647,10 @@
   ]
 },
 {
-  "naam": "cosine",
+  "naam": "cosine B.V.",
   "plaats": "Sassenheim",
-  "lat": 52.225,
-  "lng": 4.522,
+  "lat": 52.21096923609623,
+  "lng": 4.508683623689661,
   "type": ["bedrijf"],
   "tags": ["High-tech systemen & materialen", "Aarde, klimaat & ruimte"],
   "beschrijving": "Ontwikkelt optische meetsystemen en ruimte-instrumentatie voor high-tech en industriële toepassingen.",
@@ -589,8 +660,8 @@
 {
     "naam": "SRON",
     "plaats": "Leiden",
-    "lat": 52.1695,
-    "lng": 4.4580,
+    "lat": 52.169681460631544,
+    "lng": 4.458574683214745,
     "type": ["onderzoek"],
     "tags": ["Aarde, klimaat & ruimte"],
     "beschrijving": "Nederlands instituut voor ruimteonderzoek en ruimte-instrumentatie.",
@@ -599,8 +670,8 @@
   {
     "naam": "Leiden Cryogenics",
     "plaats": "Leiden",
-    "lat": 52.1557,
-    "lng": 4.4456,
+    "lat": 52.15578078921383,
+    "lng": 4.446974474779396,
     "type": ["bedrijf"],
     "tags": ["High-tech systemen & materialen" ],
     "beschrijving": "Ontwikkelt systemen voor extreme lage temperaturen.",
@@ -609,8 +680,8 @@
   {
     "naam": "Airbus Netherlands",
     "plaats": "Leiden",
-    "lat": 52.1650,
-    "lng": 4.4712,
+    "lat": 52.165097605258445,
+    "lng": 4.4723498538702176,
     "type": ["bedrijf"],
     "tags": ["Aarde, klimaat & ruimte", "High-tech systemen & materialen"],
     "beschrijving": "High-tech ruimtevaartbedrijf met focus op space systems en instrumentatie.",
@@ -619,8 +690,8 @@
   {
     "naam": "Nikon BioImaging Lab",
     "plaats": "Leiden",
-    "lat": 52.1686,
-    "lng": 4.4649,
+    "lat": 52.168692399948725,
+    "lng": 4.465726517615185,
     "type": ["bedrijf", "onderzoek"],
     "tags": ["High-tech systemen & materialen", "Gezondheid & medische technologie"],
     "beschrijving": "Geavanceerd imaging-lab voor microscopie en analyse.",
@@ -629,18 +700,36 @@
   {
     "naam": "Huygens Laboratory / Leiden University Physics",
     "plaats": "Leiden",
-    "lat": 52.1689,
-    "lng": 4.4584,
+    "lat": 52.16843515696689,
+    "lng": 4.457932239540584,
     "type": ["onderzoek"],
     "tags": ["High-tech systemen & materialen", "Energie & duurzaamheid", "Aarde, klimaat & ruimte"],
     "beschrijving": "Gebouw en onderzoeksomgeving van natuurkunde aan Universiteit Leiden.",
     "website": "https://www.universiteitleiden.nl/en/locations/huygens"
-  },
+  },{
+  "naam": "STERIS",
+  "plaats": "Ede",
+  "lat": 52.03104617569708,
+  "lng": 5.642666829751265,
+  "type": ["bedrijf"],
+  "tags": ["Gezondheid & medische technologie", "High-tech systemen & materialen"],
+  "beschrijving": "Ontwikkelt en levert systemen en diensten voor sterilisatie en infectiepreventie, o.a. met toepassingen van straling, chemie en procescontrole.",
+  "website": "https://www.steris.com"
+},{
+  "naam": "Kiwatt",
+  "plaats": "Ede",
+  "lat": 52.032191108399466,
+  "lng": 5.599309663919181,
+  "type": ["bedrijf"],
+  "tags": ["Energie & duurzaamheid", "High-tech systemen & materialen"],
+  "beschrijving": "Ontwikkelt en implementeert batterijopslagsystemen (BESS) voor bedrijven en energie-infrastructuur, gericht op netcongestie, peak shaving en energiemanagement.",
+  "website": "https://www.kiwatt.nl"
+},
   {
     "naam": "ESA ESTEC",
     "plaats": "Noordwijk",
-    "lat": 52.2390,
-    "lng": 4.4330,
+    "lat": 52.219409147268316,
+    "lng": 4.420662756312998,
     "type": ["onderzoek"],
     "tags": ["Aarde, klimaat & ruimte"],
     "beschrijving": "Europees centrum voor ruimtevaarttechnologie en testen.",
@@ -650,8 +739,8 @@
   {
     "naam": "Endress+Hauser Nederland",
     "plaats": "Naarden",
-    "lat": 52.295,
-    "lng": 5.162,
+    "lat": 52.32515972170999,
+    "lng": 5.292810240529,
     "type": ["bedrijf"],
     "tags": ["Data & digitalisering", "High-tech systemen & materialen"],
     "beschrijving": "Meet- en regelapparatuur voor de procesindustrie.",
@@ -660,8 +749,8 @@
   {
     "naam": "Royal HaskoningDHV",
     "plaats": "Amersfoort",
-    "lat": 52.155,
-    "lng": 5.387,
+    "lat": 52.13354734180319,
+    "lng": 5.368238196703505,
     "type": ["bedrijf"],
     "tags": ["Aarde, klimaat & ruimte"],
     "beschrijving": "Ingenieursbureau voor infrastructuur en technologie.",
@@ -670,13 +759,22 @@
   {
     "naam": "Arcadis",
     "plaats": "Amersfoort",
-    "lat": 52.153,
-    "lng": 5.389,
+    "lat": 52.15462401968002,
+    "lng": 5.376756590442226,
     "type": ["bedrijf"],
     "tags": ["Aarde, klimaat & ruimte", "Data & digitalisering"],
     "beschrijving": "Internationaal ingenieursbureau.",
     "website": "https://www.arcadis.com"
-  },
+  },{
+  "naam": "Wigner Research Centre for Physics",
+  "plaats": "Budapest",
+  "lat": 47.4917,
+  "lng": 19.0386,
+  "type": ["onderzoek"],
+  "tags": ["High-tech systemen & materialen", "Data & digitalisering", "Aarde, klimaat & ruimte"],
+  "beschrijving": "Internationaal onderzoeksinstituut gericht op theoretische en experimentele fysica, waaronder quantumfysica, deeltjesfysica en materiaalfysica.",
+  "website": "https://wigner.hu"
+},
   {
     "naam": "Sioux Technologies",
     "plaats": "Amersfoort",
