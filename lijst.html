@@ -66,25 +66,39 @@
       return [value];
     }
 
-    function maakBedrijfHtml(bedrijf) {
-      const naam = escapeHtml(bedrijf.naam || 'Onbekende organisatie');
-      const plaats = escapeHtml(bedrijf.plaats || 'Onbekende locatie');
-      const beschrijving = escapeHtml(bedrijf.beschrijving || '');
-      const website = bedrijf.website
-        ? `<a href="${escapeHtml(bedrijf.website)}" target="_blank" rel="noopener noreferrer">Website</a>`
-        : '';
+function maakBedrijfHtml(bedrijf) {
+  const naam = escapeHtml(bedrijf.naam || 'Onbekende organisatie');
+  const plaats = escapeHtml(bedrijf.plaats || 'Onbekende locatie');
+  const beschrijving = escapeHtml(bedrijf.beschrijving || '');
 
-      return `
-        <article class="company-list-item">
-          <div class="company-list-item-header">
-            <h3>${naam}</h3>
-            <div class="company-list-place">${plaats}</div>
-          </div>
-          <p>${beschrijving}</p>
-          ${website ? `<div class="company-list-links">${website}</div>` : ''}
-        </article>
-      `;
-    }
+  let linksHtml = '';
+
+  if (Array.isArray(bedrijf.websites) && bedrijf.websites.length > 0) {
+    linksHtml = bedrijf.websites
+      .map((site) => {
+        const url = escapeHtml(site.url || '');
+        const label = escapeHtml(site.naam || 'Website');
+        if (!url) return '';
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+      })
+      .filter(Boolean)
+      .join('');
+  } else if (bedrijf.website) {
+    const url = escapeHtml(bedrijf.website);
+    linksHtml = `<a href="${url}" target="_blank" rel="noopener noreferrer">Website</a>`;
+  }
+
+  return `
+    <article class="company-list-item">
+      <div class="company-list-item-header">
+        <h3>${naam}</h3>
+        <div class="company-list-place">${plaats}</div>
+      </div>
+      <p>${beschrijving}</p>
+      ${linksHtml ? `<div class="company-list-links">${linksHtml}</div>` : ''}
+    </article>
+  `;
+}
 
     function renderDomeinen(bedrijven) {
       const container = document.getElementById('domeinLijst');

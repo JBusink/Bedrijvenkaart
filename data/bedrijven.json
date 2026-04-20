@@ -814,5 +814,89 @@
     "tags": ["Aarde, klimaat & ruimte"],
     "beschrijving": "Adviesbureau voor milieu en fysische processen.",
     "website": "https://www.tauw.nl"
-  }
+  },{
+  "naam": "Amazec Photonics",
+  "plaats": "Oudkarspel",
+  "lat": 52.7180,
+  "lng": 4.8060,
+  "type": ["bedrijf"],
+  "tags": ["High-tech systemen & materialen",
+    "Gezondheid & medische technologie"
+  ],
+  "beschrijving": "Deep-tech startup gespecialiseerd in fotonische sensoren (o.a. fiber Bragg gratings en integrated photonics) voor ultra-nauwkeurige temperatuurmetingen in medische toepassingen, zoals cardiovasculaire diagnostiek.",
+  "websites": [
+    {
+      "naam": "Website",
+      "url": "https://amazec-photonics.nl/"
+    }
+  ]
+},{
+  "naam": "Rapid Photonics",
+  "plaats": "Amsterdam",
+  "lat": 52.3560,
+  "lng": 4.9550,
+  "type": ["bedrijf"],
+  "tags": [
+    "High-tech systemen & materialen",
+    "Data & digitalisering"
+  ],
+  "beschrijving": "VU spin-off gespecialiseerd in snelle ontwikkeling en fabricage van photonic integrated circuits (PICs) op basis van geavanceerde materialen zoals lithium niobate. Richt zich op toepassingen in telecom, quantumtechnologie en high-speed datacommunicatie.",
+  "websites": [
+    {
+      "naam": "Website",
+      "url": "https://rapidphotonics.com/"
+    }
+  ]
+},{
+  "naam": "Nostics",
+  "plaats": "Delft",
+  "lat": 52.0116,
+  "lng": 4.3571,
+  "type": ["bedrijf"],
+  "tags": [
+    "Gezondheid & medische technologie",
+    "Data & digitalisering"
+  ],
+  "beschrijving": "Medtech startup uit Delft die snelle diagnostische tests ontwikkelt op basis van microfluidics en biosensoren. Richt zich op point-of-care detectie van infectieziekten en antibioticaresistentie.",
+  "websites": [
+    {
+      "naam": "Website",
+      "url": "https://nostics.com/"
+    }
+  ]
+},{
+  "naam": "Ommatidia LiDAR",
+  "plaats": "Rijswijk",
+  "lat": 52.0444,
+  "lng": 4.3250,
+  "type": ["bedrijf"],
+  "tags": [
+    "High-tech systemen & materialen",
+    "Data & digitalisering"
+  ],
+  "beschrijving": "Deep-tech bedrijf dat een biomimetische LiDAR-architectuur ontwikkelt voor 3D optische metrologie en afstandsmeting. Combineert brede continue belichting met single-photon detectie voor hoge resolutie en groot bereik in 3D imaging en sensing toepassingen.",
+  "websites": [
+    {
+      "naam": "Website",
+      "url": "https://ommatidia-lidar.com/"
+    }
+  ]
+},{
+  "naam": "Etteplan",
+  "plaats": "Eindhoven",
+  "lat": 51.4416,
+  "lng": 5.4697,
+  "type": ["bedrijf"],
+  "tags": [
+    "High-tech systemen & materialen",
+    "Data & digitalisering"
+  ],
+  "beschrijving": "Internationaal engineering- en consultancybedrijf dat technische diensten levert op het gebied van productontwikkeling, embedded software, industriële automatisering en digitalisering. Werkt projectmatig voor high-tech industrie en OEM’s.",
+  "websites": [
+    {
+      "naam": "Website",
+      "url": "https://www.etteplan.com/"
+    }
+  ]
+}
 ]
