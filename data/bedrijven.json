@@ -777,9 +777,9 @@
 },
   {
     "naam": "Sioux Technologies",
-    "plaats": "Amersfoort",
-    "lat": 52.148,
-    "lng": 5.390,
+    "plaats": "Eindhoven",
+    "lat": 51.487457713316104,
+    "lng": 5.489439115254946,
     "type": ["bedrijf"],
     "tags": ["High-tech systemen & materialen", "Data & digitalisering"],
     "beschrijving": "High-tech systeemontwikkeling.",
@@ -788,8 +788,8 @@
   {
     "naam": "Sensorfact",
     "plaats": "Utrecht",
-    "lat": 52.09,
-    "lng": 5.12,
+    "lat": 52.0935024614752,
+    "lng": 5.12613831789932,
     "type": ["bedrijf"],
     "tags": ["Energie & duurzaamheid", "Data & digitalisering"],
     "beschrijving": "IoT sensoren voor energie-optimalisatie in industrie.",
@@ -798,8 +798,8 @@
   {
     "naam": "Brunelco Electronic Engineering",
     "plaats": "Utrecht",
-    "lat": 52.11,
-    "lng": 5.07,
+    "lat": 52.11184725433228,
+    "lng": 5.045581169515298,
     "type": ["bedrijf"],
     "tags": ["High-tech systemen & materialen"],
     "beschrijving": "Ontwikkelt elektronische systemen en meetopstellingen.",
@@ -808,21 +808,11 @@
   {
     "naam": "Tauw",
     "plaats": "Utrecht",
-    "lat": 52.09,
-    "lng": 5.11,
+    "lat": 52.065091212151664,
+    "lng": 5.1052962255359615,
     "type": ["bedrijf"],
     "tags": ["Aarde, klimaat & ruimte"],
     "beschrijving": "Adviesbureau voor milieu en fysische processen.",
     "website": "https://www.tauw.nl"
-  },
-  {
-  "naam": "Black Semiconductor Netherlands",
-  "plaats": "Zoetermeer",
-  "lat": 52.060,
-  "lng": 4.493,
-  "type": ["bedrijf"],
-  "tags": ["High-tech systemen & materialen"],
-  "beschrijving": "Nederlandse tak van Black Semiconductor, gespecialiseerd in graphene en chip-fotonica.",
-  "website": "https://www.blacksemi.com"
   }
 ]
