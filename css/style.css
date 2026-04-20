@@ -2,6 +2,22 @@
   box-sizing: border-box;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img, iframe, video {
+  max-width: 100%;
+  height: auto;
+}
+
 :root {
   --bg-page: #f6f4fb;
   --bg-panel: #ffffff;
@@ -355,7 +371,7 @@ body {
 
 /* Responsive */
 
-@media (max-width: 1000px) {
+@media (max-width: 720px) {
   .content-layout {
     grid-template-columns: 1fr;
     grid-template-rows: 52vh auto;
