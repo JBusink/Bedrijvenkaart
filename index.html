@@ -19,10 +19,8 @@
   <link
     rel="stylesheet"
     href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
-  />
-  <link rel="stylesheet" href="css/style.css">  
-</head>
-<body>
+  /> 
+  <link rel="stylesheet" href="css/style.css"> </head> <body>
 
 <header class="topbar">
   <div class="topbar-inner">
@@ -36,7 +34,7 @@
 
     <nav class="page-tabs">
       <a href="index.html" class="tab-button active">🗺️ Kaart</a>
-      <a href="lijst.html" class="tab-button"> 📋 Lijst</a>
+      <a href="lijst.html" class="tab-button">📋 Lijst</a>
       <a href="stage.html" class="tab-button">ℹ️ Stage-informatie</a>
     </nav>
 
@@ -56,19 +54,20 @@
         </select>
       </div>
 
-<div class="filter-group filter-group-tags">
-  <label>Keywords</label>
+      <div class="filter-group filter-group-tags">
+        <label>Keywords</label>
 
-  <div class="tag-filter-row">
-    <div class="filter-actions">
-      <button id="resetFilters" type="button">Reset filters</button>
-    </div>
+        <div class="tag-filter-row">
+          <div class="filter-actions">
+            <button id="resetFilters" type="button">Reset filters</button>
+          </div>
 
-    <div id="tagFilter" class="tag-filter-list">
-      <!-- Wordt dynamisch gevuld -->
+          <div id="tagFilter" class="tag-filter-list">
+            <!-- Wordt dynamisch gevuld -->
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
   </section>
 
   <main class="content-layout">
@@ -83,7 +82,18 @@
       </div>
     </aside>
   </main>
+
 </div>
+
+<footer>
+  <div class="footer-section">
+    <h3>Feedback</h3>
+    <p>
+      Mis je een bedrijf of klopt er iets niet?
+      Laat het weten via <a href="mailto:j.busink@hva.nl">Neem contact op</a>.
+    </p>
+  </div>
+</footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
@@ -91,14 +101,3 @@
 
 </body>
 </html>
-
-    <div class="footer-section">
-      <h3>Feedback</h3>
-      <p>
-        Mis je een bedrijf of klopt er iets niet?
-        Laat het weten via <a href="mailto:j.busink@hva.nl">Neem contact op</a>.
-      </p>
-    </div>
-
-  </div>
-</footer>
