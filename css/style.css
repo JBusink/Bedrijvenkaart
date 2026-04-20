@@ -200,7 +200,8 @@ a {
   display: grid;
   gap: 18px;
   border-radius: var(--radius-lg);
-  padding: 20px;
+  background: var(--bg-panel);
+  padding: 20px;  
 }
 
 .filter-group {
@@ -231,7 +232,7 @@ a {
 .filter-group select:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(53, 31, 183, 0.15);
+  box-shadow: 0 0 0 3px rgba(81, 99, 216, 0.18);
 }
 
 .tag-filter-row {
@@ -252,7 +253,7 @@ a {
   padding: 10px 14px;
   border: 1px solid transparent;
   border-radius: 10px;
-  background: var(--accent);
+  background: var(--accent-hover);
   color: #ffffff;
   font-size: 0.95rem;
   font-weight: 600;
@@ -570,31 +571,34 @@ footer,
 /* =========================
    13. MARKER CLUSTERS
    ========================= */
+/* =========================
+   13. MARKER CLUSTERS
+   ========================= */
 
 .marker-cluster-small {
-  background-color: rgba(53, 31, 183, 0.2);
+  background-color: rgba(81, 99, 216, 0.20);
 }
 
 .marker-cluster-small div {
-  background-color: #6a54da;
+  background-color: #5163d8;
   color: #ffffff;
 }
 
 .marker-cluster-medium {
-  background-color: rgba(53, 31, 183, 0.28);
+  background-color: rgba(81, 99, 216, 0.28);
 }
 
 .marker-cluster-medium div {
-  background-color: #351fb7;
+  background-color: #6b7bf0;
   color: #ffffff;
 }
 
 .marker-cluster-large {
-  background-color: rgba(30, 22, 73, 0.3);
+  background-color: rgba(60, 70, 140, 0.35);
 }
 
 .marker-cluster-large div {
-  background-color: #1e1649;
+  background-color: #37418d;
   color: #ffffff;
 }
 
@@ -628,23 +632,27 @@ body.dark-mode .filter-group label {
 }
 
 body.dark-mode .filter-group select {
-  background: #160d47;
+  background: #1a1f2d;
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.18);
 }
 
 body.dark-mode .tag-filter-option {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.16);
+  background: #1a1f2d;
+  border-color: rgba(140, 156, 220, 0.14);
   color: #ffffff;
 }
 
+body.dark-mode .hero-filters-inner {
+  background: #141822;
+}
+
 body.dark-mode .tag-filter-option:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: #20283a;
 }
 
 body.dark-mode .tag-filter-option input {
-  accent-color: #39106f;
+  accent-color: #8f8c94;
 }
 
 body.dark-mode .accordion-item summary {
@@ -692,27 +700,30 @@ body.dark-mode #resetFilters:hover {
 }
 
 body.dark-mode .marker-cluster-small {
-  background-color: rgba(34, 17, 128, 0.28);
+  background-color: rgba(81, 99, 216, 0.20);
 }
 
 body.dark-mode .marker-cluster-small div {
-  background-color: #9785fc;
+  background-color: #5163d8;
+  color: #ffffff;
 }
 
 body.dark-mode .marker-cluster-medium {
-  background-color: rgba(50, 16, 238, 0.318);
+  background-color: rgba(81, 99, 216, 0.28);
 }
 
 body.dark-mode .marker-cluster-medium div {
-  background-color: #381f91;
+  background-color: #6073e7;
+  color: #ffffff;
 }
 
 body.dark-mode .marker-cluster-large {
-  background-color: rgba(0, 0, 0, 0.28);
+  background-color: rgba(43, 55, 120, 0.34);
 }
 
 body.dark-mode .marker-cluster-large div {
-  background-color: #000000;
+  background-color: #37418d;
+  color: #ffffff;
 }
 
 body.dark-mode #map {
@@ -722,6 +733,10 @@ body.dark-mode #map {
 /* =========================
    15. DARK MODE - LEAFLET
    ========================= */
+
+body.dark-mode #map {
+  filter: brightness(1.05) contrast(1.02);
+}
 
 body.dark-mode .leaflet-bar {
   border: 1px solid var(--border);
