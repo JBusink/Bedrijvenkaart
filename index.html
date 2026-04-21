@@ -3,101 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bedrijvenkaart Technische Natuurkunde</title>
-
+  <title>Stage-informatie Technische Natuurkunde</title>
   <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  />
+  <header class="topbar">
+    <div class="topbar-inner">
 
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"
-  /> 
-  <link rel="stylesheet" href="css/style.css"> </head> <body>
+      <button id="darkToggle" class="dark-toggle" type="button" aria-label="Toggle dark mode">
+        <img src="images/icons/darkmode.svg" alt="Toggle dark mode" width="30" height="30">
+      </button>
 
-<header class="topbar">
-  <div class="topbar-inner">
-
-    <button id="darkToggle" class="dark-toggle">🌙</button>
-
-    <div class="topbar-text">
-      <h1>Bedrijvenkaart Technische Natuurkunde</h1>
-      <p>Zoek stagebedrijven en onderzoeksinstituten</p>
-    </div>
-
-    <nav class="page-tabs">
-      <a href="index.html" class="tab-button active">🗺️ Kaart</a>
-      <a href="lijst.html" class="tab-button">📋 Lijst</a>
-      <a href="stage.html" class="tab-button">ℹ️ Stage-informatie</a>
-    </nav>
-
-  </div>
-</header>
-
-<div id="kaartView">
-
-  <section class="hero-filters">
-    <div class="hero-filters-inner">
-      <div class="filter-group">
-        <label for="typeFilter">Type organisatie</label>
-        <select id="typeFilter">
-          <option value="alles">Alles</option>
-          <option value="bedrijf">Bedrijf</option>
-          <option value="onderzoek">Onderzoeksinstituut</option>
-        </select>
+      <div class="topbar-text">
+        <h1>Stage-informatie Technische Natuurkunde</h1>
+        <p>Algemene informatie over het zoeken en uitvoeren van een stage</p>
       </div>
 
-      <div class="filter-group filter-group-tags">
-        <label>Domein</label>
+      <nav class="page-tabs">
+        <a href="index.html" class="tab-button active">
+          <img src="images/icons/information.svg" class="tab-icon" alt="" width="30" height="30">
+          <span>Info</span>
+        </a>
+        <a href="lijst.html" class="tab-button">
+          <img src="images/icons/list.svg" class="tab-icon" alt="" width="30" height="30">
+          <span>Lijst</span>
+        </a>
+        <a href="map.html" class="tab-button">
+          <img src="images/icons/map.svg" class="tab-icon" alt="" width="30" height="30">
+          <span>Kaart</span>
+        </a>
+      </nav>
 
-        <div class="tag-filter-row">
-          <div class="filter-actions">
-            <button id="resetFilters" type="button">Reset filters</button>
-          </div>
+    </div>
+  </header>
 
-          <div id="tagFilter" class="tag-filter-list">
-            <!-- Wordt dynamisch gevuld -->
-          </div>
+  <main class="info-page">
+
+    <section class="info-card">
+      <h2>Stage-informatie</h2>
+      <p>
+        Op deze pagina vind je informatie over het vinden van een stage.
+      </p>
+      <p>
+        Hieronder vind je een aantal punten waarmee je je kunt oriënteren op het vinden van een stage.
+      </p>
+    </section>
+
+    <section class="accordion">
+      <details class="accordion-item">
+        <summary>Waar moet een stageplek aan voldoen?</summary>
+        <div class="accordion-content">
+          <ul>
+            <li>Duurt 20 weken fulltime, startdatum september of februari. Let op! Afwijken van deze data mag, maar kan leiden tot studievertraging. </li>
+            <li>Technische inhoud zoals R&amp;D, metingen of modellering</li>
+            <li>Begeleiding vanuit het bedrijf of instituut</li>
+            <li>Relevantie voor Technische Natuurkunde</li>
+            <li>Mogelijkheid om inhoudelijk en professioneel te groeien</li>
+          </ul>
         </div>
-      </div>
-    </div>
-  </section>
+      </details>
+      
+      <details class="accordion-item">
+        <summary>Wat is een stage?</summary>
+        <div class="accordion-content">
+          <p>
+            Een stage richt zich op onderzoek, ontwikkeling, metingen,
+            modellering of systeemintegratie binnen een professionele omgeving in het Technische Natuurkunde-domein.
+          </p>
+        </div>
+      </details>
 
-  <main class="content-layout">
-    <div class="map-wrapper">
-      <div id="map"></div>
-    </div>
+      <details class="accordion-item">
+        <summary>Hoe vind je een stage?</summary>
+        <div class="accordion-content">
+          <ul>
+            <li>Gebruik de info-, kaart- en lijstpagina als startpunt</li>
+            <li>Bekijk bedrijven en onderzoeksinstituten</li>
+            <li>Neem contact op via e-mail of website</li>
+            <li>Bespreek ideeën met je SLB-docent</li>
+          </ul>
+        </div>
+      </details>
 
-    <aside class="sidepanel" id="sidepanel">
-      <div class="sidepanel-placeholder">
-        <h2>Bedrijfsinformatie</h2>
-        <p>Klik op een marker om uitgebreide informatie te bekijken.</p>
-      </div>
-    </aside>
+      <details class="accordion-item">
+        <summary>Tips</summary>
+        <div class="accordion-content">
+          <ul>
+            <li>Begin op tijd, bij voorkeur minimaal 2–3 maanden vooraf</li>
+            <li>Ben je laat met het regelen van een stage? Geef dit aan bij de stagecoördinator</li>
+            <li>Wees proactief in contact opnemen</li>
+            <li>Denk na over je interesses, zoals optica, data of materialen</li>
+            <li>Gebruik je netwerk van docenten, medestudenten en eerdere stageplekken</li>
+            <li>Mocht je vastlopen in het zoeken naar een stage, neem dan contact op met je SLB-docent</li>
+          </ul>
+        </div>
+      </details>
+
+    </section>
+
   </main>
 
-</div>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Feedback</h3>
+        <p>
+          Mis je een bedrijf of klopt er iets niet?
+          Laat het weten via <a href="mailto:j.busink@hva.nl">Neem contact op</a>.
+        </p>
+      </div>
+    </div>
+  </footer>
 
-<footer>
-  <div class="footer-section">
-    <h3>Feedback</h3>
-    <p>
-      Mis je een bedrijf of klopt er iets niet?
-      Laat het weten via <a href="mailto:j.busink@hva.nl">Neem contact op</a>.
-    </p>
-  </div>
-</footer>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
-<script src="js/main.js"></script>
+  <script src="js/theme.js"></script>
 
 </body>
 </html>

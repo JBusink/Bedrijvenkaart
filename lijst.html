@@ -10,20 +10,28 @@
 
   <header class="topbar">
     <div class="topbar-inner">
-
-      <button id="darkToggle" class="dark-toggle">☾</button>
-
+    <button id="darkToggle" class="dark-toggle" type="button" aria-label="Toggle dark mode">
+      <img src="images\icons\darkmode.svg" alt="Toggle dark mode" width="30" height="30">
+    </button>
       <div class="topbar-text">
         <h1>Stagebedrijven per domein</h1>
         <p>Overzicht van bedrijven en instituten per toepassingsgebied</p>
       </div>
 
-      <nav class="page-tabs">
-        <a href="index.html" class="tab-button">🗺️ Kaart</a>
-        <a href="lijst.html" class="tab-button active">📋 Lijst</a>
-        <a href="stage.html" class="tab-button">ℹ️ Stage-informatie</a>
-      </nav>
-
+    <nav class="page-tabs">
+      <a href="index.html" class="tab-button">
+        <img src="images/icons/information.svg" class="tab-icon" alt="" width="30" height="30">
+        <span>Info</span>
+      </a>
+      <a href="map.html" class="tab-button">
+        <img src="images/icons/map.svg" class="tab-icon" alt="" width="30" height="30">
+        <span>Kaart</span>
+      </a>
+      <a href="lijst.html" class="tab-button active">
+        <img src="images/icons/list.svg" class="tab-icon" alt="" width="30" height="30">
+        <span>Lijst</span>
+      </a>    
+    </nav>
     </div>
   </header>
 
@@ -36,162 +44,48 @@
       </p>
     </section>
 
+    <section class="info-card search-card">
+      <div class="search-header">
+        <h2>Zoeken</h2>
+        <p>Zoek op naam, plaats, provincie, beschrijving, type of domein.</p>
+      </div>
+
+      <div class="search-row">
+        <input
+          type="text"
+          id="zoekInput"
+          class="search-input"
+          placeholder="Bijvoorbeeld: Amsterdam, fotonica, energie..."
+          autocomplete="off"
+        >
+
+        <select id="provincieFilter" class="search-select">
+          <option value="">Alle provincies</option>
+        </select>
+
+        <button id="resetZoekopdracht" class="search-reset-button" type="button">
+          Wissen
+        </button>
+      </div>
+    </section>
+
+    <section id="zoekStatus" class="search-status" aria-live="polite"></section>
     <section id="domeinLijst" class="accordion"></section>
   </main>
 
-  <script>
-    const darkToggle = document.getElementById('darkToggle');
-
-    const domeinen = [
-      "High-tech systemen & materialen",
-      "Data & digitalisering",
-      "Energie & duurzaamheid",
-      "Gezondheid & medische technologie",
-      "Aarde, klimaat & ruimte",
-      "Veiligheid & defensie"
-    ];
-
-    function escapeHtml(value) {
-      return String(value)
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '&lt;')
-        .replaceAll('>', '&gt;')
-        .replaceAll('"', '&quot;')
-        .replaceAll("'", '&#039;');
-    }
-
-    function asArray(value) {
-      if (Array.isArray(value)) return value;
-      if (value === null || value === undefined || value === '') return [];
-      return [value];
-    }
-
-function maakBedrijfHtml(bedrijf) {
-  const naam = escapeHtml(bedrijf.naam || 'Onbekende organisatie');
-  const plaats = escapeHtml(bedrijf.plaats || 'Onbekende locatie');
-  const beschrijving = escapeHtml(bedrijf.beschrijving || '');
-
-  let linksHtml = '';
-
-  if (Array.isArray(bedrijf.websites) && bedrijf.websites.length > 0) {
-    linksHtml = bedrijf.websites
-      .map((site) => {
-        const url = escapeHtml(site.url || '');
-        const label = escapeHtml(site.naam || 'Website');
-        if (!url) return '';
-        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
-      })
-      .filter(Boolean)
-      .join('');
-  } else if (bedrijf.website) {
-    const url = escapeHtml(bedrijf.website);
-    linksHtml = `<a href="${url}" target="_blank" rel="noopener noreferrer">Website</a>`;
-  }
-
-  return `
-    <article class="company-list-item">
-      <div class="company-list-item-header">
-        <h3>${naam}</h3>
-        <div class="company-list-place">${plaats}</div>
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Feedback</h3>
+        <p>
+          Mis je een bedrijf of klopt er iets niet?
+          Laat het weten via <a href="mailto:j.busink@hva.nl">e-mail</a>.
+        </p>
       </div>
-      <p>${beschrijving}</p>
-      ${linksHtml ? `<div class="company-list-links">${linksHtml}</div>` : ''}
-    </article>
-  `;
-}
-
-    function renderDomeinen(bedrijven) {
-      const container = document.getElementById('domeinLijst');
-      if (!container) return;
-
-      const html = domeinen.map((domein, index) => {
-        const bedrijvenInDomein = bedrijven.filter((bedrijf) =>
-          asArray(bedrijf.tags).includes(domein)
-        );
-
-        const itemsHtml = bedrijvenInDomein.length > 0
-          ? bedrijvenInDomein
-              .sort((a, b) => (a.naam || '').localeCompare(b.naam || '', 'nl'))
-              .map(maakBedrijfHtml)
-              .join('')
-          : `<p>Voor dit domein zijn nog geen organisaties toegevoegd.</p>`;
-
-        return `
-          <details class="accordion-item" ${index === 6 ? 'open' : ''}>
-            <summary>${escapeHtml(domein)} (${bedrijvenInDomein.length})</summary>
-            <div class="accordion-content">
-              <div class="company-list">
-                ${itemsHtml}
-              </div>
-            </div>
-          </details>
-        `;
-      }).join('');
-
-      container.innerHTML = html;
-    }
-
-    fetch('data/bedrijven.json')
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error(`Kon bedrijven.json niet laden: ${res.status}`);
-        }
-        return res.json();
-      })
-      .then((bedrijven) => {
-        renderDomeinen(bedrijven);
-      })
-      .catch((err) => {
-        console.error(err);
-        const container = document.getElementById('domeinLijst');
-        if (container) {
-          container.innerHTML = `
-            <section class="info-card">
-              <p>Fout bij laden van bedrijven.</p>
-            </section>
-          `;
-        }
-      });
-
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark-mode');
-      document.body.classList.remove('light-mode');
-      if (darkToggle) darkToggle.textContent = '☀️';
-    } else if (localStorage.getItem('theme') === 'light') {
-      document.body.classList.add('light-mode');
-      document.body.classList.remove('dark-mode');
-      if (darkToggle) darkToggle.textContent = '🌙';
-    }
-
-    if (darkToggle) {
-      darkToggle.addEventListener('click', () => {
-        const isDark = document.body.classList.contains('dark-mode');
-
-        if (isDark) {
-          document.body.classList.remove('dark-mode');
-          document.body.classList.add('light-mode');
-          localStorage.setItem('theme', 'light');
-          darkToggle.textContent = '🌙';
-        } else {
-          document.body.classList.remove('light-mode');
-          document.body.classList.add('dark-mode');
-          localStorage.setItem('theme', 'dark');
-          darkToggle.textContent = '☀️';
-        }
-      });
-    }
-  </script>
+    </div>
+  </footer>
+  <script src="js/lijst.js"></script>
+  <script src="js/theme.js"></script>
 
 </body>
-</html>
-
-    <div class="footer-section">
-      <h3>Feedback</h3>
-      <p>
-        Mis je een bedrijf of klopt er iets niet?
-        Laat het weten via <a href="mailto:j.busink@hva.nl">Neem contact op</a>.
-      </p>
-    </div>
-
-  </div>
-</footer>
+</html> 

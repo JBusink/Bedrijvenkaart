@@ -8,6 +8,7 @@ const tagFilter = document.getElementById('tagFilter');
 const resetButton = document.getElementById('resetFilters');
 const sidepanel = document.getElementById('sidepanel');
 const darkToggle = document.getElementById('darkToggle');
+const provincieFilter = document.getElementById('provincieFilter');
 
 const map = L.map('map').setView([52.2, 5.3], 7);
 
@@ -39,7 +40,9 @@ lightTiles.addTo(map);
    ========================= */
 
 let alleBedrijven = [];
-const markerCluster = L.markerClusterGroup();
+const markerCluster = L.markerClusterGroup({
+  maxClusterRadius: 50
+});
 map.addLayer(markerCluster);
 
 /* =========================
@@ -222,18 +225,48 @@ function toonBedrijfInPanel(bedrijf) {
 
 function voldoetAanFilter(bedrijf) {
   const gekozenType = typeFilter ? typeFilter.value : 'alles';
+  const gekozenProvincie = provincieFilter ? provincieFilter.value : 'alles';
   const actieveTags = geselecteerdeTags();
 
   const types = asArray(bedrijf.type);
   const tags = asArray(bedrijf.tags);
 
   const typeOk = gekozenType === 'alles' || types.includes(gekozenType);
+  const provincieOk =
+    gekozenProvincie === 'alles' || bedrijf.provincie === gekozenProvincie;
 
   const tagsOk =
     actieveTags.length === 0 ||
     actieveTags.some((tag) => tags.includes(tag));
 
-  return typeOk && tagsOk;
+  return typeOk && provincieOk && tagsOk;
+}
+
+function vulProvincieFilterOpties(bedrijven) {
+  if (!provincieFilter) {
+    return;
+  }
+
+  const huidigeWaarde = provincieFilter.value || 'alles';
+
+  const uniekeProvincies = [...new Set(
+    bedrijven.map((bedrijf) => bedrijf.provincie).filter(Boolean)
+  )].sort((a, b) => a.localeCompare(b, 'nl'));
+
+  provincieFilter.innerHTML = '<option value="alles">Alle provincies</option>';
+
+  uniekeProvincies.forEach((provincie) => {
+    const option = document.createElement('option');
+    option.value = provincie;
+    option.textContent = provincie;
+    provincieFilter.appendChild(option);
+  });
+
+  if ([...provincieFilter.options].some((opt) => opt.value === huidigeWaarde)) {
+    provincieFilter.value = huidigeWaarde;
+  } else {
+    provincieFilter.value = 'alles';
+  }
 }
 
 function kleurVoorCategorie() {
@@ -388,13 +421,17 @@ function geselecteerdeTags() {
 
 function updateKaart() {
   const gefilterd = alleBedrijven.filter(voldoetAanFilter);
-  tekenMarkers(gefilterd);
 
-  if (gefilterd.length > 0) {
-    toonStandaardPanel();
-  } else {
-    toonGeenResultatenPanel();
-  }
+  requestAnimationFrame(() => {
+    map.invalidateSize();
+    tekenMarkers(gefilterd);
+
+    if (gefilterd.length > 0) {
+      toonStandaardPanel();
+    } else {
+      toonGeenResultatenPanel();
+    }
+  });
 }
 
 /* =========================
@@ -419,11 +456,6 @@ function updateMapTheme() {
       lightTiles.addTo(map);
     }
   }
-
-  if (alleBedrijven.length > 0) {
-    const gefilterd = alleBedrijven.filter(voldoetAanFilter);
-    tekenMarkers(gefilterd);
-  }
 }
 
 /* =========================
@@ -442,9 +474,16 @@ fetch('data/bedrijven.json')
 
     vulTypeFilterOpties(alleBedrijven);
     vulTagFilterOpties(alleBedrijven);
+    vulProvincieFilterOpties(alleBedrijven);
 
-    updateKaart();
     updateMapTheme();
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        map.invalidateSize();
+        updateKaart();
+      });
+    });
   })
   .catch((err) => {
     console.error('Fout bij laden van bedrijven:', err);
@@ -462,11 +501,17 @@ if (typeFilter) {
 if (tagFilter) {
   tagFilter.addEventListener('change', updateKaart);
 }
-
+if (provincieFilter) {
+  provincieFilter.addEventListener('change', updateKaart);
+}
 if (resetButton) {
   resetButton.addEventListener('click', () => {
     if (typeFilter) {
       typeFilter.value = 'alles';
+    }
+
+    if (provincieFilter) {
+      provincieFilter.value = 'alles';
     }
 
     if (tagFilter) {
@@ -497,38 +542,36 @@ if (showInfoBtn) {
    DARK MODE TOGGLE
    ========================= */
 
-if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark-mode');
-  document.body.classList.remove('light-mode');
-  if (darkToggle) {
-    darkToggle.textContent = '☀️';
-  }
-} else if (localStorage.getItem('theme') === 'light') {
-  document.body.classList.add('light-mode');
-  document.body.classList.remove('dark-mode');
-  if (darkToggle) {
-    darkToggle.textContent = '🌙';
-  }
-}
+const opgeslagenThema = localStorage.getItem('theme') || 'light';
+
+document.body.classList.toggle('dark-mode', opgeslagenThema === 'dark');
+document.body.classList.toggle('light-mode', opgeslagenThema !== 'dark');
 
 updateMapTheme();
+updateKaart();
 
 if (darkToggle) {
   darkToggle.addEventListener('click', () => {
-    const isDark = document.body.classList.contains('dark-mode');
+    const wordtDonker = !document.body.classList.contains('dark-mode');
 
-    if (isDark) {
-      document.body.classList.remove('dark-mode');
-      document.body.classList.add('light-mode');
-      localStorage.setItem('theme', 'light');
-      darkToggle.textContent = '🌙';
-    } else {
-      document.body.classList.remove('light-mode');
-      document.body.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark');
-      darkToggle.textContent = '☀️';
-    }
+    document.body.classList.toggle('dark-mode', wordtDonker);
+    document.body.classList.toggle('light-mode', !wordtDonker);
+
+    localStorage.setItem('theme', wordtDonker ? 'dark' : 'light');
 
     updateMapTheme();
+    updateKaart();
   });
+}
+
+function toggleFavoriet(naam) {
+  let favs = JSON.parse(localStorage.getItem('favs') || '[]');
+
+  if (favs.includes(naam)) {
+    favs = favs.filter(f => f !== naam);
+  } else {
+    favs.push(naam);
+  }
+
+  localStorage.setItem('favs', JSON.stringify(favs));
 }
