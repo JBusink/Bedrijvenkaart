@@ -77,18 +77,19 @@
       <label>Domein</label>
 
       <div class="tag-filter-row">
-        <div class="filter-actions">
-          <button id="resetFilters" type="button">Reset filters</button>
+        <div class="filter-actions-column">
+          <button id="resetFilters" class="tag-filter-option" type="button">
+            Reset
+          </button>
+          <button id="favorietenFilter" class="tag-filter-option" type="button">
+            ★ Favorieten
+          </button>
         </div>
 
-        <div id="tagFilter" class="tag-filter-list">
-          <!-- Wordt dynamisch gevuld -->
-        </div>
+        <div id="tagFilter" class="tag-filter-list"></div>
       </div>
     </div>
   </div>
-</section>
-
   <main class="content-layout">
     <div class="map-wrapper">
       <div id="map"></div>
@@ -103,7 +104,10 @@
   </main>
 
 </div>
-
+  <section class="favorieten-lijst">
+    <h2>Favorieten</h2>
+    <div id="favorietenContainer" class="company-list"></div>
+  </section>
 <footer>
   <div class="footer-section">
     <h3>Feedback</h3>

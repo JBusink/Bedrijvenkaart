@@ -9,6 +9,23 @@ const resetButton = document.getElementById('resetFilters');
 const sidepanel = document.getElementById('sidepanel');
 const darkToggle = document.getElementById('darkToggle');
 const provincieFilter = document.getElementById('provincieFilter');
+const favorietenFilterButton = document.getElementById('favorietenFilter');
+
+let alleenFavorietenActief = false;
+
+function updateFavorietenKnop() {
+  if (!favorietenFilterButton) {
+    return;
+  }
+
+  favorietenFilterButton.classList.toggle('active', alleenFavorietenActief);
+
+  if (alleenFavorietenActief) {
+    favorietenFilterButton.textContent = '★ Favorieten';
+  } else {
+    favorietenFilterButton.textContent = '☆ Favorieten';
+  }
+}
 
 const map = L.map('map').setView([52.2, 5.3], 7);
 
@@ -137,6 +154,9 @@ function toonBedrijfInPanel(bedrijf) {
 
   const naam = escapeHtml(bedrijf.naam || 'Onbekende organisatie');
   const plaats = escapeHtml(bedrijf.plaats || 'Onbekende locatie');
+  const provincie = escapeHtml(bedrijf.provincie || '');
+  const locatie = provincie ? `${plaats}, ${provincie}` : plaats;
+
   const types = asArray(bedrijf.type);
   const tags = asArray(bedrijf.tags);
 
@@ -157,25 +177,25 @@ function toonBedrijfInPanel(bedrijf) {
     : '';
 
   const emailHtml = bedrijf.email
-    ? `<a href="mailto:${bedrijf.email}">📧 E-mail</a>`
+    ? `<a href="mailto:${escapeHtml(bedrijf.email)}">📧 E-mail</a>`
     : '';
 
   let websiteHtml = '';
 
   if (Array.isArray(bedrijf.websites) && bedrijf.websites.length > 0) {
-    websiteHtml = bedrijf.websites.map(site => `
+    websiteHtml = bedrijf.websites.map((site) => `
       <a href="${escapeHtml(site.url)}" target="_blank" rel="noopener noreferrer">
         🌐 ${escapeHtml(site.naam)}
       </a>
     `).join('');
   } else if (bedrijf.website) {
-    // fallback voor oude entries
     websiteHtml = `
       <a href="${escapeHtml(bedrijf.website)}" target="_blank" rel="noopener noreferrer">
         🌐 Website
       </a>
     `;
   }
+
   const extraInfoHtml = extraInfo
     ? `
       <div class="company-section">
@@ -187,10 +207,20 @@ function toonBedrijfInPanel(bedrijf) {
     `
     : '';
 
+  const favorietLabel = isFavoriet(bedrijf)
+    ? '★ Verwijder uit favorieten'
+    : '☆ Voeg toe aan favorieten';
+
+  const favorietKnopHtml = `
+  <button id="favorietToggleKnop" type="button" class="favoriet-knop">
+    ${favorietLabel}
+  </button>
+  `;
+
   sidepanel.innerHTML = `
     <div class="company-header">
       <h2>${naam}</h2>
-      <div class="company-subtitle">${plaats}</div>
+      <div class="company-subtitle">${locatie}</div>
     </div>
 
     <div class="company-meta">
@@ -216,12 +246,118 @@ function toonBedrijfInPanel(bedrijf) {
         </div>
       </div>
     </div>
+        <div class="company-section">
+      <div class="company-section-inner">
+        <h3>Favoriet</h3>
+        <div class="company-links">
+          ${favorietKnopHtml}
+        </div>
+      </div>
+    </div>
   `;
+
+  const favorietToggleKnop = document.getElementById('favorietToggleKnop');
+
+  if (favorietToggleKnop) {
+    favorietToggleKnop.addEventListener('click', () => {
+      toggleFavoriet(bedrijf);
+      toonBedrijfInPanel(bedrijf);
+      updateKaart();
+      updateFavorietenKnop();
+      renderFavorietenLijst();   
+    });
+  }
 }
 
 /* =========================
    FILTERS / CATEGORIEËN
    ========================= */
+function renderFavorietenLijst() {
+  const container = document.getElementById('favorietenContainer');
+  if (!container) return;
+
+  const favorieten = haalFavorietenOp();
+
+  const favorietenBedrijven = alleBedrijven.filter((b) =>
+    favorieten.includes(b.naam)
+  );
+
+  if (favorietenBedrijven.length === 0) {
+    container.innerHTML = `
+      <p class="company-list-empty">Nog geen favorieten geselecteerd.</p>
+    `;
+    return;
+  }
+
+  container.innerHTML = favorietenBedrijven
+    .map((bedrijf) => maakBedrijfLijstHtml(bedrijf))
+    .join('');
+
+  voegFavorietListenersToe();
+}
+
+function voegFavorietListenersToe() {
+  document.querySelectorAll('.favoriet-icoon').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const naam = btn.dataset.bedrijf;
+      const bedrijf = alleBedrijven.find((b) => b.naam === naam);
+      if (!bedrijf) return;
+
+      toggleFavoriet(bedrijf);
+      renderFavorietenLijst();
+      updateKaart();
+      updateFavorietenKnop();
+    });
+  });
+}
+
+function maakBedrijfLijstHtml(bedrijf) {
+  const naam = escapeHtml(bedrijf.naam || '');
+  const plaats = escapeHtml(bedrijf.plaats || '');
+  const provincie = escapeHtml(bedrijf.provincie || '');
+  const locatie = provincie ? `${plaats}, ${provincie}` : plaats;
+
+  const ster = isFavoriet(bedrijf) ? '★' : '☆';
+
+  let linksHtml = '';
+
+  if (Array.isArray(bedrijf.websites) && bedrijf.websites.length > 0) {
+    linksHtml = bedrijf.websites
+      .map((site) => {
+        const url = escapeHtml(site.url || '');
+        const label = escapeHtml(site.naam || 'Website');
+        if (!url) return '';
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`;
+      })
+      .join('');
+  } else if (bedrijf.website) {
+    const url = escapeHtml(bedrijf.website);
+    linksHtml = `<a href="${url}" target="_blank" rel="noopener noreferrer">Website</a>`;
+  }
+
+  return `
+    <article class="company-list-item">
+      <div class="company-list-item-header">
+        <button
+          class="favoriet-icoon"
+          type="button"
+          data-bedrijf="${naam}"
+          aria-label="Toggle favoriet"
+          title="Toggle favoriet"
+        >
+          ${ster}
+        </button>
+
+        <div>
+          <h3>${naam}</h3>
+          <div class="company-list-place">${locatie}</div>
+        </div>
+      </div>
+
+      ${linksHtml ? `<div class="company-list-links">${linksHtml}</div>` : ''}
+    </article>
+  `;
+}
 
 function voldoetAanFilter(bedrijf) {
   const gekozenType = typeFilter ? typeFilter.value : 'alles';
@@ -239,7 +375,10 @@ function voldoetAanFilter(bedrijf) {
     actieveTags.length === 0 ||
     actieveTags.some((tag) => tags.includes(tag));
 
-  return typeOk && provincieOk && tagsOk;
+  const favorietOk =
+    !alleenFavorietenActief || isFavoriet(bedrijf);
+
+  return typeOk && provincieOk && tagsOk && favorietOk;
 }
 
 function vulProvincieFilterOpties(bedrijven) {
@@ -482,6 +621,9 @@ fetch('data/bedrijven.json')
       requestAnimationFrame(() => {
         map.invalidateSize();
         updateKaart();
+        updateFavorietenKnop();
+        renderFavorietenLijst();    
+
       });
     });
   })
@@ -504,6 +646,13 @@ if (tagFilter) {
 if (provincieFilter) {
   provincieFilter.addEventListener('change', updateKaart);
 }
+if (favorietenFilterButton) {
+  favorietenFilterButton.addEventListener('click', () => {
+    alleenFavorietenActief = !alleenFavorietenActief;
+    updateFavorietenKnop();
+    updateKaart();
+  });
+}
 if (resetButton) {
   resetButton.addEventListener('click', () => {
     if (typeFilter) {
@@ -522,6 +671,8 @@ if (resetButton) {
         });
     }
 
+    alleenFavorietenActief = false;
+    updateFavorietenKnop();
     updateKaart();
   });
 }
@@ -564,14 +715,33 @@ if (darkToggle) {
   });
 }
 
-function toggleFavoriet(naam) {
-  let favs = JSON.parse(localStorage.getItem('favs') || '[]');
 
-  if (favs.includes(naam)) {
-    favs = favs.filter(f => f !== naam);
-  } else {
-    favs.push(naam);
+
+function haalFavorietenOp() {
+  try {
+    return JSON.parse(localStorage.getItem('favorieten') || '[]');
+  } catch {
+    return [];
   }
+}
 
-  localStorage.setItem('favs', JSON.stringify(favs));
+function slaFavorietenOp(favorieten) {
+  localStorage.setItem('favorieten', JSON.stringify(favorieten));
+}
+
+function isFavoriet(bedrijf) {
+  const favorieten = haalFavorietenOp();
+  return favorieten.includes(bedrijf.naam);
+}
+
+function toggleFavoriet(bedrijf) {
+  const favorieten = haalFavorietenOp();
+
+  if (favorieten.includes(bedrijf.naam)) {
+    const nieuweFavorieten = favorieten.filter((naam) => naam !== bedrijf.naam);
+    slaFavorietenOp(nieuweFavorieten);
+  } else {
+    favorieten.push(bedrijf.naam);
+    slaFavorietenOp(favorieten);
+  }
 }

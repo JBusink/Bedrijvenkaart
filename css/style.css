@@ -233,6 +233,21 @@ a {
   box-sizing: border-box;
 }
 
+.favoriet-knop {
+  background: var(--bg-link);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+
+.favoriet-knop:hover {
+  background: var(--bg-link-hover);
+}
+
 @media (max-width: 800px) {
   .hero-filters-inner {
     grid-template-columns: 1fr;
@@ -263,24 +278,69 @@ a {
   gap: 16px;
 }
 
-.filter-actions {
+.filter-actions-column {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  gap: 8px;
   flex: 0 0 auto;
 }
 
-.filter-actions button,
-#resetFilters,
-.button {
-  padding: 10px 14px;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  background: var(--accent-hover);
-  color: #ffffff;
-  font-size: 0.95rem;
-  font-weight: 600;
+.tag-filter-list {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 10px 12px;
+}
+
+.tag-filter-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-soft);
+  color: var(--text-main);
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.05s ease;
+  font-size: 0.8rem;
+}
+
+.tag-filter-option:hover {
+  background: var(--bg-link);
+}
+
+.tag-filter-option input {
+  margin: 0;
+}
+
+#favorietenFilter.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.favorieten-lijst {
+  padding: 20px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-panel);
+}
+
+.favorieten-lijst h2 {
+  margin-bottom: 12px;
+  color: var(--text-heading);
+}
+.favoriet-icoon {
+  background: transparent;
+  border: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: transparent;
+  margin-right: 8px;
+  padding: 0;
+}
+
+.favoriet-icoon:hover {
+  transform: scale(1.2);
 }
 
 .filter-actions button:hover,
@@ -295,6 +355,11 @@ a {
   transform: scale(0.97);
 }
 
+#favorietenFilter.active {
+  background: var(--accent-hover);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
 .tag-filter-list {
   display: flex;
   flex: 1;
@@ -303,22 +368,32 @@ a {
 }
 
 .tag-filter-option {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 8px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--bg-soft);
-  color: var(--text-main);
   cursor: pointer;
   font-size: 0.8rem;
+  padding: 4px 10px;
+}
+
+button.tag-filter-option {
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text-main);
+}
+
+button.tag-filter-option:hover {
+  background: var(--bg-link);
 }
 
 .tag-filter-option:hover {
   background: var(--bg-link);
 }
-
+#favorietenFilter.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
 .tag-filter-option input {
   margin: 0;
 }
@@ -440,7 +515,32 @@ a {
 .company-list-links a:hover {
   background: var(--bg-link-hover);
 }
+.company-list-item-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
+.favoriet-icoon {
+  background: transparent !important;
+  border: transparent !important;
+  box-shadow: transparent !important;
+
+  font-size: 1.6rem;   /* groter */
+  width: 12px !important;
+  height: 12px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  padding: 0;
+}
+
+.company-list-item-header > div {
+  flex: 1;
+}
 /* =========================
    9. INFO PAGINA
    ========================= */
