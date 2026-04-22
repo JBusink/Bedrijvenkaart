@@ -151,7 +151,8 @@ function toonBedrijfInPanel(bedrijf) {
   if (!sidepanel) {
     return;
   }
-
+  const aantalKliks = aantalKliksVoorBedrijf(bedrijf);
+  const bekekenTekst = aantalKliks === 1 ? '1 keer bekeken' : `${aantalKliks} keer bekeken`;
   const naam = escapeHtml(bedrijf.naam || 'Onbekende organisatie');
   const plaats = escapeHtml(bedrijf.plaats || 'Onbekende locatie');
   const provincie = escapeHtml(bedrijf.provincie || '');
@@ -262,9 +263,11 @@ function toonBedrijfInPanel(bedrijf) {
     favorietToggleKnop.addEventListener('click', () => {
       toggleFavoriet(bedrijf);
       toonBedrijfInPanel(bedrijf);
-      updateKaart();
       updateFavorietenKnop();
-      renderFavorietenLijst();   
+      renderFavorietenLijst(); 
+      if (alleenFavorietenActief) {
+  updateKaart({ resetPanel: false, herpositioneer: false });
+}  
     });
   }
 }
@@ -316,7 +319,10 @@ function maakBedrijfLijstHtml(bedrijf) {
   const plaats = escapeHtml(bedrijf.plaats || '');
   const provincie = escapeHtml(bedrijf.provincie || '');
   const locatie = provincie ? `${plaats}, ${provincie}` : plaats;
-
+  const aantalKliks = aantalKliksVoorBedrijf(bedrijf);
+  const populariteitHtml = aantalKliks > 0
+    ? `<div class="company-list-popularity"> ${aantalKliks}x bekeken</div>`
+    : '';
   const ster = isFavoriet(bedrijf) ? '★' : '☆';
 
   let linksHtml = '';
@@ -335,7 +341,7 @@ function maakBedrijfLijstHtml(bedrijf) {
     linksHtml = `<a href="${url}" target="_blank" rel="noopener noreferrer">Website</a>`;
   }
 
-  return `
+ return `
     <article class="company-list-item">
       <div class="company-list-item-header">
         <button
@@ -343,7 +349,6 @@ function maakBedrijfLijstHtml(bedrijf) {
           type="button"
           data-bedrijf="${naam}"
           aria-label="Toggle favoriet"
-          title="Toggle favoriet"
         >
           ${ster}
         </button>
@@ -351,6 +356,7 @@ function maakBedrijfLijstHtml(bedrijf) {
         <div>
           <h3>${naam}</h3>
           <div class="company-list-place">${locatie}</div>
+          ${populariteitHtml}
         </div>
       </div>
 
@@ -417,13 +423,13 @@ function borderVoorMarker() { return document.body.classList.contains('dark-mode
 function iconVoorBedrijf(bedrijf) {
   const isDark = document.body.classList.contains('dark-mode');
 
-  const kleur = isDark ? '#e3ddf9' : '#0f172a';   // licht in dark, zwart in light
+  const kleur = isDark ? '#e3ddf9' : '#0f172a';
   const borderKleur = isDark ? '#0f172a' : '#e3ddf9';
 
   return L.divIcon({
-    className: '',
+    className: 'bedrijf-marker',
     html: `
-      <div style="
+      <div class="bedrijf-marker-inner" style="
         width: 22px;
         height: 22px;
         border-radius: 50%;
@@ -503,17 +509,18 @@ function vulTagFilterOpties(bedrijven) {
    POPUP / MARKERS
    ========================= */
 
-function maakPopupHtml(bedrijf) {
+
+
+function maakTooltipHtml(bedrijf) {
   const naam = escapeHtml(bedrijf.naam || 'Onbekende organisatie');
   const plaats = escapeHtml(bedrijf.plaats || 'Onbekende locatie');
-  const types = asArray(bedrijf.type);
-  const typeTekst = types.length > 0 ? escapeHtml(types.join(', ')) : 'Onbekend';
+  const provincie = escapeHtml(bedrijf.provincie || '');
+  const locatie = provincie ? `${plaats}, ${provincie}` : plaats;
 
   return `
-    <div>
+    <div class="marker-tooltip">
       <strong>${naam}</strong><br>
-      ${plaats}<br>
-      <small>${typeTekst}</small>
+      <span>${locatie}</span>
     </div>
   `;
 }
@@ -528,15 +535,29 @@ function tekenMarkers(bedrijven) {
       return;
     }
 
-    const marker = L.marker(
-      [bedrijf.lat, bedrijf.lng],
-      { icon: iconVoorBedrijf(bedrijf) }
-    )
-      .bindPopup(maakPopupHtml(bedrijf))
-      .on('click', () => {
-        toonBedrijfInPanel(bedrijf);
-      });
+const marker = L.marker(
+  [bedrijf.lat, bedrijf.lng],
+  { icon: iconVoorBedrijf(bedrijf) }
+)
+  .bindTooltip(maakTooltipHtml(bedrijf), {
+    direction: 'top',
+    offset: [0, -10],
+    opacity: 0.95
+  })
+  .on('click', () => {
+    registreerBedrijfKlik(bedrijf);
+    toonBedrijfInPanel(bedrijf);
+    renderFavorietenLijst();
+  });
+  marker.on('mouseover', () => {
+    const el = marker.getElement()?.querySelector('.bedrijf-marker-inner');
+    if (el) el.style.transform = 'scale(1.2)';
+  });
 
+  marker.on('mouseout', () => {
+    const el = marker.getElement()?.querySelector('.bedrijf-marker-inner');
+    if (el) el.style.transform = 'scale(1)';
+  });
     markers.push(marker);
     markerCluster.addLayer(marker);
   });
@@ -715,6 +736,9 @@ if (darkToggle) {
   });
 }
 
+/* =========================
+   Favorieten
+   ========================= */
 
 
 function haalFavorietenOp() {
@@ -744,4 +768,33 @@ function toggleFavoriet(bedrijf) {
     favorieten.push(bedrijf.naam);
     slaFavorietenOp(favorieten);
   }
+}
+
+/* =========================
+   Extract user-data
+   ========================= */
+
+   function haalKlikStatsOp() {
+  try {
+    return JSON.parse(localStorage.getItem('bedrijfKliks') || '{}');
+  } catch {
+    return {};
+  }
+}
+
+function slaKlikStatsOp(stats) {
+  localStorage.setItem('bedrijfKliks', JSON.stringify(stats));
+}
+
+function registreerBedrijfKlik(bedrijf) {
+  const stats = haalKlikStatsOp();
+  const naam = bedrijf.naam;
+
+  stats[naam] = (stats[naam] || 0) + 1;
+  slaKlikStatsOp(stats);
+}
+
+function aantalKliksVoorBedrijf(bedrijf) {
+  const stats = haalKlikStatsOp();
+  return stats[bedrijf.naam] || 0;
 }
