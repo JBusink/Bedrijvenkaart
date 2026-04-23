@@ -1009,5 +1009,60 @@
         "url": "https://www.etteplan.com/"
       }
     ]
+  },
+  {
+    "naam": "ITER Organization",
+    "plaats": "Saint-Paul-lès-Durance",
+    "provincie": "Provence-Alpes-Côte d'Azur",
+    "lat": 43.7098,
+    "lng": 5.7633,
+    "type": ["onderzoek"],
+    "tags": ["Energie & duurzaamheid", "High-tech systemen & materialen"],
+    "beschrijving": "Internationaal kernfusieproject gericht op het demonstreren van grootschalige energieopwekking via tokamak-fusie.",
+    "website": "https://www.iter.org/"
+  },
+  {
+    "naam": "GVB",
+    "plaats": "Amsterdam",
+    "provincie": "Noord-Holland",
+    "lat": 52.3731,
+    "lng": 4.9189,
+    "type": ["bedrijf"],
+    "tags": ["Data & digitalisering", "High-tech systemen & materialen"],
+    "beschrijving": "Openbaarvervoerbedrijf met focus op infrastructuur, elektrotechniek, data-analyse en mobiliteitssystemen.",
+    "website": "https://werkenbijgvb.nl/vakgebieden/stage/"
+  },
+  {
+    "naam": "Enduro Softslings",
+    "plaats": "De Goorn",
+    "provincie": "Noord-Holland",
+    "lat": 52.6205,
+    "lng": 4.9526,
+    "type": ["bedrijf"],
+    "tags": ["High-tech systemen & materialen"],
+    "beschrijving": "Producent van hoogwaardige synthetische hijs- en sjoroplossingen met focus op materiaalgedrag en veiligheid.",
+    "website": "https://www.endurosoftslings.com/"
+  },
+  {
+    "naam": "SolarNL",
+    "plaats": "Eindhoven",
+    "provincie": "Noord-Brabant",
+    "lat": 51.4470,
+    "lng": 5.4697,
+    "type": ["onderzoek"],
+    "tags": ["Energie & duurzaamheid", "High-tech systemen & materialen"],
+    "beschrijving": "Nationaal programma voor ontwikkeling van next-generation zonne-energie technologie, inclusief fotonica en PV-systemen.",
+    "website": "https://solarnl.eu/"
+  },
+  {
+    "naam": "Politie Nederland – Landelijk Team Forensische Opsporing",
+    "plaats": "Driebergen-Rijsenburg",
+    "provincie": "Utrecht",
+    "lat": 52.0525,
+    "lng": 5.2806,
+    "type": ["onderzoek", "overheid"],
+    "tags": ["Metingen en sensoren", "Data & digitalisering", "Veiligheid & defensie"],
+    "beschrijving": "Forensisch onderzoek en technologische ondersteuning bij opsporing, inclusief data-analyse, sensortechnologie en beeldverwerking.",
+    "website": "https://kombijde.politie.nl/vakgebieden/stage/intro"
   }
 ]
