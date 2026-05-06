@@ -1061,8 +1061,140 @@
     "lat": 52.0525,
     "lng": 5.2806,
     "type": ["onderzoek", "overheid"],
-    "tags": ["Metingen en sensoren", "Data & digitalisering", "Veiligheid & defensie"],
+    "tags": ["Data & digitalisering", "Veiligheid & defensie"],
     "beschrijving": "Forensisch onderzoek en technologische ondersteuning bij opsporing, inclusief data-analyse, sensortechnologie en beeldverwerking.",
     "website": "https://kombijde.politie.nl/vakgebieden/stage/intro"
+  },
+  {
+    "naam": "Optics11",
+    "plaats": "Amsterdam",
+    "provincie": "Noord-Holland",
+    "lat": 52.30591917412812,
+    "lng": 4.944404412058965,
+    "type": ["bedrijf"],
+    "tags": ["High-tech systemen & materialen", "Veiligheid & defensie"],
+    "beschrijving": "Optics11 ontwikkelt en produceert geavanceerde meetsystemen op basis van optische vezeltechnologie voor nauwkeurige metingen van druk, kracht en trillingen.",
+    "website": "https://www.optics11.com"
+  },
+  {
+    "naam": "Single Quantum",
+    "plaats": "Delft",
+    "provincie": "Zuid-Holland",
+    "lat": 51.98634659086185,
+    "lng": 4.376968840628462,
+    "type": ["bedrijf"],
+    "tags": ["High-tech systemen & materialen"],
+    "beschrijving": "Single Quantum ontwikkelt zeer gevoelige fotondetectoren op basis van supergeleidende technologie voor quantumtechnologie, quantumcryptografie en fundamenteel onderzoek.",
+    "website": "https://singlequantum.com"
+  },
+  {
+    "naam": "VSParticle",
+    "plaats": "Delft",
+    "provincie": "Zuid-Holland",
+    "lat": 52.02078692196441,
+    "lng": 4.351560462296485,
+    "type": ["bedrijf"],
+    "tags": ["High-tech systemen & materialen", "Energie & duurzaamheid"],
+    "beschrijving": "VSParticle ontwikkelt technologie om nanopartikels nauwkeurig te produceren en te printen voor toepassingen in energieopslag, katalyse en materiaalkunde.",
+    "website": "https://vsparticle.com"
+  },
+  {
+    "naam": "HedoN Electronic Developments",
+    "plaats": "Delft",
+    "provincie": "Zuid-Holland",
+    "lat": 51.99617986637027,
+    "lng": 4.383648854368371,
+    "type": ["bedrijf"],
+    "tags": ["High-tech systemen & materialen"],
+    "beschrijving": "HedoN Electronic Developments ontwikkelt precisie-elektronica, inductietechnologie en meetapparatuur voor fysische en technische systemen.",
+    "website": "https://www.hedon.nl"
+  },
+  {
+    "naam": "MEMSYS",
+    "plaats": "Delft",
+    "provincie": "Zuid-Holland",
+    "lat": 51.99356645365631,
+    "lng": 4.387563008331577,
+    "type": ["bedrijf"],
+    "tags": ["Data & digitalisering", "Energie & duurzaamheid"],
+    "beschrijving": "MEMSYS ontwikkelt draadloze sensoren met energy harvesting voor toepassingen waarin trillingen, energie en signalen worden gemeten.",
+    "website": "https://www.memsys.nl"
+  },
+  {
+    "naam": "Selmers",
+    "plaats": "Beverwijk",
+    "provincie": "Noord-Holland",
+    "lat": 52.47023822242593,
+    "lng": 4.677055337195459,
+    "type": ["bedrijf"],
+    "tags": ["High-tech systemen & materialen", "Energie & duurzaamheid"],
+    "beschrijving": "Selmers maakt apparatuur voor het produceren, coaten en behandelen van pijpleidingen, waarbij kennis van dunnefilmfysica en materiaalkunde belangrijk is.",
+    "website": "https://www.selmers.com"
+  },
+  {
+    "naam": "Dawn Aerospace",
+    "plaats": "Delfgauw",
+    "provincie": "Zuid-Holland",
+    "lat": 52.0015,
+    "lng": 4.4022,
+    "type": ["bedrijf"],
+    "tags": ["Aarde, klimaat & ruimte", "High-tech systemen & materialen"],
+    "beschrijving": "Dawn Aerospace ontwikkelt ruimtevliegtuigen en voortstuwingssystemen voor ruimtevaarttoepassingen, waarbij materiaalkunde en fysica centraal staan.",
+    "website": "https://www.dawnaerospace.com"
+  },
+  {
+    "naam": "Scientific Volume Imaging B.V.",
+    "plaats": "Hilversum",
+    "provincie": "Noord-Holland",
+    "lat": 52.21048872639602,
+    "lng": 5.19314927436517,
+    "type": ["bedrijf"],
+    "tags": ["Gezondheid & medische technologie", "Data & digitalisering"],
+    "beschrijving": "SVI ontwikkelt beeldvormingssoftware waarmee de output van medische apparaten beter wordt gevisualiseerd, gemodelleerd en geanalyseerd.",
+    "website": "https://svi.nl"
+  },
+  {
+    "naam": "SMART Photonics",
+    "plaats": "Eindhoven",
+    "provincie": "Noord-Brabant",
+    "lat": 51.41187271549125,
+    "lng": 5.457141694807493,
+    "type": ["bedrijf"],
+    "tags": ["High-tech systemen & materialen"],
+    "beschrijving": "SMART Photonics is een onafhankelijke foundry voor photonic integrated circuits op basis van indiumfosfide.",
+    "website": "https://smartphotonics.nl"
+  },
+  {
+    "naam": "4Silence",
+    "plaats": "Enschede",
+    "provincie": "Overijssel",
+    "lat": 52.28031913044357,
+    "lng": 6.887972408348078,
+    "type": ["bedrijf"],
+    "tags": ["Energie & duurzaamheid", "High-tech systemen & materialen"],
+    "beschrijving": "4Silence ontwikkelt constructies die geluidsoverlast verminderen met behulp van diffractie en slimme geometrieën, zonder hoge geluidsschermen.",
+    "website": "https://www.4silence.nl"
+  },
+  {
+    "naam": "VPS",
+    "plaats": "Barendrecht",
+    "provincie": "Zuid-Holland",
+    "lat": 51.861093117411144,
+    "lng": 4.510514448796465,
+    "type": ["bedrijf"],
+    "tags": ["Energie & duurzaamheid", "Data & digitalisering"],
+    "beschrijving": "VPS is gespecialiseerd in controle en verbetering van brandstofkwaliteit en energie-efficiëntie, vooral voor de scheepvaart en energiesector.",
+    "website": "https://www.vpsveritas.com"
+  },
+  {
+    "naam": "HFML-FELIX",
+    "plaats": "Nijmegen",
+    "provincie": "Gelderland",
+    "lat": 51.823278174033454,
+    "lng": 5.870743664139865,
+    "type": ["onderzoek"],
+    "tags": ["High-tech systemen & materialen"],
+    "beschrijving": "HFML-FELIX combineert hoge magneetvelden en vrije-elektronenlasers om fundamentele eigenschappen van materie en materialen te bestuderen.",
+    "website": "https://www.hfml-felix.nl"
   }
 ]
