@@ -251,13 +251,13 @@
     ]
   },
   {
-    "naam": "Vrije Universiteit Amsterdam",
+    "naam": "Vrije Universiteit Amsterdam (VU)",
     "plaats": "Amsterdam",
     "provincie": "Noord-Holland",
     "lat": 52.333792829840796,
     "lng": 4.866535288788349,
     "type": ["onderzoek"],
-    "tags": ["High-tech systemen & materialen", "Energie & duurzaamheid", "Aarde, klimaat & ruimte"],
+    "tags": ["High-tech systemen & materialen","Gezondheid & medische technologie", "Energie & duurzaamheid", "Aarde, klimaat & ruimte"],
     "beschrijving": "Universiteit met sterke onderzoeksgroepen in natuurkunde, o.a. op het gebied van high-energy physics, condensed matter en klimaatwetenschappen.",
     "websites": [
       {
@@ -1196,5 +1196,32 @@
     "tags": ["High-tech systemen & materialen"],
     "beschrijving": "HFML-FELIX combineert hoge magneetvelden en vrije-elektronenlasers om fundamentele eigenschappen van materie en materialen te bestuderen.",
     "website": "https://www.hfml-felix.nl"
-  }
+  },
+  {
+  "naam": "Amsterdam UMC",
+  "plaats": "Amsterdam",
+  "provincie": "Noord-Holland",
+  "lat": 52.295726420262156,
+  "lng": 4.957513510675661,
+  "type": ["onderzoek"],
+  "tags": [
+    "High-tech systemen & materialen",
+    "Gezondheid & medische technologie"
+  ],
+  "beschrijving": "Onderzoeks- en core-facilityomgeving rond biomedische fysica, medische beeldvorming, MRI/PET/CT, optische microscopie, cytometrie en geavanceerde beeldanalyse. Interessant voor technische natuurkunde door de combinatie van instrumentatie, imaging physics, data-analyse en klinisch/preklinisch onderzoek.",
+  "websites": [
+    {
+      "naam": "Biomedical Engineering and Physics",
+      "url": "https://bme-physics.nl/"
+    },
+    {
+      "naam": "Research Imaging Core Center",
+      "url": "https://amsterdamumc.org/research/core-facility/research-imaging"
+    },
+    {
+      "naam": "Microscopy and Cytometry Core Facility",
+      "url": "https://immunologyamsterdam.org/core-facilities/#mccf"
+    }
+  ]
+}
 ]
